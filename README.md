@@ -11,7 +11,7 @@ Jellyfin for macOS is a launcher/wrapper built in Swift.
 
 1. Clone or download this repository.
    ```sh
-   git clone https://github.com/anthonylavado/jellyfin-mac-app.git
+   git clone https://github.com/jellyfin/jellyfin-mac-app.git
    ```
 2. Create a second directory beside this repository, called `jellyfin-mac-app-resources`.
    ```sh
