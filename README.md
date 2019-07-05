@@ -57,6 +57,8 @@ Please review the error inside Xcode. If a build failed, it is likely because th
 
 Does the console inside Xcode show `Error Domain=NSPOSIXErrorDomain Code=13 "Permission denied"`? If so, you need to fix your Jellyfin directory inside `-resources`.
 
+Does the console show a `Failed to bind to address` message? You may already have a copy of Jellyfin running on your computer. This can happen if you did not shutdown a separate Jellyfin install, or if you clicked on "Stop" inside Xcode. Use Activity Monitor to find and quit any open Jellyfin process.
+
 ### The project built, but Jellyfin didn't launch. There are no errors I can see.
 
 This wrapper does not launch the Web UI automatically. This will eventually become a configurable option. In the meanwhile, you can use the Jellyfin icon in the menu bar to launch the Web UI.
