@@ -43,6 +43,7 @@ jellyfin-mac-app-resources/
 ### FFmpeg Download
 
 It's recommended to use a static macOS build of FFmpeg, such as [Zeranoe's Builds](https://ffmpeg.zeranoe.com/builds/macos64/static/).
+
 At the time of writing, please use [ffmpeg-4.0.2-macos64-static.zip](https://ffmpeg.zeranoe.com/builds/macos64/static/ffmpeg-4.0.2-macos64-static.zip).
 
 
