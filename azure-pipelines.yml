@@ -14,7 +14,7 @@ steps:
 # Downloads a GitHub Release from a repository.
 - task: DownloadGitHubRelease@0
   inputs:
-    connection: 'mac-app-build'
+    connection: jellyfin
     userRepository: 'jellyfin/jellyfin'
     defaultVersionType: 'latest'
     itemPattern: 'jellyfin_*_macos.tar.gz'
