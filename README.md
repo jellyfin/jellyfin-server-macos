@@ -19,7 +19,7 @@ Jellyfin for macOS is a launcher/wrapper built in Swift.
    ```
 3. Download Jellyfin, and extract it. Rename the folder to `jellyfin` and put it inside the resources folder.
 
-4. Download the correct version of FFmpeg, and place it in the root of `jellyfin-mac-app-resources`.
+4. Download the correct version of FFmpeg. Extract it, and place `ffmpeg` and `ffprobe` in the root of `jellyfin-mac-app-resources`.
 
 5. Open `Server.xcodeproj` with Xcode, and build.
 
@@ -36,6 +36,7 @@ jellyfin-mac-app
 
 jellyfin-mac-app-resources/
 ├── ffmpeg
+├── ffprobe
 └── jellyfin
 ```
 
