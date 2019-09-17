@@ -21,9 +21,9 @@ codesign --force --options runtime --sign "Developer ID Application: Anthony Lav
 ### Set Capabilities
 These should already be set in the project, but for reference, you must enable these capabilities:
 
-:white_check_mark: **Hardened Runtime**
-* [x] Allow Execution of JIT-compiled Code Entitlement
-* [x] Apple Events Entitlement
+* [x] **Hardened Runtime**
+    * [x] Allow Execution of JIT-compiled Code Entitlement
+    * [x] Apple Events Entitlement
 
 ### Archive and Upload for Notarization
 At this point, you can archive the app, and upload to Apple for notarization.
