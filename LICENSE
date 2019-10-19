@@ -1,7 +1,11 @@
 The MIT License (MIT)
 
+<<<<<<< HEAD
 Original work Copyright (c) 2016 Jerry Jacobs
 Modified work Copyright (c) 2019 Anthony Lavado
+=======
+Copyright (c) 2016 Jerry Jacobs
+>>>>>>> change the application base to syncthing-macos
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

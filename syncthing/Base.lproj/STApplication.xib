@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="14113" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="14113"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
+            <connections>
+                <outlet property="delegate" destination="Voe-Tx-rLC" id="GzC-gU-4Uq"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customObject id="Voe-Tx-rLC" customClass="STAppDelegate">
+            <connections>
+                <outlet property="Menu" destination="FYW-KQ-yxY" id="plp-7h-Wj2"/>
+                <outlet property="connectionStatusMenuItem" destination="Gzh-BA-qbg" id="Qsf-SM-5Ew"/>
+                <outlet property="daemonRestartMenuItem" destination="24n-vt-eof" id="D3g-69-jyJ"/>
+                <outlet property="daemonStartMenuItem" destination="s51-hi-aSO" id="8qL-OZ-Raj"/>
+                <outlet property="daemonStatusMenuItem" destination="MAH-El-s0y" id="Lv4-ej-d0h"/>
+                <outlet property="daemonStopMenuItem" destination="v6W-XD-Nuf" id="jJ8-t9-Dwq"/>
+                <outlet property="statusMenuItem" destination="PGw-J9-KII" id="zfN-9R-I9K"/>
+                <outlet property="toggleAllDevicesItem" destination="kBF-aK-W8P" id="ITn-Le-nZi"/>
+            </connections>
+        </customObject>
+        <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
+        <menu id="FYW-KQ-yxY">
+            <items>
+                <menuItem title="Status" image="NSStatusUnavailable" id="PGw-J9-KII">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <menu key="submenu" title="Status" autoenablesItems="NO" id="qS5-d4-4WD">
+                        <items>
+                            <menuItem title="Syncthing Service" image="NSStatusUnavailable" id="MAH-El-s0y">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="Syncthing Service" autoenablesItems="NO" id="YYN-1k-umQ">
+                                    <items>
+                                        <menuItem title="Start" id="s51-hi-aSO">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="clickedDaemonStart:" target="Voe-Tx-rLC" id="48u-8L-C1K"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Stop" enabled="NO" id="v6W-XD-Nuf">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="clickedDaemonStop:" target="Voe-Tx-rLC" id="yBD-4Z-Q0Z"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Restart" enabled="NO" id="24n-vt-eof">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="clickedDaemonRestart:" target="Voe-Tx-rLC" id="KwT-ej-jdO"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
+                            <menuItem title="API" image="NSStatusUnavailable" enabled="NO" id="Gzh-BA-qbg">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="Qhv-cP-g7k"/>
+                <menuItem title="Open" toolTip="Open Syncthing Web GUI" id="euz-4I-RQa">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="clickedOpen:" target="Voe-Tx-rLC" id="7Cv-q4-hhD"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="Folders" id="Gbh-kn-bEe">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <menu key="submenu" title="Folders" id="0Tt-4w-4MD">
+                        <items>
+                            <menuItem title="None" id="8nY-KP-Cjq">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                            </menuItem>
+                        </items>
+                        <connections>
+                            <outlet property="delegate" destination="Voe-Tx-rLC" id="YxH-QH-bOa"/>
+                        </connections>
+                    </menu>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="dFB-LR-pV8"/>
+                <menuItem title="Pause All Devices" id="kBF-aK-W8P">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="clickedToggleAllDevices:" target="Voe-Tx-rLC" id="iqS-22-Q46"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="Rescan All" id="boL-Lr-rxV">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="clickedRescanAll:" target="Voe-Tx-rLC" id="Mrn-A1-oBJ"/>
+                    </connections>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="t35-2r-DDO"/>
+                <menuItem title="Preferences..." id="lgT-yX-bGZ">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="clickedPreferences:" target="Voe-Tx-rLC" id="nAN-bU-JlB"/>
+                    </connections>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="8xd-5E-q58"/>
+                <menuItem title="About" id="dst-j8-d2d">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="clickedAbout:" target="Voe-Tx-rLC" id="p8O-aU-oe3"/>
+                    </connections>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="ghy-2s-RVl"/>
+                <menuItem title="Quit Syncthing" id="1wN-cb-7w4">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="clickedQuit:" target="Voe-Tx-rLC" id="Y11-Nd-yq9"/>
+                    </connections>
+                </menuItem>
+            </items>
+            <point key="canvasLocation" x="400" y="224"/>
+        </menu>
+        <menu title="Main Menu" systemMenu="main" id="LRK-4Q-J2a">
+            <items>
+                <menuItem title="Syncthing" id="ViC-de-Xi1">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <menu key="submenu" title="Syncthing" systemMenu="apple" id="O1r-v6-dVJ">
+                        <items>
+                            <menuItem title="Close window" keyEquivalent="w" id="htF-y1-dkl">
+                                <connections>
+                                    <action selector="performClose:" target="-1" id="wl7-Zc-dFu"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Quit application" keyEquivalent="q" id="42h-qg-75M">
+                                <connections>
+                                    <action selector="terminate:" target="-1" id="11j-7w-23u"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+                <menuItem title="Edit" id="HiV-0K-6gI">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <menu key="submenu" title="Edit" id="BIk-A1-DsB">
+                        <items>
+                            <menuItem title="Undo" keyEquivalent="z" id="aRj-ou-O6a">
+                                <connections>
+                                    <action selector="undo:" target="-1" id="mtc-LM-5it"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Redo" keyEquivalent="Z" id="aOH-1O-Idh">
+                                <connections>
+                                    <action selector="redo:" target="-1" id="L2P-e6-veZ"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="iuL-Tv-oDj"/>
+                            <menuItem title="Cut" keyEquivalent="x" id="Kac-nG-ccL">
+                                <connections>
+                                    <action selector="cut:" target="-1" id="Ny7-dh-aL0"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Copy" keyEquivalent="c" id="ygR-tH-H8e">
+                                <connections>
+                                    <action selector="copy:" target="-1" id="gOt-0I-jNl"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Paste" keyEquivalent="v" id="HRl-Yj-JKY">
+                                <connections>
+                                    <action selector="paste:" target="-1" id="xhb-AG-qJb"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Delete" id="09B-Fd-kIg">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="delete:" target="-1" id="ewu-el-0as"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Select All" keyEquivalent="a" id="uO2-Lw-6R3">
+                                <connections>
+                                    <action selector="selectAll:" target="-1" id="kGo-fb-4BN"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+            </items>
+        </menu>
+        <customObject id="LNQ-zz-nO6" customClass="SUUpdater"/>
+        <menuItem title="Menu" id="I8M-Pf-BKw">
+            <modifierMask key="keyEquivalentModifierMask"/>
+            <menu key="submenu" title="Menu" id="rlz-0G-Jeh">
+                <items>
+                    <menuItem title="Item" id="Y9X-vm-pic">
+                        <modifierMask key="keyEquivalentModifierMask"/>
+                    </menuItem>
+                </items>
+            </menu>
+        </menuItem>
+    </objects>
+    <resources>
+        <image name="NSStatusUnavailable" width="16" height="16"/>
+    </resources>
+</document>
