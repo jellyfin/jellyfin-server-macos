@@ -54,9 +54,9 @@
         </menu>
         <menu title="Main Menu" systemMenu="main" id="LRK-4Q-J2a">
             <items>
-                <menuItem title="Syncthing" id="ViC-de-Xi1">
+                <menuItem title="Jellyfin" id="ViC-de-Xi1">
                     <modifierMask key="keyEquivalentModifierMask"/>
-                    <menu key="submenu" title="Syncthing" systemMenu="apple" id="O1r-v6-dVJ">
+                    <menu key="submenu" title="Jellyfin" systemMenu="apple" id="O1r-v6-dVJ">
                         <items>
                             <menuItem title="Close window" keyEquivalent="w" id="htF-y1-dkl">
                                 <connections>

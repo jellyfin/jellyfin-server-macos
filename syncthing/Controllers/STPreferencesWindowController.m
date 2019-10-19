@@ -8,9 +8,7 @@
 
 #import "STPreferencesWindowController.h"
 #import "STPreferencesGeneralViewController.h"
-#import "STPreferencesFoldersViewController.h"
 #import "STPreferencesInfoViewController.h"
-#import "STPreferencesDevicesViewController.h"
 #import "STPreferencesAdvancedViewController.h"
 
 @interface STPreferencesWindowController ()
@@ -50,16 +48,6 @@ enum
             if (self.generalView == nil)
                 _generalView = [[STPreferencesGeneralViewController alloc] init];
             _currentViewController = self.generalView;
-            break;
-        case kFoldersView:
-            if (self.foldersView == nil)
-                _foldersView = [[STPreferencesFoldersViewController alloc] init];
-            _currentViewController = self.foldersView;
-            break;
-        case kDevicesView:
-            if (self.devicesView == nil)
-                _devicesView = [[STPreferencesDevicesViewController alloc] init];
-            _currentViewController = self.devicesView;
             break;
         case kInfoView:
             if (self.infoView == nil)

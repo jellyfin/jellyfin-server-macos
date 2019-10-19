@@ -35,7 +35,7 @@
     _statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
     _statusItem.menu = _Menu;
 
-    [self updateStatusIcon:@"StatusIconNotify"];
+   [self updateStatusIcon:@"StatusIconNotify"];
 }
 
 // TODO: move to STConfiguration class

@@ -19,7 +19,6 @@
 - (void) viewDidLoad {
     [super viewDidLoad];
     
-    [self updateTestButton];
 }
 
 - (id) init {
@@ -27,14 +26,6 @@
     return self;
 }
 
-- (void) updateTestButton {
-    XGSyncthing *st = [[XGSyncthing alloc] init];
-    
-    [st setURI:[self.Syncthing_URI stringValue]];
-    [st setApiKey:[self.Syncthing_ApiKey stringValue]];
-    
-   
-}
 
 - (IBAction)clickedStartAtLogin:(id)sender {
     [self updateStartAtLogin];
@@ -51,8 +42,5 @@
     }
 }
 
-- (IBAction) clickedTest:(id)sender {
-    [self updateTestButton];
-}
 
 @end

@@ -17,7 +17,7 @@
 
 @implementation STConfiguration
 
-NSString *const defaultHost       = @"http://localhost:8384";
+NSString *const defaultHost       = @"http://localhost:8096";
 NSString *defaultExecutable;
 
 - (id) init {

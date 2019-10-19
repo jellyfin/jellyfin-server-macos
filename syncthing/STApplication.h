@@ -13,7 +13,6 @@
 #import "Controllers/STPreferencesWindowController.h"
 #import "Jellyfin_Server-Swift.h"
 
-//@interface STAppDelegate : NSObject <NSApplicationDelegate, STStatusMonitorDelegate, DaemonProcessDelegate>
 @interface STAppDelegate : NSObject <NSApplicationDelegate, DaemonProcessDelegate>
 
 @property (weak) IBOutlet NSMenu *Menu;
