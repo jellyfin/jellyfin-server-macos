@@ -1,6 +1,6 @@
 #import "STApplication.h"
 #import "STLoginItem.h"
-#import "Syncthing-Swift.h"
+#import "Jellyfin_Server-Swift.h"
 
 @interface STAppDelegate ()
 
@@ -8,19 +8,8 @@
 @property (nonatomic, strong, readwrite) XGSyncthing *syncthing;
 @property (nonatomic, strong, readwrite) NSString *executable;
 @property (nonatomic, strong, readwrite) DaemonProcess *process;
-@property (nonatomic, strong, readwrite) STStatusMonitor *statusMonitor;
-@property (weak) IBOutlet NSMenuItem *toggleAllDevicesItem;
-@property (weak) IBOutlet NSMenuItem *statusMenuItem;
-@property (weak) IBOutlet NSMenuItem *connectionStatusMenuItem;
-@property (weak) IBOutlet NSMenuItem *daemonStatusMenuItem;
-@property (weak) IBOutlet NSMenuItem *daemonStartMenuItem;
-@property (weak) IBOutlet NSMenuItem *daemonStopMenuItem;
-@property (weak) IBOutlet NSMenuItem *daemonRestartMenuItem;
 @property (strong) STPreferencesWindowController *preferencesWindow;
 @property (strong) STAboutWindowController *aboutWindow;
-@property (nonatomic, assign) BOOL devicesPaused;
-@property (nonatomic, assign) BOOL daemonOK;
-@property (nonatomic, assign) BOOL connectionOK;
 
 @end
 
@@ -34,16 +23,9 @@
     _process = [[DaemonProcess alloc] initWithPath:_executable delegate:self];
     [_process launch];
 
-    _statusMonitor = [[STStatusMonitor alloc] init];
-    _statusMonitor.syncthing = _syncthing;
-    _statusMonitor.delegate = self;
-    [_statusMonitor startMonitoring];
+    
 }
 
-- (void) clickedFolder:(id)sender {
-    NSString *path = [sender representedObject];
-    [[NSWorkspace sharedWorkspace] selectFile:path inFileViewerRootedAtPath:@""];
-}
 
 - (void) applicationWillTerminate:(NSNotification *)aNotification {
     [_process terminate];
@@ -147,98 +129,18 @@
 	[_statusItem.button.image setTemplate:YES];
 }
 
-- (void) syncMonitorStatusChanged:(SyncthingStatus)status {
-    switch (status) {
-        case SyncthingStatusIdle:
-            [self updateStatusIcon:@"StatusIconDefault"];
-            [_statusItem setToolTip:@"Idle"];
-            [self updateConnectionStatus:true];
-            break;
-        case SyncthingStatusBusy:
-            [self updateStatusIcon:@"StatusIconSync"];
-            [_statusItem setToolTip:@"Syncing"];
-            [self updateConnectionStatus:true];
-            break;
-        case SyncthingStatusOffline:
-            [_statusItem setToolTip:@"Not connected"];
-            [self updateStatusIcon:@"StatusIconNotify"];
-            [self updateConnectionStatus:false];
-            break;
-        case SyncthingStatusError:
-            [_statusItem setToolTip:@"Error"];
-            [self updateStatusIcon:@"StatusIconNotify"];
-            [self updateConnectionStatus:false]; // XXX: Maybe? Or what does it mean
-            break;
-    }
-}
-
-- (void) syncMonitorEventReceived:(NSDictionary *)event {
-    NSString *eventType = [event objectForKey:@"type"];
-
-    if ([eventType isEqualToString:@"ConfigSaved"]) {
-        [self refreshDevices];
-    }
-    else if ([eventType isEqualToString:@"DevicePaused"] ||
-        [eventType isEqualToString:@"DeviceResumed"]) {
-        [self refreshDevices];
-    }
-}
-
-- (void)refreshDevices {
-    BOOL allPaused = true;
-    NSArray *devices = [_syncthing getDevices];
-    if (!devices.count)
-        return;
-    for (NSDictionary *device in devices) {
-        NSNumber *paused = device[@"paused"];
-        if (paused == nil || paused.boolValue == NO)
-            allPaused = false;
-    }
-    self.devicesPaused = allPaused;
-    if (self.devicesPaused)
-        self.toggleAllDevicesItem.title = @"Resume All Devices";
-    else
-        self.toggleAllDevicesItem.title = @"Pause All Devices";
-}
 
 - (IBAction) clickedOpen:(id)sender {
     NSURL *URL = [NSURL URLWithString:[_syncthing URI]];
     [[NSWorkspace sharedWorkspace] openURL:URL];
 }
 
-- (void) updateFoldersMenu:(NSMenu *)menu {
-    [menu removeAllItems];
-
-    // Get folders from syncthing and sort ascending
-    NSSortDescriptor *sort = [NSSortDescriptor sortDescriptorWithKey:@"label" ascending:YES comparator:^NSComparisonResult(id obj1, id obj2) {
-        return [(NSString *)obj1 compare:(NSString *)obj2 options:NSNumericSearch];
-    }];
-    NSArray *folders = [[self.syncthing getFolders] sortedArrayUsingDescriptors:@[sort]];
-
-    for (id dir in folders) {
-        NSString *name = [dir objectForKey:@"label"];
-        if ([name length] == 0)
-            name = [dir objectForKey:@"id"];
-
-        NSMenuItem *item = [[NSMenuItem alloc] init];
-
-        [item setTitle:name];
-        [item setRepresentedObject:[dir objectForKey:@"path"]];
-        [item setAction:@selector(clickedFolder:)];
-        [item setToolTip:[dir objectForKey:@"path"]];
-
-        [menu addItem:item];
-    }
-}
 
 -(void) menuWillOpen:(NSMenu *)menu {
-	if ([[menu title] isEqualToString:@"Folders"])
-        [self updateFoldersMenu:menu];
 }
 
 - (IBAction) clickedQuit:(id)sender {
-    [_statusMonitor stopMonitoring];
-
+    
     [self updateStatusIcon:@"StatusIconNotify"];
     [_statusItem setToolTip:@""];
     _statusItem.menu = nil;
@@ -246,16 +148,6 @@
     [NSApp performSelector:@selector(terminate:) withObject:nil];
 }
 
-- (IBAction)clickedToggleAllDevices:(NSMenuItem *)sender {
-    if (self.devicesPaused)
-        [_syncthing resumeAllDevices];
-    else
-        [_syncthing pauseAllDevices];
-}
-
-- (IBAction)clickedRescanAll:(NSMenuItem *)sender {
-    [_syncthing rescanAll];
-}
 
 // TODO: need a more generic approach for opening windows
 - (IBAction)clickedPreferences:(NSMenuItem *)sender {
@@ -288,17 +180,6 @@
                                                object:[_aboutWindow window]];
 }
 
-- (IBAction)clickedDaemonStart:(NSMenuItem *)sender {
-    [_process launch];
-}
-
-- (IBAction)clickedDaemonStop:(NSMenuItem *)sender {
-    [_process terminate];
-}
-
-- (IBAction)clickedDaemonRestart:(NSMenuItem *)sender {
-    [_process restart];
-}
 
 // TODO: need a more generic approach for closing windows
 - (void)aboutWillClose:(NSNotification *)notification {
@@ -316,61 +197,7 @@
 }
 
 - (void)process:(DaemonProcess *)_ isRunning:(BOOL)isRunning {
-    if (_daemonOK == isRunning) {
-        return;
-    }
-    _daemonOK = isRunning;
-    if (_daemonOK) {
-        [_daemonStatusMenuItem setTitle:@"Syncthing Service (Running)"];
-        [_daemonStatusMenuItem setImage:[NSImage imageNamed:@"NSStatusAvailable"]];
-        [_daemonStartMenuItem setEnabled:NO];
-        [_daemonStopMenuItem setEnabled:YES];
-        [_daemonRestartMenuItem setEnabled:YES];
-    } else {
-        [_daemonStatusMenuItem setTitle:@"Syncthing Service (Stopped)"];
-        [_daemonStatusMenuItem setImage:[NSImage imageNamed:@"NSStatusUnavailable"]];
-        [_daemonStartMenuItem setEnabled:YES];
-        [_daemonStopMenuItem setEnabled:NO];
-        [_daemonRestartMenuItem setEnabled:NO];
-    }
 
-    [self updateAggregateState];
-}
-
-- (void)updateConnectionStatus:(BOOL)isConnected {
-    if (_connectionOK == isConnected) {
-        return;
-    }
-    _connectionOK = isConnected;
-    if (_connectionOK) {
-        [_connectionStatusMenuItem setTitle:@"API (Online)"];
-        [_connectionStatusMenuItem setImage:[NSImage imageNamed:@"NSStatusAvailable"]];
-    } else {
-        [_connectionStatusMenuItem setTitle:@"API (Offline)"];
-        [_connectionStatusMenuItem setImage:[NSImage imageNamed:@"NSStatusUnavailable"]];
-    }
-
-    [self updateAggregateState];
-}
-
-- (void)updateAggregateState {
-    if (_daemonOK) {
-        if (_connectionOK) {
-            [_statusMenuItem setImage:[NSImage imageNamed:@"NSStatusAvailable"]];
-            [_statusMenuItem setTitle:@"Online"];
-        } else {
-            [_statusMenuItem setImage:[NSImage imageNamed:@"NSStatusPartiallyAvailable"]];
-            [_statusMenuItem setTitle:@"Running (Offline)"];
-        }
-    } else {
-        if (_connectionOK) {
-            [_statusMenuItem setImage:[NSImage imageNamed:@"NSStatusPartiallyAvailable"]];
-            [_statusMenuItem setTitle:@"Unknown (Online)"];
-        } else {
-            [_statusMenuItem setImage:[NSImage imageNamed:@"NSStatusUnavailable"]];
-            [_statusMenuItem setTitle:@"Unavailable"];
-        }
-    }
 }
 
 @end

@@ -5,25 +5,25 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
-	<string>Syncthing</string>
+	<string>Jellyfin Server</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
-	<key>CFBundleIconFile</key>
-	<string>syncthing.icns</string>
+	<key>CFBundleGetInfoString</key>
+	<string>Jellyfin Project</string>
 	<key>CFBundleIdentifier</key>
 	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>Syncthing</string>
+	<string>Jellyfin Server</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0.0-2</string>
+	<string>$(MARKETING_VERSION)</string>
 	<key>CFBundleVersion</key>
-	<string>100000002</string>
+	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>LSApplicationCategoryType</key>
-	<string>public.app-category.utilities</string>
+	<string>public.app-category.entertainment</string>
 	<key>LSMinimumSystemVersion</key>
 	<string>$(MACOSX_DEPLOYMENT_TARGET)</string>
 	<key>LSUIElement</key>
@@ -34,20 +34,18 @@
 		<true/>
 	</dict>
 	<key>NSHumanReadableCopyright</key>
-	<string>Copyright © 2018 Syncthing for macOS authors (github.com/syncthing/syncthing-macos). All rights reserved.</string>
+	<string>Copyright © 2019 Jellyfin. All rights reserved.</string>
 	<key>NSMainNibFile</key>
 	<string>STApplication</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
 	<key>STBundleName</key>
-	<string>syncthing-macos</string>
+	<string>jellyfin-server-macos</string>
 	<key>STProjectHomepageURL</key>
-	<string>https://github.com/syncthing/syncthing-macos</string>
+	<string>https://github.com/jellyfin/jellyfin-server-macos</string>
 	<key>SUFeedURL</key>
-	<string>https://upgrades.syncthing.net/syncthing-macos/appcast.xml</string>
+	<string>https://repo.jellyfin.org/releases/server/macos/stable/</string>
 	<key>SUScheduledCheckInterval</key>
 	<integer>86400</integer>
-	<key>CFBundleGetInfoString</key>
-	<string>syncthing project Group</string>
 </dict>
 </plist>

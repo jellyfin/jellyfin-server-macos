@@ -22,8 +22,6 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		0BE9B88A1F050E93002883E2 /* STStatusMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0BE9B8891F050E93002883E2 /* STStatusMonitor.m */; };
-		298A5C45210DA6C40034B89F /* LocalhostTLSDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 298A5C43210DA6C40034B89F /* LocalhostTLSDelegate.m */; };
 		29AF1BA3210F11BF004212DE /* DaemonProcess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29AFA4CD210F10FA00071E5E /* DaemonProcess.swift */; };
 		C4460A801D0DD2D500200C21 /* STPreferencesWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4460A7D1D0DD2D500200C21 /* STPreferencesWindowController.m */; };
 		C4460A811D0DD2D500200C21 /* STStatusBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4460A7F1D0DD2D500200C21 /* STStatusBarController.m */; };
@@ -74,10 +72,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		0BE9B8881F050E93002883E2 /* STStatusMonitor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STStatusMonitor.h; sourceTree = "<group>"; };
-		0BE9B8891F050E93002883E2 /* STStatusMonitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STStatusMonitor.m; sourceTree = "<group>"; };
-		298A5C43210DA6C40034B89F /* LocalhostTLSDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalhostTLSDelegate.m; sourceTree = "<group>"; };
-		298A5C44210DA6C40034B89F /* LocalhostTLSDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalhostTLSDelegate.h; sourceTree = "<group>"; };
 		29AF1BA4210F11DE004212DE /* syncthing-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "syncthing-Bridging-Header.h"; sourceTree = "<group>"; };
 		29AFA4CD210F10FA00071E5E /* DaemonProcess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DaemonProcess.swift; sourceTree = "<group>"; };
 		29CC334D4211142108D2F82C /* Pods-syncthing.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-syncthing.release.xcconfig"; path = "Pods/Target Support Files/Pods-syncthing/Pods-syncthing.release.xcconfig"; sourceTree = "<group>"; };
@@ -97,7 +91,7 @@
 		C4946B001D5877F2008447A2 /* STAboutWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = STAboutWindowController.xib; path = UI/STAboutWindowController.xib; sourceTree = "<group>"; };
 		C4946B021D587878008447A2 /* STAboutWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = STAboutWindowController.m; path = Controllers/STAboutWindowController.m; sourceTree = "<group>"; };
 		C4946B041D587907008447A2 /* STAboutWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = STAboutWindowController.h; path = Controllers/STAboutWindowController.h; sourceTree = "<group>"; };
-		C4A415601D0D579D00DC6018 /* Syncthing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Syncthing.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C4A415601D0D579D00DC6018 /* Jellyfin Server.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Jellyfin Server.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4A415631D0D579D00DC6018 /* STApplication.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STApplication.h; sourceTree = "<group>"; };
 		C4A415641D0D579D00DC6018 /* STApplication.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STApplication.m; sourceTree = "<group>"; };
 		C4A415671D0D579D00DC6018 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -203,8 +197,6 @@
 			children = (
 				29AF1BA4210F11DE004212DE /* syncthing-Bridging-Header.h */,
 				29AFA4CD210F10FA00071E5E /* DaemonProcess.swift */,
-				298A5C44210DA6C40034B89F /* LocalhostTLSDelegate.h */,
-				298A5C43210DA6C40034B89F /* LocalhostTLSDelegate.m */,
 				C4FFB0631D0D7E440015D14A /* XGSyncthing.h */,
 				C4FFB0641D0D7E4C0015D14A /* XGSyncthing.m */,
 				C4A415631D0D579D00DC6018 /* STApplication.h */,
@@ -213,8 +205,6 @@
 				C4D567A31D3A8E34002AD881 /* STLoginItem.h */,
 				C48B83B41DA444BC0052A172 /* STConfiguration.h */,
 				C48B83B51DA444BC0052A172 /* STConfiguration.m */,
-				0BE9B8881F050E93002883E2 /* STStatusMonitor.h */,
-				0BE9B8891F050E93002883E2 /* STStatusMonitor.m */,
 			);
 			name = Misc;
 			sourceTree = "<group>";
@@ -235,7 +225,7 @@
 		C4A415611D0D579D00DC6018 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C4A415601D0D579D00DC6018 /* Syncthing.app */,
+				C4A415601D0D579D00DC6018 /* Jellyfin Server.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -315,7 +305,7 @@
 			);
 			name = syncthing;
 			productName = syncthing;
-			productReference = C4A415601D0D579D00DC6018 /* Syncthing.app */;
+			productReference = C4A415601D0D579D00DC6018 /* Jellyfin Server.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -324,7 +314,7 @@
 		C4A415581D0D579D00DC6018 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0940;
+				LastUpgradeCheck = 1110;
 				ORGANIZATIONNAME = "Jerry Jacobs";
 				TargetAttributes = {
 					0B9C6B051F144DF1009C68CA = {
@@ -333,15 +323,14 @@
 					};
 					C4A4155F1D0D579D00DC6018 = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = C24U83K674;
-						LastSwiftMigration = 0940;
+						LastSwiftMigration = 1110;
 						ProvisioningStyle = Automatic;
 					};
 				};
 			};
 			buildConfigurationList = C4A4155B1D0D579D00DC6018 /* Build configuration list for PBXProject "syncthing" */;
 			compatibilityVersion = "Xcode 8.0";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
@@ -441,7 +430,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "${SOURCE_ROOT}/syncthing/Scripts/syncthing-resource.sh";
+			shellScript = "${SOURCE_ROOT}/syncthing/Scripts/syncthing-resource.sh\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -454,7 +443,6 @@
 				C4D567A21D3A8DFE002AD881 /* STLoginItem.m in Sources */,
 				29AF1BA3210F11BF004212DE /* DaemonProcess.swift in Sources */,
 				C4FFB0661D0D7F870015D14A /* XGSyncthing.m in Sources */,
-				298A5C45210DA6C40034B89F /* LocalhostTLSDelegate.m in Sources */,
 				C4F0E8331DA1C7A800435310 /* STPreferencesFoldersViewController.m in Sources */,
 				C4A415681D0D579D00DC6018 /* main.m in Sources */,
 				C4946B031D587878008447A2 /* STAboutWindowController.m in Sources */,
@@ -462,7 +450,6 @@
 				C4D36D851DA3E2820061FD08 /* STPreferencesDevicesViewController.m in Sources */,
 				C4460A811D0DD2D500200C21 /* STStatusBarController.m in Sources */,
 				C48B83B61DA444BC0052A172 /* STConfiguration.m in Sources */,
-				0BE9B88A1F050E93002883E2 /* STStatusMonitor.m in Sources */,
 				C4460A801D0DD2D500200C21 /* STPreferencesWindowController.m in Sources */,
 				C4F0E82E1DA1B9CF00435310 /* STPreferencesGeneralViewController.m in Sources */,
 				C4F0E8381DA1CB0900435310 /* STPreferencesInfoViewController.m in Sources */,
@@ -619,12 +606,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FB3E4EE48CFC608AD4FBDE77 /* Pods-syncthing.debug.xcconfig */;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "-";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "";
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = "";
-				DEVELOPMENT_TEAM = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6YC6EAV7ES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -633,8 +621,9 @@
 				INFOPLIST_FILE = syncthing/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.github.xor-gate.syncthing-macosx";
-				PRODUCT_NAME = Syncthing;
+				MARKETING_VERSION = 10.4.0;
+				PRODUCT_BUNDLE_IDENTIFIER = org.jellyfin.server.macos;
+				PRODUCT_NAME = "Jellyfin Server";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SEPARATE_STRIP = NO;
@@ -649,12 +638,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 29CC334D4211142108D2F82C /* Pods-syncthing.release.xcconfig */;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "-";
 				"CODE_SIGN_IDENTITY[sdk=*]" = "";
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = "";
-				DEVELOPMENT_TEAM = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6YC6EAV7ES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -663,8 +653,9 @@
 				INFOPLIST_FILE = syncthing/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.github.xor-gate.syncthing-macosx";
-				PRODUCT_NAME = Syncthing;
+				MARKETING_VERSION = 10.4.0;
+				PRODUCT_BUNDLE_IDENTIFIER = org.jellyfin.server.macos;
+				PRODUCT_NAME = "Jellyfin Server";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SEPARATE_STRIP = YES;

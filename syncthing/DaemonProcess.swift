@@ -30,7 +30,7 @@ let MaxKeepLogLines = 200
 
     @objc func launch() {
         queue.async {
-            self.launchSync()
+            self.launchServer()
         }
     }
 
@@ -48,12 +48,12 @@ let MaxKeepLogLines = 200
         }
     }
 
-    private func launchSync() {
-        NSLog("Launching Syncthing daemon")
+    private func launchServer() {
+        NSLog("Launching Jellyfin Server")
         shouldTerminate = false
 
         let p = Process()
-        p.arguments = ["-no-browser", "-no-restart"]
+        p.arguments = ["--noautorunwebapp"] //, "--ffmpeg"]
         p.launchPath = path
         p.standardInput = Pipe() // isolate daemon from our stdin
         p.standardOutput = pipeIntoLineBuffer()
@@ -70,7 +70,7 @@ let MaxKeepLogLines = 200
     }
 
     private func didTerminate(_ p: Process) {
-        NSLog("Syncthing daemon terminated (exit code %d)", p.terminationStatus)
+        NSLog("Jellyfin Server terminated (exit code %d)", p.terminationStatus)
         process = nil
 
         DispatchQueue.main.async {
@@ -95,10 +95,10 @@ let MaxKeepLogLines = 200
             // Anything else is an error condition of some kind. Delay
             // the startup to not get caught in a tight loop.
             delay = RestartInterval
-            NSLog("Delaying daemon startup by %.1f s", delay)
+            NSLog("Delaying Jellyfin startup by %.1f s", delay)
         }
         queue.asyncAfter(deadline: DispatchTime.now() + delay) {
-            self.launchSync()
+            self.launchServer()
         }
     }
 

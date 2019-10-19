@@ -9,12 +9,12 @@
 #import <Cocoa/Cocoa.h>
 
 #import "XGSyncthing.h"
-#import "STStatusMonitor.h"
 #import "Controllers/STAboutWindowController.h"
 #import "Controllers/STPreferencesWindowController.h"
-#import "Syncthing-Swift.h"
+#import "Jellyfin_Server-Swift.h"
 
-@interface STAppDelegate : NSObject <NSApplicationDelegate, STStatusMonitorDelegate, DaemonProcessDelegate>
+//@interface STAppDelegate : NSObject <NSApplicationDelegate, STStatusMonitorDelegate, DaemonProcessDelegate>
+@interface STAppDelegate : NSObject <NSApplicationDelegate, DaemonProcessDelegate>
 
 @property (weak) IBOutlet NSMenu *Menu;
 @property (nonatomic, readonly) NSStatusItem *statusItem;

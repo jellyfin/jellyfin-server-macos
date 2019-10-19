@@ -33,11 +33,7 @@
     [st setURI:[self.Syncthing_URI stringValue]];
     [st setApiKey:[self.Syncthing_ApiKey stringValue]];
     
-    if ([st ping]) {
-        [_buttonTest setImage:[NSImage imageNamed:NSImageNameStatusAvailable]];
-    } else {
-        [_buttonTest setImage:[NSImage imageNamed:NSImageNameStatusUnavailable]];
-    }
+   
 }
 
 - (IBAction)clickedStartAtLogin:(id)sender {
