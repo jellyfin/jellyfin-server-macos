@@ -6,23 +6,9 @@
 	objectVersion = 48;
 	objects = {
 
-/* Begin PBXAggregateTarget section */
-		0B9C6B051F144DF1009C68CA /* syncthing-dmg */ = {
-			isa = PBXAggregateTarget;
-			buildConfigurationList = 0B9C6B061F144DF1009C68CA /* Build configuration list for PBXAggregateTarget "syncthing-dmg" */;
-			buildPhases = (
-				0B889EB11F1451EF006E20E6 /* ShellScript */,
-			);
-			dependencies = (
-				0B9C6B0A1F144DF6009C68CA /* PBXTargetDependency */,
-			);
-			name = "syncthing-dmg";
-			productName = "syncthing-dmg";
-		};
-/* End PBXAggregateTarget section */
-
 /* Begin PBXBuildFile section */
-		29AF1BA3210F11BF004212DE /* DaemonProcess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29AFA4CD210F10FA00071E5E /* DaemonProcess.swift */; };
+		09004F8D238E70BF00F7E9C2 /* DaemonProcess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09004F8C238E70BF00F7E9C2 /* DaemonProcess.swift */; };
+		09004F8F238E739700F7E9C2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09004F8E238E739700F7E9C2 /* Images.xcassets */; };
 		C4460A801D0DD2D500200C21 /* STPreferencesWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4460A7D1D0DD2D500200C21 /* STPreferencesWindowController.m */; };
 		C4460A811D0DD2D500200C21 /* STStatusBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4460A7F1D0DD2D500200C21 /* STStatusBarController.m */; };
 		C4460A831D0DD38F00200C21 /* STPreferencesWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4460A821D0DD38F00200C21 /* STPreferencesWindowController.xib */; };
@@ -31,7 +17,7 @@
 		C4946B031D587878008447A2 /* STAboutWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4946B021D587878008447A2 /* STAboutWindowController.m */; };
 		C4A415651D0D579D00DC6018 /* STApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = C4A415641D0D579D00DC6018 /* STApplication.m */; };
 		C4A415681D0D579D00DC6018 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C4A415671D0D579D00DC6018 /* main.m */; };
-		C4A4156A1D0D579D00DC6018 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C4A415691D0D579D00DC6018 /* Assets.xcassets */; };
+		C4A4156A1D0D579D00DC6018 /* jellyfin-server in Resources */ = {isa = PBXBuildFile; fileRef = C4A415691D0D579D00DC6018 /* jellyfin-server */; };
 		C4A4156D1D0D579D00DC6018 /* STApplication.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4A4156B1D0D579D00DC6018 /* STApplication.xib */; };
 		C4D36D801DA3D53F0061FD08 /* STPreferencesAdvancedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4D36D7E1DA3D53F0061FD08 /* STPreferencesAdvancedViewController.m */; };
 		C4D36D811DA3D53F0061FD08 /* STPreferencesAdvancedViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4D36D7F1DA3D53F0061FD08 /* STPreferencesAdvancedViewController.xib */; };
@@ -42,16 +28,6 @@
 		C4F0E8391DA1CB0900435310 /* STPreferencesInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4F0E8371DA1CB0900435310 /* STPreferencesInfoViewController.xib */; };
 		C4FFB0661D0D7F870015D14A /* XGSyncthing.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FFB0641D0D7E4C0015D14A /* XGSyncthing.m */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		0B9C6B091F144DF6009C68CA /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C4A415581D0D579D00DC6018 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = C4A4155F1D0D579D00DC6018;
-			remoteInfo = syncthing;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		C462613D1D57944400B16BC6 /* Copy Files */ = {
@@ -67,8 +43,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		29AF1BA4210F11DE004212DE /* syncthing-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "syncthing-Bridging-Header.h"; sourceTree = "<group>"; };
-		29AFA4CD210F10FA00071E5E /* DaemonProcess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DaemonProcess.swift; sourceTree = "<group>"; };
+		09004F8C238E70BF00F7E9C2 /* DaemonProcess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DaemonProcess.swift; sourceTree = "<group>"; };
+		09004F8E238E739700F7E9C2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = "jellyfin-server-macos/Images.xcassets"; sourceTree = "<group>"; };
+		29AF1BA4210F11DE004212DE /* jellyfin-server-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "jellyfin-server-Bridging-Header.h"; sourceTree = "<group>"; };
 		29CC334D4211142108D2F82C /* Pods-syncthing.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-syncthing.release.xcconfig"; path = "Pods/Target Support Files/Pods-syncthing/Pods-syncthing.release.xcconfig"; sourceTree = "<group>"; };
 		C44262761D0DEF9F005340C2 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		C4460A7C1D0DD2D500200C21 /* STPreferencesWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = STPreferencesWindowController.h; path = Controllers/STPreferencesWindowController.h; sourceTree = "<group>"; };
@@ -85,13 +62,13 @@
 		C4946B001D5877F2008447A2 /* STAboutWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = STAboutWindowController.xib; path = UI/STAboutWindowController.xib; sourceTree = "<group>"; };
 		C4946B021D587878008447A2 /* STAboutWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = STAboutWindowController.m; path = Controllers/STAboutWindowController.m; sourceTree = "<group>"; };
 		C4946B041D587907008447A2 /* STAboutWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = STAboutWindowController.h; path = Controllers/STAboutWindowController.h; sourceTree = "<group>"; };
-		C4A415601D0D579D00DC6018 /* Jellyfin Server.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Jellyfin Server.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C4A415601D0D579D00DC6018 /* jellyfin-server-macos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "jellyfin-server-macos.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4A415631D0D579D00DC6018 /* STApplication.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = STApplication.h; sourceTree = "<group>"; };
 		C4A415641D0D579D00DC6018 /* STApplication.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = STApplication.m; sourceTree = "<group>"; };
-		C4A415671D0D579D00DC6018 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		C4A415691D0D579D00DC6018 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C4A415671D0D579D00DC6018 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = main.m; path = "jellyfin-server/main.m"; sourceTree = "<group>"; };
+		C4A415691D0D579D00DC6018 /* jellyfin-server */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "jellyfin-server"; sourceTree = "<group>"; };
 		C4A4156C1D0D579D00DC6018 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/STApplication.xib; sourceTree = "<group>"; };
-		C4A4156E1D0D579D00DC6018 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C4A4156E1D0D579D00DC6018 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = "/Users/anthonylavado/repos/jellyfin-server-macos/jellyfin-server/Info.plist"; sourceTree = "<absolute>"; };
 		C4D36D7D1DA3D53F0061FD08 /* STPreferencesAdvancedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = STPreferencesAdvancedViewController.h; path = UI/STPreferencesWindow/STPreferencesAdvancedViewController.h; sourceTree = "<group>"; };
 		C4D36D7E1DA3D53F0061FD08 /* STPreferencesAdvancedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = STPreferencesAdvancedViewController.m; path = UI/STPreferencesWindow/STPreferencesAdvancedViewController.m; sourceTree = "<group>"; };
 		C4D36D7F1DA3D53F0061FD08 /* STPreferencesAdvancedViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = STPreferencesAdvancedViewController.xib; path = UI/STPreferencesWindow/STPreferencesAdvancedViewController.xib; sourceTree = "<group>"; };
@@ -100,13 +77,13 @@
 		C4D6DD581D0D93D80024D20A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		C4D896121D0DF90900D42F73 /* syncthing-resource.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; name = "syncthing-resource.sh"; path = "syncthing/Scripts/syncthing-resource.sh"; sourceTree = "<group>"; };
 		C4F0E82B1DA1B9CF00435310 /* STPreferencesGeneralViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STPreferencesGeneralViewController.h; sourceTree = "<group>"; };
-		C4F0E82C1DA1B9CF00435310 /* STPreferencesGeneralViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STPreferencesGeneralViewController.m; sourceTree = "<group>"; };
-		C4F0E82D1DA1B9CF00435310 /* STPreferencesGeneralViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = STPreferencesGeneralViewController.xib; sourceTree = "<group>"; };
+		C4F0E82C1DA1B9CF00435310 /* STPreferencesGeneralViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = STPreferencesGeneralViewController.m; path = "../jellyfin-server/STPreferencesGeneralViewController.m"; sourceTree = "<group>"; };
+		C4F0E82D1DA1B9CF00435310 /* STPreferencesGeneralViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = STPreferencesGeneralViewController.xib; path = "../jellyfin-server/STPreferencesGeneralViewController.xib"; sourceTree = "<group>"; };
 		C4F0E8351DA1CB0900435310 /* STPreferencesInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = STPreferencesInfoViewController.h; path = UI/STPreferencesWindow/STPreferencesInfoViewController.h; sourceTree = "<group>"; };
 		C4F0E8361DA1CB0900435310 /* STPreferencesInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = STPreferencesInfoViewController.m; path = UI/STPreferencesWindow/STPreferencesInfoViewController.m; sourceTree = "<group>"; };
 		C4F0E8371DA1CB0900435310 /* STPreferencesInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = STPreferencesInfoViewController.xib; path = UI/STPreferencesWindow/STPreferencesInfoViewController.xib; sourceTree = "<group>"; };
-		C4FFB0631D0D7E440015D14A /* XGSyncthing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XGSyncthing.h; path = syncthing/XGSyncthing.h; sourceTree = SOURCE_ROOT; };
-		C4FFB0641D0D7E4C0015D14A /* XGSyncthing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XGSyncthing.m; path = syncthing/XGSyncthing.m; sourceTree = SOURCE_ROOT; };
+		C4FFB0631D0D7E440015D14A /* XGSyncthing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XGSyncthing.h; sourceTree = "<group>"; };
+		C4FFB0641D0D7E4C0015D14A /* XGSyncthing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XGSyncthing.m; sourceTree = "<group>"; };
 		FB3E4EE48CFC608AD4FBDE77 /* Pods-syncthing.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-syncthing.debug.xcconfig"; path = "Pods/Target Support Files/Pods-syncthing/Pods-syncthing.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -155,8 +132,8 @@
 				C4460A7D1D0DD2D500200C21 /* STPreferencesWindowController.m */,
 				C4F0E82B1DA1B9CF00435310 /* STPreferencesGeneralViewController.h */,
 				C4F0E82C1DA1B9CF00435310 /* STPreferencesGeneralViewController.m */,
-				C4F0E82D1DA1B9CF00435310 /* STPreferencesGeneralViewController.xib */,
 				C4F0E8351DA1CB0900435310 /* STPreferencesInfoViewController.h */,
+				C4F0E82D1DA1B9CF00435310 /* STPreferencesGeneralViewController.xib */,
 				C4F0E8361DA1CB0900435310 /* STPreferencesInfoViewController.m */,
 				C4F0E8371DA1CB0900435310 /* STPreferencesInfoViewController.xib */,
 				C4D36D7D1DA3D53F0061FD08 /* STPreferencesAdvancedViewController.h */,
@@ -177,8 +154,8 @@
 		C465001D1DA18F4300C250BC /* Misc */ = {
 			isa = PBXGroup;
 			children = (
-				29AF1BA4210F11DE004212DE /* syncthing-Bridging-Header.h */,
-				29AFA4CD210F10FA00071E5E /* DaemonProcess.swift */,
+				29AF1BA4210F11DE004212DE /* jellyfin-server-Bridging-Header.h */,
+				09004F8C238E70BF00F7E9C2 /* DaemonProcess.swift */,
 				C4FFB0631D0D7E440015D14A /* XGSyncthing.h */,
 				C4FFB0641D0D7E4C0015D14A /* XGSyncthing.m */,
 				C4A415631D0D579D00DC6018 /* STApplication.h */,
@@ -189,11 +166,13 @@
 				C48B83B51DA444BC0052A172 /* STConfiguration.m */,
 			);
 			name = Misc;
+			path = "jellyfin-server";
 			sourceTree = "<group>";
 		};
 		C4A415571D0D579D00DC6018 = {
 			isa = PBXGroup;
 			children = (
+				09004F8E238E739700F7E9C2 /* Images.xcassets */,
 				C46261361D578DA800B16BC6 /* Frameworks */,
 				C4576BE71D11E7C00031BCFD /* libobjc.tbd */,
 				C4D896141D0DF90E00D42F73 /* Scripts */,
@@ -207,7 +186,7 @@
 		C4A415611D0D579D00DC6018 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C4A415601D0D579D00DC6018 /* Jellyfin Server.app */,
+				C4A415601D0D579D00DC6018 /* jellyfin-server-macos.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -218,12 +197,11 @@
 				C465001D1DA18F4300C250BC /* Misc */,
 				C4D6DD601D0DB18A0024D20A /* UI */,
 				C4D6DD5F1D0DAF530024D20A /* Controllers */,
-				C4A415691D0D579D00DC6018 /* Assets.xcassets */,
+				C4A415691D0D579D00DC6018 /* jellyfin-server */,
 				C4A4156E1D0D579D00DC6018 /* Info.plist */,
 				C4A415661D0D579D00DC6018 /* Supporting Files */,
 			);
 			name = Sources;
-			path = syncthing;
 			sourceTree = "<group>";
 		};
 		C4A415661D0D579D00DC6018 /* Supporting Files */ = {
@@ -244,6 +222,7 @@
 				C4946B041D587907008447A2 /* STAboutWindowController.h */,
 			);
 			name = Controllers;
+			path = "jellyfin-server";
 			sourceTree = "<group>";
 		};
 		C4D6DD601D0DB18A0024D20A /* UI */ = {
@@ -254,6 +233,7 @@
 				C4946B001D5877F2008447A2 /* STAboutWindowController.xib */,
 			);
 			name = UI;
+			path = "jellyfin-server";
 			sourceTree = "<group>";
 		};
 		C4D896141D0DF90E00D42F73 /* Scripts */ = {
@@ -268,25 +248,22 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		C4A4155F1D0D579D00DC6018 /* syncthing */ = {
+		C4A4155F1D0D579D00DC6018 /* jellyfin-server-macos */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C4A415711D0D579D00DC6018 /* Build configuration list for PBXNativeTarget "syncthing" */;
+			buildConfigurationList = C4A415711D0D579D00DC6018 /* Build configuration list for PBXNativeTarget "jellyfin-server-macos" */;
 			buildPhases = (
-				8A5B68A2BC79FFEFE08E3863 /* [CP] Check Pods Manifest.lock */,
 				C4A4155C1D0D579D00DC6018 /* Sources */,
 				C4A4155D1D0D579D00DC6018 /* Frameworks */,
 				C4A4155E1D0D579D00DC6018 /* Resources */,
 				C462613D1D57944400B16BC6 /* Copy Files */,
-				C4946AFF1D5876AF008447A2 /* ShellScript */,
-				76C4F2C92ED96E367934A99B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = syncthing;
+			name = "jellyfin-server-macos";
 			productName = syncthing;
-			productReference = C4A415601D0D579D00DC6018 /* Jellyfin Server.app */;
+			productReference = C4A415601D0D579D00DC6018 /* jellyfin-server-macos.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -298,10 +275,6 @@
 				LastUpgradeCheck = 1110;
 				ORGANIZATIONNAME = "Jerry Jacobs";
 				TargetAttributes = {
-					0B9C6B051F144DF1009C68CA = {
-						CreatedOnToolsVersion = 8.3.3;
-						ProvisioningStyle = Automatic;
-					};
 					C4A4155F1D0D579D00DC6018 = {
 						CreatedOnToolsVersion = 7.3.1;
 						LastSwiftMigration = 1110;
@@ -309,7 +282,7 @@
 					};
 				};
 			};
-			buildConfigurationList = C4A4155B1D0D579D00DC6018 /* Build configuration list for PBXProject "syncthing" */;
+			buildConfigurationList = C4A4155B1D0D579D00DC6018 /* Build configuration list for PBXProject "jellyfin-server-macos" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -322,8 +295,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C4A4155F1D0D579D00DC6018 /* syncthing */,
-				0B9C6B051F144DF1009C68CA /* syncthing-dmg */,
+				C4A4155F1D0D579D00DC6018 /* jellyfin-server-macos */,
 			);
 		};
 /* End PBXProject section */
@@ -334,8 +306,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C4F0E8391DA1CB0900435310 /* STPreferencesInfoViewController.xib in Resources */,
+				09004F8F238E739700F7E9C2 /* Images.xcassets in Resources */,
 				C4D36D811DA3D53F0061FD08 /* STPreferencesAdvancedViewController.xib in Resources */,
-				C4A4156A1D0D579D00DC6018 /* Assets.xcassets in Resources */,
+				C4A4156A1D0D579D00DC6018 /* jellyfin-server in Resources */,
 				C4A4156D1D0D579D00DC6018 /* STApplication.xib in Resources */,
 				C4460A831D0DD38F00200C21 /* STPreferencesWindowController.xib in Resources */,
 				C4946B011D5877F2008447A2 /* STAboutWindowController.xib in Resources */,
@@ -345,86 +318,18 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		0B889EB11F1451EF006E20E6 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "${SOURCE_ROOT}/syncthing/Scripts/create-dmg.sh\n";
-		};
-		76C4F2C92ED96E367934A99B /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-syncthing/Pods-syncthing-frameworks.sh",
-				"${PODS_ROOT}/Sparkle/Sparkle.framework",
-				"${PODS_ROOT}/Sparkle/Sparkle.framework.dSYM",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Sparkle.framework",
-				"${DWARF_DSYM_FOLDER_PATH}/Sparkle.framework.dSYM",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-syncthing/Pods-syncthing-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8A5B68A2BC79FFEFE08E3863 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-syncthing-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C4946AFF1D5876AF008447A2 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "${SOURCE_ROOT}/syncthing/Scripts/syncthing-resource.sh\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		C4A4155C1D0D579D00DC6018 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				C4D567A21D3A8DFE002AD881 /* STLoginItem.m in Sources */,
-				29AF1BA3210F11BF004212DE /* DaemonProcess.swift in Sources */,
 				C4FFB0661D0D7F870015D14A /* XGSyncthing.m in Sources */,
 				C4A415681D0D579D00DC6018 /* main.m in Sources */,
 				C4946B031D587878008447A2 /* STAboutWindowController.m in Sources */,
 				C4D36D801DA3D53F0061FD08 /* STPreferencesAdvancedViewController.m in Sources */,
 				C4460A811D0DD2D500200C21 /* STStatusBarController.m in Sources */,
+				09004F8D238E70BF00F7E9C2 /* DaemonProcess.swift in Sources */,
 				C48B83B61DA444BC0052A172 /* STConfiguration.m in Sources */,
 				C4460A801D0DD2D500200C21 /* STPreferencesWindowController.m in Sources */,
 				C4F0E82E1DA1B9CF00435310 /* STPreferencesGeneralViewController.m in Sources */,
@@ -434,14 +339,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		0B9C6B0A1F144DF6009C68CA /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = C4A4155F1D0D579D00DC6018 /* syncthing */;
-			targetProxy = 0B9C6B091F144DF6009C68CA /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		C4A4156B1D0D579D00DC6018 /* STApplication.xib */ = {
@@ -455,20 +352,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		0B9C6B071F144DF1009C68CA /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		0B9C6B081F144DF1009C68CA /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
 		C4A4156F1D0D579D00DC6018 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -522,6 +405,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CFLAGS = "";
 				SDKROOT = macosx;
 			};
 			name = Debug;
@@ -573,6 +457,7 @@
 				HEADER_SEARCH_PATHS = "$(SRCROOT)/syncthing/Test";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_CFLAGS = "";
 				SDKROOT = macosx;
 				SWIFT_COMPILATION_MODE = wholemodule;
 			};
@@ -589,21 +474,19 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6YC6EAV7ES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)",
-					"$(PROJECT_DIR)/3thparty/frameworks",
-				);
-				INFOPLIST_FILE = syncthing/Info.plist;
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)";
+				INFOPLIST_FILE = "jellyfin-server/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MARKETING_VERSION = 10.4.0;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = org.jellyfin.server.macos;
-				PRODUCT_NAME = "Jellyfin Server";
+				PRODUCT_NAME = "jellyfin-server-macos";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SEPARATE_STRIP = NO;
-				SWIFT_OBJC_BRIDGING_HEADER = "syncthing/syncthing-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "jellyfin-server/jellyfin-server-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				VALID_ARCHS = x86_64;
@@ -621,21 +504,19 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6YC6EAV7ES;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)",
-					"$(PROJECT_DIR)/3thparty/frameworks",
-				);
-				INFOPLIST_FILE = syncthing/Info.plist;
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)";
+				INFOPLIST_FILE = "jellyfin-server/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MARKETING_VERSION = 10.4.0;
+				OTHER_CFLAGS = "";
+				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = org.jellyfin.server.macos;
-				PRODUCT_NAME = "Jellyfin Server";
+				PRODUCT_NAME = "jellyfin-server-macos";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SEPARATE_STRIP = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "syncthing/syncthing-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "jellyfin-server/jellyfin-server-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				VALID_ARCHS = x86_64;
 			};
@@ -644,16 +525,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0B9C6B061F144DF1009C68CA /* Build configuration list for PBXAggregateTarget "syncthing-dmg" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				0B9C6B071F144DF1009C68CA /* Debug */,
-				0B9C6B081F144DF1009C68CA /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		C4A4155B1D0D579D00DC6018 /* Build configuration list for PBXProject "syncthing" */ = {
+		C4A4155B1D0D579D00DC6018 /* Build configuration list for PBXProject "jellyfin-server-macos" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C4A4156F1D0D579D00DC6018 /* Debug */,
@@ -662,7 +534,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C4A415711D0D579D00DC6018 /* Build configuration list for PBXNativeTarget "syncthing" */ = {
+		C4A415711D0D579D00DC6018 /* Build configuration list for PBXNativeTarget "jellyfin-server-macos" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C4A415721D0D579D00DC6018 /* Debug */,

@@ -1,6 +1,7 @@
 #import "STApplication.h"
 #import "STLoginItem.h"
-#import "Jellyfin_Server-Swift.h"
+#import "jellyfin_server_macos-Swift.h"
+
 
 @interface STAppDelegate ()
 
@@ -46,8 +47,8 @@
 
     _executable = [defaults stringForKey:@"Executable"];
     if (!_executable) {
-        // We store the executable in ~/Library/Application Support/Syncthing-macOS/syncthing by default
-        _executable = [[self applicationSupportDirectoryFor:@"Syncthing-macOS"] stringByAppendingPathComponent:@"syncthing"];
+        // We store the server and runtime files in ~/Library/Application Support/Jellyfin/server by default
+        _executable = [[self applicationSupportDirectoryFor:@"jellyfin-server"] stringByAppendingPathComponent:@"Server"];
         [defaults setValue:_executable forKey:@"Executable"];
     }
 
@@ -113,7 +114,7 @@
     }
 
     // Copy the bundled executable to the desired location. Pass on return and error to the caller.
-    NSString *bundled = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"syncthing/syncthing"];
+    NSString *bundled = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"jellyfin"];
     return [manager copyItemAtPath:bundled toPath:path error:error];
 }
 

@@ -11,7 +11,8 @@
 #import "XGSyncthing.h"
 #import "Controllers/STAboutWindowController.h"
 #import "Controllers/STPreferencesWindowController.h"
-#import "Jellyfin_Server-Swift.h"
+#import "jellyfin_server_macos-Swift.h"
+//#import "Syncthing-Swift.h"
 
 @interface STAppDelegate : NSObject <NSApplicationDelegate, DaemonProcessDelegate>
 
