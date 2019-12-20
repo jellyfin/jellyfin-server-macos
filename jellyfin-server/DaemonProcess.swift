@@ -25,7 +25,6 @@ let MaxKeepLogLines = 200
 
     @objc init(path: String, delegate: DaemonProcessDelegate) {
         self.path = path
-        //self.path = "/Users/anthonylavado/Library/Application Support/jellyfin-server/Server/jellyfin"
         self.delegate = delegate
     }
 
@@ -52,11 +51,9 @@ let MaxKeepLogLines = 200
     private func launchServer() {
         NSLog("Launching Jellyfin Server")
         shouldTerminate = false
-
         let p = Process()
         p.arguments = ["--noautorunwebapp"] //, "--ffmpeg"]
         p.launchPath = path
-
         p.standardInput = Pipe() // isolate daemon from our stdin
         p.standardOutput = pipeIntoLineBuffer()
         p.standardError = pipeIntoLineBuffer()
