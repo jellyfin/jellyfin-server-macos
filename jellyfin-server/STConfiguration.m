@@ -23,7 +23,7 @@ NSString *defaultExecutable;
 - (id) init {
     defaultExecutable = [NSString stringWithFormat:@"%@/%@",
                          [[NSBundle mainBundle] resourcePath],
-                         @"syncthing/syncthing"];
+                         @"jellyfin/server"];
     return self;
 }
 

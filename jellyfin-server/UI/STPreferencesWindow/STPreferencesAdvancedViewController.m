@@ -27,7 +27,7 @@
 - (IBAction)openConfigFolder:(id)sender {
     // TODO: currently we hardcode according to the default folder
     // as I have no idea yet how to get the current running config dir
-    NSString *configDir = [NSString stringWithFormat:@"%@/%@", NSHomeDirectory(), @"Library/Application Support/Syncthing"];
+    NSString *configDir = [NSString stringWithFormat:@"%@/%@", NSHomeDirectory(), @"Library/Application Support/Jellyfin/server"];
     [[NSWorkspace sharedWorkspace] openFile:configDir];
 }
 

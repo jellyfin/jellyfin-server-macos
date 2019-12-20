@@ -29,7 +29,7 @@
                                                   appropriateForURL:nil
                                                              create:NO
                                                               error:&error];
-    NSURL* configUrl = [supURL URLByAppendingPathComponent:@"Syncthing/config.xml"];
+    NSURL* configUrl = [supURL URLByAppendingPathComponent:@"jellyfin-Server/config.xml"];
     _parsing = [[NSMutableArray alloc] init];
     _configParser = [[NSXMLParser alloc] initWithContentsOfURL:configUrl];
     [_configParser setDelegate:self];

@@ -48,7 +48,7 @@
     _executable = [defaults stringForKey:@"Executable"];
     if (!_executable) {
         // We store the server and runtime files in ~/Library/Application Support/Jellyfin/server by default
-        _executable = [[self applicationSupportDirectoryFor:@"jellyfin-server"] stringByAppendingPathComponent:@"Server"];
+        _executable = [[self applicationSupportDirectoryFor:@"jellyfin-server/server"] stringByAppendingPathComponent:@"jellyfin"];
         [defaults setValue:_executable forKey:@"Executable"];
     }
 
@@ -79,7 +79,7 @@
     }
 
     if (!_syncthing.URI) {
-        _syncthing.URI = @"http://localhost:8384";
+        _syncthing.URI = @"http://localhost:8096";
         [defaults setObject:_syncthing.URI forKey:@"URI"];
     }
 
@@ -126,7 +126,7 @@
 }
 
 - (void) updateStatusIcon:(NSString *)icon {
-	_statusItem.button.image = [NSImage imageNamed:icon];
+    _statusItem.button.image = [NSImage imageNamed:@"StatusBarButtonImage"];
 	[_statusItem.button.image setTemplate:YES];
 }
 
