@@ -75,7 +75,7 @@
 		C4D567A11D3A8DFE002AD881 /* STLoginItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STLoginItem.m; sourceTree = "<group>"; };
 		C4D567A31D3A8E34002AD881 /* STLoginItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STLoginItem.h; sourceTree = "<group>"; };
 		C4D6DD581D0D93D80024D20A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		C4D896121D0DF90900D42F73 /* syncthing-resource.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; name = "syncthing-resource.sh"; path = "syncthing/Scripts/syncthing-resource.sh"; sourceTree = "<group>"; };
+		C4D896121D0DF90900D42F73 /* jellyfin-resource.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; name = "jellyfin-resource.sh"; path = "jellyfin-server/Scripts/jellyfin-resource.sh"; sourceTree = "<group>"; };
 		C4F0E82B1DA1B9CF00435310 /* STPreferencesGeneralViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STPreferencesGeneralViewController.h; sourceTree = "<group>"; };
 		C4F0E82C1DA1B9CF00435310 /* STPreferencesGeneralViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = STPreferencesGeneralViewController.m; path = "../jellyfin-server/STPreferencesGeneralViewController.m"; sourceTree = "<group>"; };
 		C4F0E82D1DA1B9CF00435310 /* STPreferencesGeneralViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = STPreferencesGeneralViewController.xib; path = "../jellyfin-server/STPreferencesGeneralViewController.xib"; sourceTree = "<group>"; };
@@ -240,7 +240,7 @@
 			isa = PBXGroup;
 			children = (
 				C4576BD51D11E3210031BCFD /* create-dmg.sh */,
-				C4D896121D0DF90900D42F73 /* syncthing-resource.sh */,
+				C4D896121D0DF90900D42F73 /* jellyfin-resource.sh */,
 			);
 			name = Scripts;
 			sourceTree = "<group>";
@@ -256,6 +256,7 @@
 				C4A4155D1D0D579D00DC6018 /* Frameworks */,
 				C4A4155E1D0D579D00DC6018 /* Resources */,
 				C462613D1D57944400B16BC6 /* Copy Files */,
+				094CD62323ACD5C1006AABB5 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -317,6 +318,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		094CD62323ACD5C1006AABB5 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "${SOURCE_ROOT}/jellyfin-server/Scripts/jellyfin-resource.sh\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C4A4155C1D0D579D00DC6018 /* Sources */ = {
