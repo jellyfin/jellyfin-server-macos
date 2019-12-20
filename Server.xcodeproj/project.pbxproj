@@ -303,7 +303,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
-				MARKETING_VERSION = 10.4.2;
+				MARKETING_VERSION = 10.4.3;
 				PRODUCT_BUNDLE_IDENTIFIER = Jellyfin.Server;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -327,7 +327,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
-				MARKETING_VERSION = 10.4.2;
+				MARKETING_VERSION = 10.4.3;
 				PRODUCT_BUNDLE_IDENTIFIER = Jellyfin.Server;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
