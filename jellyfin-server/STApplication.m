@@ -149,6 +149,9 @@
     [NSApp performSelector:@selector(terminate:) withObject:nil];
 }
 
+- (IBAction)clickedRestart:(NSMenuItem *)sender {
+    [_process restart];
+}
 
 // TODO: need a more generic approach for opening windows
 - (IBAction)clickedPreferences:(NSMenuItem *)sender {
