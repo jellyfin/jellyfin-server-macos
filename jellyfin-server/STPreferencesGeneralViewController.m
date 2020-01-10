@@ -8,7 +8,7 @@
 
 #import "STPreferencesGeneralViewController.h"
 #import "STLoginItem.h"
-#import "XGSyncthing.h"
+#import "JellyfinMacOS.h"
 
 @interface STPreferencesGeneralViewController ()
 

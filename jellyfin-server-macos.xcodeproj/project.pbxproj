@@ -26,7 +26,7 @@
 		C4F0E82F1DA1B9CF00435310 /* STPreferencesGeneralViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4F0E82D1DA1B9CF00435310 /* STPreferencesGeneralViewController.xib */; };
 		C4F0E8381DA1CB0900435310 /* STPreferencesInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4F0E8361DA1CB0900435310 /* STPreferencesInfoViewController.m */; };
 		C4F0E8391DA1CB0900435310 /* STPreferencesInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4F0E8371DA1CB0900435310 /* STPreferencesInfoViewController.xib */; };
-		C4FFB0661D0D7F870015D14A /* XGSyncthing.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FFB0641D0D7E4C0015D14A /* XGSyncthing.m */; };
+		C4FFB0661D0D7F870015D14A /* JellyfinMacOS.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FFB0641D0D7E4C0015D14A /* JellyfinMacOS.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -81,8 +81,8 @@
 		C4F0E8351DA1CB0900435310 /* STPreferencesInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = STPreferencesInfoViewController.h; path = UI/STPreferencesWindow/STPreferencesInfoViewController.h; sourceTree = "<group>"; };
 		C4F0E8361DA1CB0900435310 /* STPreferencesInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = STPreferencesInfoViewController.m; path = UI/STPreferencesWindow/STPreferencesInfoViewController.m; sourceTree = "<group>"; };
 		C4F0E8371DA1CB0900435310 /* STPreferencesInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = STPreferencesInfoViewController.xib; path = UI/STPreferencesWindow/STPreferencesInfoViewController.xib; sourceTree = "<group>"; };
-		C4FFB0631D0D7E440015D14A /* XGSyncthing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XGSyncthing.h; sourceTree = "<group>"; };
-		C4FFB0641D0D7E4C0015D14A /* XGSyncthing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XGSyncthing.m; sourceTree = "<group>"; };
+		C4FFB0631D0D7E440015D14A /* JellyfinMacOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JellyfinMacOS.h; sourceTree = "<group>"; };
+		C4FFB0641D0D7E4C0015D14A /* JellyfinMacOS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JellyfinMacOS.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,8 +145,8 @@
 			children = (
 				29AF1BA4210F11DE004212DE /* jellyfin-server-Bridging-Header.h */,
 				09004F8C238E70BF00F7E9C2 /* DaemonProcess.swift */,
-				C4FFB0631D0D7E440015D14A /* XGSyncthing.h */,
-				C4FFB0641D0D7E4C0015D14A /* XGSyncthing.m */,
+				C4FFB0631D0D7E440015D14A /* JellyfinMacOS.h */,
+				C4FFB0641D0D7E4C0015D14A /* JellyfinMacOS.m */,
 				C4A415631D0D579D00DC6018 /* STApplication.h */,
 				C4A415641D0D579D00DC6018 /* STApplication.m */,
 				C4D567A11D3A8DFE002AD881 /* STLoginItem.m */,
@@ -334,7 +334,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C4D567A21D3A8DFE002AD881 /* STLoginItem.m in Sources */,
-				C4FFB0661D0D7F870015D14A /* XGSyncthing.m in Sources */,
+				C4FFB0661D0D7F870015D14A /* JellyfinMacOS.m in Sources */,
 				C4A415681D0D579D00DC6018 /* main.m in Sources */,
 				C4946B031D587878008447A2 /* STAboutWindowController.m in Sources */,
 				C4D36D801DA3D53F0061FD08 /* STPreferencesAdvancedViewController.m in Sources */,
@@ -411,7 +411,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				HEADER_SEARCH_PATHS = "$(SRCROOT)/syncthing/Test";
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/jellyfin-server/Test";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -464,7 +464,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				HEADER_SEARCH_PATHS = "$(SRCROOT)/syncthing/Test";
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/jellyfin-server/Test";
 				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_CFLAGS = "";

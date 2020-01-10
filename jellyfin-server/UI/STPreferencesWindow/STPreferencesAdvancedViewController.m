@@ -24,11 +24,15 @@
     return self;
 }
 
-- (IBAction)openConfigFolder:(id)sender {
+- (IBAction)openAppFolder:(id)sender {
     // TODO: currently we hardcode according to the default folder
     // as I have no idea yet how to get the current running config dir
-    NSString *configDir = [NSString stringWithFormat:@"%@/%@", NSHomeDirectory(), @"Library/Application Support/Jellyfin/server"];
-    [[NSWorkspace sharedWorkspace] openFile:configDir];
+    //NSWorkspace.shared.selectFile(nil, inFileViewerRootedAtPath: "/Users/\(NSUserName())/Library/Application Support/Jellyfin/server")
+    //NSString *configDir = [NSString stringWithFormat:@"%@/%@", NSHomeDirectory(), @"Library/Application Support/Jellyfin/server"];
+    NSString *configDir =@"/Users/anthonylavado/Library/Application Support/jellyfin/server/";
+    NSURL *folderURL = [NSURL fileURLWithPath: configDir];
+    [[NSWorkspace sharedWorkspace] openURL:folderURL];
+   
 }
 
 @end

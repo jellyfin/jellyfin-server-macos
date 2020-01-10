@@ -10,7 +10,7 @@
 
 @interface STPreferencesGeneralViewController : NSViewController
 
-@property (weak) IBOutlet NSTextField *Syncthing_URI;
+@property (weak) IBOutlet NSTextField *Jellyfin_URI;
 @property (weak) IBOutlet NSButton *StartAtLogin;
 
 

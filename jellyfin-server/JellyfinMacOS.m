@@ -1,9 +1,9 @@
-#import "XGSyncthing.h"
+#import "JellyfinMacOS.h"
 
 // How long we wait for one event poll
 #define EVENT_TIMEOUT 60.0
 
-@interface XGSyncthing()
+@interface JellyfinMacOS()
 
 @property (nonatomic, strong) NSXMLParser *configParser;
 @property (nonatomic, strong) NSMutableArray<NSString *> *parsing;
@@ -11,10 +11,10 @@
 
 @end
 
-@implementation XGSyncthing {}
+@implementation JellyfinMacOS {}
 
 @synthesize URI = _URI;
-@synthesize ApiKey = _apiKey;
+
 
 
 
@@ -29,7 +29,7 @@
                                                   appropriateForURL:nil
                                                              create:NO
                                                               error:&error];
-    NSURL* configUrl = [supURL URLByAppendingPathComponent:@"jellyfin-Server/config.xml"];
+    NSURL* configUrl = [supURL URLByAppendingPathComponent:@"jellyfin/config.xml"];
     _parsing = [[NSMutableArray alloc] init];
     _configParser = [[NSXMLParser alloc] initWithContentsOfURL:configUrl];
     [_configParser setDelegate:self];
@@ -56,9 +56,7 @@
 -(void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string {
     NSString *keyPath = [_parsing componentsJoinedByString:@"."];
 
-    if ([keyPath isEqualToString:@"configuration.gui.apikey"]) {
-        _apiKey = string;
-    } else if  ([keyPath isEqualToString:@"configuration.gui.address"]) {
+    if  ([keyPath isEqualToString:@"configuration.gui.address"]) {
         _URI = [_URI stringByAppendingString:string];
     }
 }

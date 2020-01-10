@@ -6,7 +6,7 @@
 @interface STAppDelegate ()
 
 @property (nonatomic, strong, readwrite) NSStatusItem *statusItem;
-@property (nonatomic, strong, readwrite) XGSyncthing *syncthing;
+@property (nonatomic, strong, readwrite) JellyfinMacOS *jfmacos;
 @property (nonatomic, strong, readwrite) NSString *executable;
 @property (nonatomic, strong, readwrite) DaemonProcess *process;
 @property (strong) STPreferencesWindowController *preferencesWindow;
@@ -16,9 +16,11 @@
 
 @implementation STAppDelegate
 
+ 
 - (void) applicationDidFinishLaunching:(NSNotification *)aNotification {
-    _syncthing = [[XGSyncthing alloc] init];
-
+    _jfmacos = [[JellyfinMacOS alloc] init];
+    
+    
     [self applicationLoadConfiguration];
 
     _process = [[DaemonProcess alloc] initWithPath:_executable delegate:self];
@@ -45,10 +47,13 @@
 
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 
+    // Watch out! This line gets data from the NSUserDefaults (defaults read org.jellyfin.server.macos)
+    // If you're updating this area, make sure you run "defaults delete org.jellyfin.server.macos" first!
     _executable = [defaults stringForKey:@"Executable"];
     if (!_executable) {
         // We store the server and runtime files in ~/Library/Application Support/Jellyfin/server by default
-        _executable = [[self applicationSupportDirectoryFor:@"jellyfin-server/server"] stringByAppendingPathComponent:@"jellyfin"];
+        // Then the appended path component is the actual executable to run
+        _executable = [[self applicationSupportDirectoryFor:@"jellyfin/server"] stringByAppendingPathComponent:@"jellyfin"];
         [defaults setValue:_executable forKey:@"Executable"];
     }
 
@@ -60,12 +65,11 @@
         return;
     }
 
-    _syncthing.URI = [defaults stringForKey:@"URI"];
-    _syncthing.ApiKey = [defaults stringForKey:@"ApiKey"];
+    _jfmacos.URI = [defaults stringForKey:@"URI"];
 
     // If no values are set, read from XML and store in defaults
-    if (!_syncthing.URI.length && !_syncthing.ApiKey.length) {
-        BOOL success = [_syncthing loadConfigurationFromXML];
+    if (!_jfmacos.URI.length) {
+        BOOL success = [_jfmacos loadConfigurationFromXML];
 
         // If XML doesn't exist or is invalid, retry after delay
         if (!success && configLoadAttempt <= 3) {
@@ -74,18 +78,12 @@
             return;
         }
 
-        [defaults setObject:_syncthing.URI forKey:@"URI"];
-        [defaults setObject:_syncthing.ApiKey forKey:@"ApiKey"];
+        [defaults setObject:_jfmacos.URI forKey:@"URI"];
     }
 
-    if (!_syncthing.URI) {
-        _syncthing.URI = @"http://localhost:8096";
-        [defaults setObject:_syncthing.URI forKey:@"URI"];
-    }
-
-    if (!_syncthing.ApiKey) {
-        _syncthing.ApiKey = @"";
-        [defaults setObject:_syncthing.ApiKey forKey:@"ApiKey"];
+    if (!_jfmacos.URI) {
+        _jfmacos.URI = @"http://localhost:8096";
+        [defaults setObject:_jfmacos.URI forKey:@"URI"];
     }
 
     if (![defaults objectForKey:@"StartAtLogin"]) {
@@ -114,7 +112,7 @@
     }
 
     // Copy the bundled executable to the desired location. Pass on return and error to the caller.
-    NSString *bundled = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"jellyfin"];
+    NSString *bundled = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"server"];
     return [manager copyItemAtPath:bundled toPath:path error:error];
 }
 
@@ -132,7 +130,7 @@
 
 
 - (IBAction) clickedOpen:(id)sender {
-    NSURL *URL = [NSURL URLWithString:[_syncthing URI]];
+    NSURL *URL = [NSURL URLWithString:[_jfmacos URI]];
     [[NSWorkspace sharedWorkspace] openURL:URL];
 }
 

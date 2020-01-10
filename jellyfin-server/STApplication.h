@@ -8,11 +8,10 @@
 
 #import <Cocoa/Cocoa.h>
 
-#import "XGSyncthing.h"
+#import "JellyfinMacOS.h"
 #import "Controllers/STAboutWindowController.h"
 #import "Controllers/STPreferencesWindowController.h"
 #import "jellyfin_server_macos-Swift.h"
-//#import "Syncthing-Swift.h"
 
 @interface STAppDelegate : NSObject <NSApplicationDelegate, DaemonProcessDelegate>
 

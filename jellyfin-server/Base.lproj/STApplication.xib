@@ -80,7 +80,6 @@
             </items>
             <point key="canvasLocation" x="428" y="223"/>
         </menu>
-        <customObject id="LNQ-zz-nO6" customClass="SUUpdater"/>
         <menuItem title="Menu" id="I8M-Pf-BKw">
             <modifierMask key="keyEquivalentModifierMask"/>
             <menu key="submenu" title="Menu" id="rlz-0G-Jeh">

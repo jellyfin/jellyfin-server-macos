@@ -10,6 +10,6 @@
 
 @interface STPreferencesAdvancedViewController : NSViewController
 
-- (IBAction)openConfigFolder:(id)sender;
+- (IBAction)openAppFolder:(id)sender;
 
 @end

@@ -7,11 +7,11 @@
 //
 
 #import "STConfiguration.h"
-#import "XGSyncthing.h"
+#import "JellyfinMacOS.h"
 
 @interface STConfiguration()
 
-@property XGSyncthing *st;
+@property JellyfinMacOS *st;
 
 @end
 

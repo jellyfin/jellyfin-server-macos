@@ -11,7 +11,7 @@ CURL_ARGS="--connect-timeout 5 --max-time 10 --retry 5 --retry-delay 3 --retry-m
 DL_DIR="${BUILT_PRODUCTS_DIR}/dl"
 JELLYFIN_TARBALL="${DL_DIR}/jellyfin.macos.tar.gz"
 APP_RESOURCES_DIR="${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.app/Contents/Resources"
-TAR_DIR="${APP_RESOURCES_DIR}/jellyfin-server"
+TAR_DIR="${APP_RESOURCES_DIR}/server"
 
 # Download jellyfin tarball
 if [ -f "${JELLYFIN_TARBALL}" ]; then
