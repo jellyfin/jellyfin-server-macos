@@ -82,7 +82,10 @@
     }
 
     if (!_jfmacos.URI) {
-        _jfmacos.URI = @"http://localhost:8096";
+        // if not already saved once, gets the machine host name and saves it for launching the web UI
+        NSString * currentHost = [[NSHost currentHost] name];
+        NSString * urlString = [NSString stringWithFormat:@"http://%@:8096", currentHost];
+        _jfmacos.URI = urlString;
         [defaults setObject:_jfmacos.URI forKey:@"URI"];
     }
 

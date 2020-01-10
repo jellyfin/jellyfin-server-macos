@@ -20,30 +20,31 @@
         <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
         <menu id="FYW-KQ-yxY">
             <items>
-                <menuItem title="Launch Web UI" toolTip="Open Jellyfin Web UI" id="euz-4I-RQa">
-                    <modifierMask key="keyEquivalentModifierMask"/>
-                    <connections>
-                        <action selector="clickedOpen:" target="Voe-Tx-rLC" id="7Cv-q4-hhD"/>
-                    </connections>
-                </menuItem>
-                <menuItem title="View Logs" id="Gbh-kn-bEe">
-                    <modifierMask key="keyEquivalentModifierMask"/>
-                </menuItem>
-                <menuItem isSeparatorItem="YES" id="Y7R-rk-7Pq"/>
                 <menuItem title="Preferences..." id="lgT-yX-bGZ">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
                         <action selector="clickedPreferences:" target="Voe-Tx-rLC" id="nAN-bU-JlB"/>
                     </connections>
                 </menuItem>
+                <menuItem isSeparatorItem="YES" id="Y7R-rk-7Pq"/>
+                <menuItem title="Launch Web UI" toolTip="Open Jellyfin Web UI" id="euz-4I-RQa">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="clickedOpen:" target="Voe-Tx-rLC" id="7Cv-q4-hhD"/>
+                    </connections>
+                </menuItem>
                 <menuItem isSeparatorItem="YES" id="8xd-5E-q58"/>
+                <menuItem title="View Logs" id="Gbh-kn-bEe">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="DZ8-So-3gj"/>
                 <menuItem title="About" id="dst-j8-d2d">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
                         <action selector="clickedAbout:" target="Voe-Tx-rLC" id="p8O-aU-oe3"/>
                     </connections>
                 </menuItem>
-                <menuItem title="Restart Jellyfin Server" id="Y0B-mh-Du3">
+                <menuItem title="Restart Server" id="Y0B-mh-Du3">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
                         <action selector="clickedRestart:" target="Voe-Tx-rLC" id="rh6-Xn-WFJ"/>
@@ -64,11 +65,6 @@
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <menu key="submenu" title="Jellyfin" systemMenu="apple" id="O1r-v6-dVJ">
                         <items>
-                            <menuItem title="Close window" keyEquivalent="w" id="htF-y1-dkl">
-                                <connections>
-                                    <action selector="performClose:" target="-1" id="wl7-Zc-dFu"/>
-                                </connections>
-                            </menuItem>
                             <menuItem title="Quit application" keyEquivalent="q" id="42h-qg-75M">
                                 <connections>
                                     <action selector="terminate:" target="-1" id="11j-7w-23u"/>

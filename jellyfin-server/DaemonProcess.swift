@@ -52,7 +52,7 @@ let MaxKeepLogLines = 200
         NSLog("Launching Jellyfin Server")
         shouldTerminate = false
         let p = Process()
-        p.arguments = ["--noautorunwebapp"] //, "--ffmpeg"]
+        p.arguments = ["--noautorunwebapp", "--service"] //, "--ffmpeg"]
         p.launchPath = path
         p.standardInput = Pipe() // isolate daemon from our stdin
         p.standardOutput = pipeIntoLineBuffer()
