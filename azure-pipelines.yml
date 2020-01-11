@@ -37,6 +37,12 @@ steps:
     script: 'mv $(Build.SourcesDirectory)/ffmpegtemp/ffmpeg*/bin/ffmpeg $(Pipeline.Workspace)/jellyfin-mac-app-resources/'
     failOnStderr: true
 
+- task: Bash@3
+  inputs:
+    targetType: 'inline'
+    script: 'mv $(Build.SourcesDirectory)/ffmpegtemp/ffmpeg*/bin/ffprobe $(Pipeline.Workspace)/jellyfin-mac-app-resources/'
+    failOnStderr: true
+
 - task: Xcode@5
   inputs:
     actions: 'build'
