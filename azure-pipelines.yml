@@ -2,7 +2,7 @@ pool:
   vmImage: 'macos-latest'
 steps:
 - task: DownloadGitHubRelease@0
-  displayName: 'Download MacOS Server'
+  displayName: 'Download macOS Server'
   inputs:
     connection: Jellyfin Release Download
     userRepository: 'jellyfin/jellyfin'
@@ -11,7 +11,7 @@ steps:
     downloadPath: '$(System.WorkFolder)'
 
 - task: ExtractFiles@1
-  displayName: 'Extract MacOS Server'
+  displayName: 'Extract macOS Server'
   inputs:
     archiveFilePatterns: '$(System.WorkFolder)/jellyfin_*_macos.tar.gz'
     destinationFolder: '$(Pipeline.Workspace)/jellyfin-mac-app-resources'
@@ -24,34 +24,34 @@ steps:
     failOnStderr: true
 
 - task: Bash@3
-  displayName: 'Download FFmpeg'
+  displayName: 'Download ffmpeg'
   inputs:
     targetType: 'inline'
-    script: 'wget https://ffmpeg.zeranoe.com/builds/macos64/static/ffmpeg-4.0.2-macos64-static.zip -P $(Build.SourcesDirectory)'
+    script: 'wget https://ffmpeg.zeranoe.com/builds/macos64/static/ffmpeg-4.2.1-macos64-static.zip -P $(Build.SourcesDirectory)'
     failOnStderr: false
 
 - task: ExtractFiles@1
-  displayName: 'Extract FFmpeg'
+  displayName: 'Extract ffmpeg'
   inputs:
-    archiveFilePatterns: '$(Build.SourcesDirectory)/ffmpeg-4.0.2-macos64-static.zip'
+    archiveFilePatterns: '$(Build.SourcesDirectory)/ffmpeg-4.2.1-macos64-static.zip'
     destinationFolder: '$(Build.SourcesDirectory)/ffmpegtemp/'
 
 - task: Bash@3
-  displayName: 'Copy FFmpeg'
+  displayName: 'Copy ffmpeg'
   inputs:
     targetType: 'inline'
     script: 'mv $(Build.SourcesDirectory)/ffmpegtemp/ffmpeg*/bin/ffmpeg $(Pipeline.Workspace)/jellyfin-mac-app-resources/'
     failOnStderr: true
 
 - task: Bash@3
-  displayName: 'Copy FFprobe'
+  displayName: 'Copy ffprobe'
   inputs:
     targetType: 'inline'
     script: 'mv $(Build.SourcesDirectory)/ffmpegtemp/ffmpeg*/bin/ffprobe $(Pipeline.Workspace)/jellyfin-mac-app-resources/'
     failOnStderr: true
 
 - task: Xcode@5
-  displayName: 'Build MacOS Wrapper'
+  displayName: 'Build macOS Wrapper'
   inputs:
     actions: 'build'
     configuration: 'Release'
