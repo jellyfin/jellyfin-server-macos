@@ -1,6 +1,6 @@
 //
-//  STAboutWindowController.m
-//  syncthing
+//  JFAboutWindowController.m
+//  Originally STAboutWindowController.m from syncthing-macos
 //
 //  Created by Jerry Jacobs on 08/08/16.
 //  Copyright © 2016 Jerry Jacobs. All rights reserved.
@@ -8,13 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
-#import "STAboutWindowController.h"
+#import "JFAboutWindowController.h"
 
-@interface STAboutWindowController ()
+@interface JFAboutWindowController ()
 
 @end
 
-@implementation STAboutWindowController
+@implementation JFAboutWindowController
 
 - (id) init {
 	return [super initWithWindowNibName:NSStringFromClass(self.class)];

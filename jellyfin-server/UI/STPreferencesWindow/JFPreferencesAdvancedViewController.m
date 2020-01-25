@@ -6,13 +6,13 @@
 //  Copyright © 2016 Jerry Jacobs. All rights reserved.
 //
 
-#import "STPreferencesAdvancedViewController.h"
+#import "JFPreferencesAdvancedViewController.h"
 
-@interface STPreferencesAdvancedViewController ()
+@interface JFPreferencesAdvancedViewController ()
 
 @end
 
-@implementation STPreferencesAdvancedViewController
+@implementation JFPreferencesAdvancedViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

@@ -11,7 +11,7 @@
 
 #include <Foundation/Foundation.h>
 
-@interface STLoginItem : NSObject
+@interface JFLoginItem : NSObject
 
 + (void) addAppAsLoginItem;
 + (BOOL) wasAppAddedAsLoginItem;

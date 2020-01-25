@@ -8,7 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface STPreferencesAdvancedViewController : NSViewController
+@interface JFPreferencesAdvancedViewController : NSViewController
 
 - (IBAction)openAppFolder:(id)sender;
 

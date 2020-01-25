@@ -6,16 +6,16 @@
 //  Copyright © 2016 Jerry Jacobs. All rights reserved.
 //
 
-#import "STPreferencesWindowController.h"
-#import "STPreferencesGeneralViewController.h"
-#import "STPreferencesInfoViewController.h"
-#import "STPreferencesAdvancedViewController.h"
+#import "JFPreferencesWindowController.h"
+#import "JFPreferencesGeneralViewController.h"
+#import "JFPreferencesInfoViewController.h"
+#import "JFPreferencesAdvancedViewController.h"
 
-@interface STPreferencesWindowController ()
+@interface JFPreferencesWindowController ()
 
 @end
 
-@implementation STPreferencesWindowController
+@implementation JFPreferencesWindowController
 
 enum
 {
@@ -46,17 +46,17 @@ enum
     switch (tag) {
         case kGeneralView:
             if (self.generalView == nil)
-                _generalView = [[STPreferencesGeneralViewController alloc] init];
+                _generalView = [[JFPreferencesGeneralViewController alloc] init];
             _currentViewController = self.generalView;
             break;
         case kInfoView:
             if (self.infoView == nil)
-                _infoView = [[STPreferencesInfoViewController alloc] init];
+                _infoView = [[JFPreferencesInfoViewController alloc] init];
             _currentViewController = self.infoView;
             break;
         case kAdvancedView:
             if (self.advancedView == nil)
-                _advancedView = [[STPreferencesAdvancedViewController alloc] init];
+                _advancedView = [[JFPreferencesAdvancedViewController alloc] init];
             _currentViewController = self.advancedView;
         default:
             break;

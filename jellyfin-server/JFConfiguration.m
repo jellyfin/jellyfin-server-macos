@@ -6,16 +6,16 @@
 //  Copyright © 2016 Jerry Jacobs. All rights reserved.
 //
 
-#import "STConfiguration.h"
+#import "JFConfiguration.h"
 #import "JellyfinMacOS.h"
 
-@interface STConfiguration()
+@interface JFConfiguration()
 
 @property JellyfinMacOS *st;
 
 @end
 
-@implementation STConfiguration
+@implementation JFConfiguration
 
 NSString *const defaultHost       = @"http://localhost:8096";
 NSString *defaultExecutable;

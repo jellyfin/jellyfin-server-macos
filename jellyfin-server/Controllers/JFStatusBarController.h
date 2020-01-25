@@ -1,13 +1,12 @@
-//
-//  StatusBarController.m
+//  StatusBarController.h
 //  syncthing-mac
 //
 //  Created by Jerry Jacobs on 12/06/16.
 //  Copyright © 2016 Jerry Jacobs. All rights reserved.
 //
 
-#import "STStatusBarController.h"
+#import <Cocoa/Cocoa.h>
 
-@implementation STStatusBarController
+@interface JFStatusBarController : NSStatusBar
 
 @end

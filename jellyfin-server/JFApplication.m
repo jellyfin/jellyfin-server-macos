@@ -1,5 +1,5 @@
-#import "STApplication.h"
-#import "STLoginItem.h"
+#import "JFApplication.h"
+#import "JFLoginItem.h"
 #import "jellyfin_server_macos-Swift.h"
 
 
@@ -9,8 +9,8 @@
 @property (nonatomic, strong, readwrite) JellyfinMacOS *jfmacos;
 @property (nonatomic, strong, readwrite) NSString *executable;
 @property (nonatomic, strong, readwrite) DaemonProcess *process;
-@property (strong) STPreferencesWindowController *preferencesWindow;
-@property (strong) STAboutWindowController *aboutWindow;
+@property (strong) JFPreferencesWindowController *preferencesWindow;
+@property (strong) JFAboutWindowController *aboutWindow;
 
 @end
 
@@ -41,7 +41,7 @@
    [self updateStatusIcon:@"StatusIconNotify"];
 }
 
-// TODO: move to STConfiguration class
+// TODO: move to JFConfiguration class
 - (void)applicationLoadConfiguration {
     static int configLoadAttempt = 1;
 
@@ -90,7 +90,7 @@
     }
 
     if (![defaults objectForKey:@"StartAtLogin"]) {
-        [defaults setBool:[STLoginItem wasAppAddedAsLoginItem] forKey:@"StartAtLogin"];
+        [defaults setBool:[JFLoginItem wasAppAddedAsLoginItem] forKey:@"StartAtLogin"];
     }
 }
 
@@ -162,7 +162,7 @@
         return;
     }
 
-    _preferencesWindow = [[STPreferencesWindowController alloc] init];
+    _preferencesWindow = [[JFPreferencesWindowController alloc] init];
     [_preferencesWindow showWindow:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(preferencesWillClose:)
@@ -177,7 +177,7 @@
         return;
     }
 
-    _aboutWindow = [[STAboutWindowController alloc] init];
+    _aboutWindow = [[JFAboutWindowController alloc] init];
     [_aboutWindow showWindow:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(aboutWillClose:)

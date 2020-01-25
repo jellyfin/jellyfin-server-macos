@@ -34,9 +34,9 @@
 		<true/>
 	</dict>
 	<key>NSHumanReadableCopyright</key>
-	<string>Copyright © 2019 Jellyfin. All rights reserved.</string>
+	<string>Copyright © 2020 Jellyfin. All rights reserved.</string>
 	<key>NSMainNibFile</key>
-	<string>STApplication</string>
+	<string>JFApplication</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
 	<key>STBundleName</key>

@@ -6,15 +6,15 @@
 //  Copyright © 2016 Jerry Jacobs. All rights reserved.
 //
 
-#import "STPreferencesGeneralViewController.h"
-#import "STLoginItem.h"
+#import "JFPreferencesGeneralViewController.h"
+#import "JFLoginItem.h"
 #import "JellyfinMacOS.h"
 
-@interface STPreferencesGeneralViewController ()
+@interface JFPreferencesGeneralViewController ()
 
 @end
 
-@implementation STPreferencesGeneralViewController
+@implementation JFPreferencesGeneralViewController
 
 - (void) viewDidLoad {
     [super viewDidLoad];
@@ -35,10 +35,10 @@
     NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
     
     if ([defaults boolForKey:@"StartAtLogin"]) {
-        if (![STLoginItem wasAppAddedAsLoginItem])
-            [STLoginItem addAppAsLoginItem];
+        if (![JFLoginItem wasAppAddedAsLoginItem])
+            [JFLoginItem addAppAsLoginItem];
     } else {
-        [STLoginItem deleteAppFromLoginItem];
+        [JFLoginItem deleteAppFromLoginItem];
     }
 }
 

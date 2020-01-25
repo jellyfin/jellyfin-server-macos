@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="15702" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="15705" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15702"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15705"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <customObject id="-2" userLabel="File's Owner" customClass="STPreferencesGeneralViewController">
+        <customObject id="-2" userLabel="File's Owner" customClass="JFPreferencesGeneralViewController">
             <connections>
                 <outlet property="Jellyfin_URI" destination="kCf-gA-qTB" id="qgf-Ba-Nvw"/>
                 <outlet property="StartAtLogin" destination="tYl-sb-Hga" id="nUj-DN-esv"/>
@@ -37,6 +37,15 @@
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b2W-Mn-xvZ">
+                    <rect key="frame" x="9" y="54" width="54" height="16"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <textFieldCell key="cell" lineBreakMode="clipping" title="Browser" id="fxg-kc-f0I">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
                 <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tYl-sb-Hga">
                     <rect key="frame" x="67" y="18" width="101" height="18"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -49,6 +58,22 @@
                         <binding destination="43V-m6-OJJ" name="value" keyPath="values.StartAtLogin" id="sF5-YE-6mA"/>
                     </connections>
                 </button>
+                <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jxr-pD-ady">
+                    <rect key="frame" x="67" y="49" width="341" height="25"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <popUpButtonCell key="cell" type="push" title="System Default" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="U9M-nR-wYM" id="mH5-kl-TvE">
+                        <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                        <menu key="menu" id="iGR-8b-edN">
+                            <items>
+                                <menuItem title="System Default" state="on" id="U9M-nR-wYM" userLabel="System Default"/>
+                                <menuItem title="Safari" id="pWe-Rp-Jd5" userLabel="Safari"/>
+                                <menuItem title="Chrome" id="IUF-U5-Hvx" userLabel="Chrome"/>
+                                <menuItem title="Firefox" id="xYU-ZE-7Wq" userLabel="Firefox"/>
+                            </items>
+                        </menu>
+                    </popUpButtonCell>
+                </popUpButton>
             </subviews>
             <point key="canvasLocation" x="109" y="95.5"/>
         </customView>

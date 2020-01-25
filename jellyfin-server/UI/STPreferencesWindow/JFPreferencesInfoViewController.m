@@ -1,18 +1,18 @@
 //
-//  STPreferencesInfoViewController.m
-//  syncthing
+//  JFPreferencesInfoViewController.m
+//  Originally STPreferencesInfoViewController.m from syncthing-macos
 //
 //  Created by Jerry Jacobs on 03/10/2016.
 //  Copyright © 2016 Jerry Jacobs. All rights reserved.
 //
 
-#import "STPreferencesInfoViewController.h"
+#import "JFPreferencesInfoViewController.h"
 
-@interface STPreferencesInfoViewController ()
+@interface JFPreferencesInfoViewController ()
 
 @end
 
-@implementation STPreferencesInfoViewController
+@implementation JFPreferencesInfoViewController
 
 - (void) viewDidLoad {
     [super viewDidLoad];

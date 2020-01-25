@@ -8,7 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface STAboutWindowController : NSWindowController
+@interface JFAboutWindowController : NSWindowController
 
 @property (weak) IBOutlet NSImageView *appImageView;
 @property (weak) IBOutlet NSTextField *appNameLabel;

@@ -1,6 +1,6 @@
-#include "STLoginItem.h"
+#include "JFLoginItem.h"
 
-@implementation STLoginItem
+@implementation JFLoginItem
 
 + (void)addAppAsLoginItem {
     if ([self wasAppAddedAsLoginItem]) return;

@@ -8,7 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface STPreferencesGeneralViewController : NSViewController
+@interface JFPreferencesGeneralViewController : NSViewController
 
 @property (weak) IBOutlet NSTextField *Jellyfin_URI;
 @property (weak) IBOutlet NSButton *StartAtLogin;
