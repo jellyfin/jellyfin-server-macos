@@ -45,14 +45,16 @@ let MaxKeepLogLines = 200
         queue.async {
             // Syncthing should exit cleanly when sent the interrupt signal. It will then be restarted.
             self.process?.interrupt()
+            self.process?.terminate()
         }
     }
 
     private func launchServer() {
         NSLog("Launching Jellyfin Server")
+        
         shouldTerminate = false
         let p = Process()
-        p.arguments = ["--noautorunwebapp", "--service"] //, "--ffmpeg"]
+        p.arguments = ["--noautorunwebapp", "--service"]
         p.launchPath = path
         p.standardInput = Pipe() // isolate daemon from our stdin
         p.standardOutput = pipeIntoLineBuffer()

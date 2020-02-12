@@ -1,6 +1,6 @@
 //
-//  LoginItem.h
-//  syncthing
+//  JFLoginItem.h
+//  Originally LoginItem.h from syncthing-macos
 //
 //  Created by Jerry Jacobs on 16/07/16.
 //  Copyright © 2016 Jerry Jacobs. All rights reserved.

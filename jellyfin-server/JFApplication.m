@@ -53,7 +53,8 @@
     if (!_executable) {
         // We store the server and runtime files in ~/Library/Application Support/Jellyfin/server by default
         // Then the appended path component is the actual executable to run
-        _executable = [[self applicationSupportDirectoryFor:@"jellyfin/server"] stringByAppendingPathComponent:@"jellyfin"];
+        //_executable = [[self applicationSupportDirectoryFor:@"jellyfin"] stringByAppendingPathComponent:@"jellyfin"];
+        _executable = [[self applicationSupportDirectoryFor:@"jellyfin"] stringByAppendingPathComponent:@"server/jellyfin"];
         [defaults setValue:_executable forKey:@"Executable"];
     }
 
@@ -105,18 +106,21 @@
         // The executable exists. Nothing for us to do.
         return YES;
     }
-
+// TODO FIX THIS
     NSString *parent = [path stringByDeletingLastPathComponent];
+    NSString *parent2 = [parent stringByDeletingLastPathComponent];
     if (![manager fileExistsAtPath:path]) {
         // The directory to hold the binary doesn't exist. We must create it.
-        if (![manager createDirectoryAtPath:parent withIntermediateDirectories:YES attributes:nil error:error]) {
+        if (![manager createDirectoryAtPath:parent2 withIntermediateDirectories:YES attributes:nil error:error]) {
             return NO;
         }
     }
-
+// TODO FIX THIS
     // Copy the bundled executable to the desired location. Pass on return and error to the caller.
     NSString *bundled = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"server"];
-    return [manager copyItemAtPath:bundled toPath:path error:error];
+     NSString *parent3 = [path stringByDeletingLastPathComponent];
+      NSString *parent4 = [parent3 stringByDeletingLastPathComponent];
+    return [manager copyItemAtPath:bundled toPath:parent4 error:error];
 }
 
 - (void) sendNotification:(NSString *)text {
