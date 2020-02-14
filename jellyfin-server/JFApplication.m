@@ -54,7 +54,6 @@
         // We store the server and runtime files in ~/Library/Application Support/Jellyfin/server by default
         // Then the appended path component is the actual executable to run
         _executable = [[self applicationSupportDirectoryFor:@"jellyfin"] stringByAppendingPathComponent:@"server/jellyfin"];
-        //_executable = [[self applicationSupportDirectoryFor:@"jellyfin"] stringByAppendingPathComponent:@"server/jellyfin"];
         [defaults setValue:_executable forKey:@"Executable"];
     }
 
