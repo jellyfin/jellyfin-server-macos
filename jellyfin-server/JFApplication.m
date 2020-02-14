@@ -53,8 +53,8 @@
     if (!_executable) {
         // We store the server and runtime files in ~/Library/Application Support/Jellyfin/server by default
         // Then the appended path component is the actual executable to run
-        //_executable = [[self applicationSupportDirectoryFor:@"jellyfin"] stringByAppendingPathComponent:@"jellyfin"];
         _executable = [[self applicationSupportDirectoryFor:@"jellyfin"] stringByAppendingPathComponent:@"server/jellyfin"];
+        //_executable = [[self applicationSupportDirectoryFor:@"jellyfin"] stringByAppendingPathComponent:@"server/jellyfin"];
         [defaults setValue:_executable forKey:@"Executable"];
     }
 
@@ -98,6 +98,7 @@
 - (NSString*)applicationSupportDirectoryFor:(NSString*)application {
         NSArray *paths = NSSearchPathForDirectoriesInDomains(NSApplicationSupportDirectory, NSUserDomainMask, YES);
         return [[paths firstObject] stringByAppendingPathComponent:application];
+    
 }
 
 - (BOOL)ensureExecutableAt:(NSString*)path error:(NSError* _Nullable*)error {
@@ -107,20 +108,19 @@
         return YES;
     }
 // TODO FIX THIS
-    NSString *parent = [path stringByDeletingLastPathComponent];
-    NSString *parent2 = [parent stringByDeletingLastPathComponent];
+    NSString *parent = [[path stringByDeletingLastPathComponent] stringByDeletingLastPathComponent];
     if (![manager fileExistsAtPath:path]) {
         // The directory to hold the binary doesn't exist. We must create it.
-        if (![manager createDirectoryAtPath:parent2 withIntermediateDirectories:YES attributes:nil error:error]) {
+        if (![manager createDirectoryAtPath:parent withIntermediateDirectories:YES attributes:nil error:error]) {
             return NO;
         }
     }
 // TODO FIX THIS
     // Copy the bundled executable to the desired location. Pass on return and error to the caller.
+    // I have created a mess of trying to ensure this is at the right path - Anthony, Feb 2020
     NSString *bundled = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"server"];
-     NSString *parent3 = [path stringByDeletingLastPathComponent];
-      NSString *parent4 = [parent3 stringByDeletingLastPathComponent];
-    return [manager copyItemAtPath:bundled toPath:parent4 error:error];
+    NSString *destpath = [parent stringByAppendingPathComponent:@"server"];
+    return [manager copyItemAtPath:bundled toPath:destpath error:error];
 }
 
 - (void) sendNotification:(NSString *)text {
