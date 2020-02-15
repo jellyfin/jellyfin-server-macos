@@ -15,11 +15,11 @@
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <window title="Jellyfin for macOS Preferences" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" animationBehavior="default" id="QvC-M9-y7g">
             <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
-            <rect key="contentRect" x="0.0" y="0.0" width="420" height="125"/>
+            <rect key="contentRect" x="0.0" y="0.0" width="445" height="125"/>
             <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1417"/>
             <value key="minSize" type="size" width="420" height="125"/>
             <view key="contentView" id="EiT-Mj-1SZ">
-                <rect key="frame" x="0.0" y="0.0" width="420" height="125"/>
+                <rect key="frame" x="0.0" y="0.0" width="445" height="125"/>
                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             </view>
             <toolbar key="toolbar" implicitIdentifier="53B9A345-0CFD-45BD-82F7-670D595DF554" autosavesConfiguration="NO" allowsUserCustomization="NO" displayMode="iconAndLabel" sizeMode="regular" id="jKq-By-NJu">
@@ -47,7 +47,7 @@
                     <toolbarItem reference="S5T-mV-7Wv"/>
                 </defaultToolbarItems>
             </toolbar>
-            <point key="canvasLocation" x="20" y="245.5"/>
+            <point key="canvasLocation" x="32.5" y="245.5"/>
         </window>
         <userDefaultsController representsSharedInstance="YES" id="O7J-o6-nEr"/>
     </objects>

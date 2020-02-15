@@ -1,6 +1,6 @@
 //
-//  STPreferencesAdvancedViewController.m
-//  syncthing
+//  JFPreferencesAdvancedViewController.m
+//  Originally STPreferencesAdvancedViewController.m from syncthing-macos
 //
 //  Created by Jerry Jacobs on 04/10/2016.
 //  Copyright © 2016 Jerry Jacobs. All rights reserved.
@@ -25,14 +25,24 @@
 }
 
 - (IBAction)openAppFolder:(id)sender {
-    // TODO: currently we hardcode according to the default folder
-    // as I have no idea yet how to get the current running config dir
+
     //NSWorkspace.shared.selectFile(nil, inFileViewerRootedAtPath: "/Users/\(NSUserName())/Library/Application Support/Jellyfin/server")
-    //NSString *configDir = [NSString stringWithFormat:@"%@/%@", NSHomeDirectory(), @"Library/Application Support/Jellyfin/server"];
-    NSString *configDir =@"/Users/anthonylavado/Library/Application Support/jellyfin/server/";
+    NSString *configDir = [NSString stringWithFormat:@"%@/%@", NSHomeDirectory(), @"Library/Application Support/Jellyfin/server"];
     NSURL *folderURL = [NSURL fileURLWithPath: configDir];
     [[NSWorkspace sharedWorkspace] openURL:folderURL];
    
+}
+
+- (IBAction)openDataFolder:(id)sender {
+    NSString *configDir = [NSString stringWithFormat:@"%@/%@", NSHomeDirectory(), @".local/share/jellyfin/data"];
+    NSURL *folderURL = [NSURL fileURLWithPath: configDir];
+    [[NSWorkspace sharedWorkspace] openURL:folderURL];
+}
+
+- (IBAction)openLogFolder:(id)sender {
+    NSString *configDir = [NSString stringWithFormat:@"%@/%@", NSHomeDirectory(), @".local/share/jellyfin/log"];
+    NSURL *folderURL = [NSURL fileURLWithPath: configDir];
+    [[NSWorkspace sharedWorkspace] openURL:folderURL];
 }
 
 @end

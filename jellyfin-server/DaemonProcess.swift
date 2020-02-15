@@ -8,7 +8,7 @@
 
 import Foundation
 
-let RestartInterval = 10.0 // seconds
+let RestartInterval = 5.0 // seconds
 let MaxKeepLogLines = 200
 
 @objc public protocol DaemonProcessDelegate: class {
@@ -44,8 +44,11 @@ let MaxKeepLogLines = 200
     @objc func restart() {
         queue.async {
             // Syncthing should exit cleanly when sent the interrupt signal. It will then be restarted.
+            // Jellyfin doesn't close cleanly at the moment so we may need a sigkill
             self.process?.interrupt()
-            self.process?.terminate()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+                self.process?.terminate()
+            }
         }
     }
 
@@ -91,6 +94,9 @@ let MaxKeepLogLines = 200
             break
         case 3:
             // Restarting. No delay necessary.
+            break
+        case 130:
+            // Had to sigkill from the restart. No delay necessary.
             break
         default:
             // Anything else is an error condition of some kind. Delay

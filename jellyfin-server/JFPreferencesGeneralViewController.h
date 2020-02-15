@@ -12,7 +12,7 @@
 
 @property (weak) IBOutlet NSTextField *Jellyfin_URI;
 @property (weak) IBOutlet NSButton *StartAtLogin;
-
+@property (weak, nonatomic) IBOutlet IBOutlet NSSwitch *AutoOpenWebUI;
 
 
 @end

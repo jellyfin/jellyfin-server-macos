@@ -16,7 +16,7 @@
         <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customView id="Hz6-mo-xeY">
-            <rect key="frame" x="0.0" y="0.0" width="420" height="125"/>
+            <rect key="frame" x="0.0" y="0.0" width="445" height="125"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bgQ-af-R3Y">
@@ -37,17 +37,8 @@
                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                     </textFieldCell>
                 </textField>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b2W-Mn-xvZ">
-                    <rect key="frame" x="9" y="54" width="54" height="16"/>
-                    <autoresizingMask key="autoresizingMask"/>
-                    <textFieldCell key="cell" lineBreakMode="clipping" title="Browser" id="fxg-kc-f0I">
-                        <font key="font" metaFont="system"/>
-                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                    </textFieldCell>
-                </textField>
                 <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tYl-sb-Hga">
-                    <rect key="frame" x="67" y="18" width="101" height="18"/>
+                    <rect key="frame" x="306" y="28" width="101" height="18"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="check" title="Start at login" bezelStyle="regularSquare" imagePosition="left" inset="2" id="bnF-et-LAz">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -58,22 +49,19 @@
                         <binding destination="43V-m6-OJJ" name="value" keyPath="values.StartAtLogin" id="sF5-YE-6mA"/>
                     </connections>
                 </button>
-                <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jxr-pD-ady">
-                    <rect key="frame" x="67" y="49" width="341" height="25"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <popUpButtonCell key="cell" type="push" title="System Default" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="U9M-nR-wYM" id="mH5-kl-TvE">
-                        <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                <switch horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" baseWritingDirection="leftToRight" alignment="left" translatesAutoresizingMaskIntoConstraints="NO" id="0Y5-YD-U0N" userLabel="Auto Open Web UI">
+                    <rect key="frame" x="37" y="28" width="42" height="24"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                </switch>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="obR-PP-W5V">
+                    <rect key="frame" x="85" y="33" width="116" height="16"/>
+                    <autoresizingMask key="autoresizingMask"/>
+                    <textFieldCell key="cell" lineBreakMode="clipping" title="Auto Open Web UI" id="01p-Fm-oZF">
                         <font key="font" metaFont="system"/>
-                        <menu key="menu" id="iGR-8b-edN">
-                            <items>
-                                <menuItem title="System Default" state="on" id="U9M-nR-wYM" userLabel="System Default"/>
-                                <menuItem title="Safari" id="pWe-Rp-Jd5" userLabel="Safari"/>
-                                <menuItem title="Chrome" id="IUF-U5-Hvx" userLabel="Chrome"/>
-                                <menuItem title="Firefox" id="xYU-ZE-7Wq" userLabel="Firefox"/>
-                            </items>
-                        </menu>
-                    </popUpButtonCell>
-                </popUpButton>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
             </subviews>
             <point key="canvasLocation" x="109" y="95.5"/>
         </customView>

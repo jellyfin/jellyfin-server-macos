@@ -92,6 +92,11 @@
     if (![defaults objectForKey:@"StartAtLogin"]) {
         [defaults setBool:[JFLoginItem wasAppAddedAsLoginItem] forKey:@"StartAtLogin"];
     }
+    
+    if (![defaults objectForKey:@"AutoOpenWebUI"]) {
+        [defaults setBool:false forKey:@"AutoOpenWebUI"];
+    }
+    
 }
 
 - (NSString*)applicationSupportDirectoryFor:(NSString*)application {
@@ -138,6 +143,12 @@
 - (IBAction) clickedOpen:(id)sender {
     NSURL *URL = [NSURL URLWithString:[_jfmacos URI]];
     [[NSWorkspace sharedWorkspace] openURL:URL];
+}
+- (IBAction) clickedViewLogs:(id)sender {
+    //NSWorkspace.shared.selectFile(nil, inFileViewerRootedAtPath: "/Users/\(NSUserName())/Library/Application Support/Jellyfin/server")
+    NSString *configDir = [NSString stringWithFormat:@"%@/%@", NSHomeDirectory(), @".local/share/jellyfin/log"];
+    NSURL *folderURL = [NSURL fileURLWithPath: configDir];
+    [[NSWorkspace sharedWorkspace] openURL:folderURL];
 }
 
 

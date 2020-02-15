@@ -36,6 +36,9 @@
                 <menuItem isSeparatorItem="YES" id="8xd-5E-q58"/>
                 <menuItem title="View Logs" id="Gbh-kn-bEe">
                     <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="clickedViewLogs:" target="Voe-Tx-rLC" id="XeA-Ak-Mir"/>
+                    </connections>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="DZ8-So-3gj"/>
                 <menuItem title="About" id="dst-j8-d2d">

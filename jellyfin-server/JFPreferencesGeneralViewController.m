@@ -18,6 +18,7 @@
 
 - (void) viewDidLoad {
     [super viewDidLoad];
+    [self updateURIField];
     
 }
 
@@ -41,6 +42,20 @@
         [JFLoginItem deleteAppFromLoginItem];
     }
 }
+
+- (void) updateURIField {
+    NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
+    self.Jellyfin_URI.stringValue = [defaults stringForKey:@"URI"];
+}
+
+- (IBAction)switched:(id)sender; {
+    if (sender == self.AutoOpenWebUI)
+    {
+        [[NSUserDefaults standardUserDefaults] setBool:self.AutoOpenWebUI.isOn forKey:@"AutoOpenWebUI"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    }
+}
+
 
 
 @end
