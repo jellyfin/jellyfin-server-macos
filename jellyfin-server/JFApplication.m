@@ -109,13 +109,6 @@
     return [manager copyItemAtPath:bundled toPath:destpath error:error];
 }
 
-- (void) sendNotification:(NSString *)text {
-    NSUserNotification *notification = [[NSUserNotification alloc] init];
-    notification.title = @"Syncthing";
-    notification.informativeText = text;
-    [[NSUserNotificationCenter defaultUserNotificationCenter] deliverNotification:notification];
-}
-
 - (IBAction) clickedOpen:(id)sender {
     NSURL *URL = [NSURL URLWithString:_URI];
     [[NSWorkspace sharedWorkspace] openURL:URL];
