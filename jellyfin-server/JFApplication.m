@@ -17,11 +17,14 @@
 @implementation STAppDelegate
 
  
-- (void) applicationDidFinishLaunching {
+- (void) applicationDidFinishLaunching:(NSNotification *)aNotification {
     
     [self applicationLoadConfiguration];
+
     _process = [[DaemonProcess alloc] initWithPath:_executable delegate:self];
     [_process launch];
+
+    
 }
 
 - (void) awakeFromNib {
