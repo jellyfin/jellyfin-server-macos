@@ -51,7 +51,7 @@
 - (IBAction)switched:(id)sender; {
     if (sender == self.AutoOpenWebUI)
     {
-        [[NSUserDefaults standardUserDefaults] setBool:self.AutoOpenWebUI.isOn forKey:@"AutoOpenWebUI"];
+        [[NSUserDefaults standardUserDefaults] setBool:self.AutoOpenWebUI.isEnabled forKey:@"AutoOpenWebUI"];
         [[NSUserDefaults standardUserDefaults] synchronize];
     }
 }

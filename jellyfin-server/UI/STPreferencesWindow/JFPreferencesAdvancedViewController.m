@@ -20,17 +20,13 @@
 
 - (id) init {
     self = [super initWithNibName:NSStringFromClass(self.class) bundle:nil];
-    // TODO(jb): Executable placement shown should be taken from config.
     return self;
 }
 
 - (IBAction)openAppFolder:(id)sender {
-
-    //NSWorkspace.shared.selectFile(nil, inFileViewerRootedAtPath: "/Users/\(NSUserName())/Library/Application Support/Jellyfin/server")
     NSString *configDir = [NSString stringWithFormat:@"%@/%@", NSHomeDirectory(), @"Library/Application Support/Jellyfin/server"];
     NSURL *folderURL = [NSURL fileURLWithPath: configDir];
     [[NSWorkspace sharedWorkspace] openURL:folderURL];
-   
 }
 
 - (IBAction)openDataFolder:(id)sender {

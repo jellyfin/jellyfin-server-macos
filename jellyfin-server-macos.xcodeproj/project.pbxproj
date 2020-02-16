@@ -24,8 +24,6 @@
 		C4D567A21D3A8DFE002AD881 /* JFLoginItem.m in Sources */ = {isa = PBXBuildFile; fileRef = C4D567A11D3A8DFE002AD881 /* JFLoginItem.m */; };
 		C4F0E82E1DA1B9CF00435310 /* JFPreferencesGeneralViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4F0E82C1DA1B9CF00435310 /* JFPreferencesGeneralViewController.m */; };
 		C4F0E82F1DA1B9CF00435310 /* JFPreferencesGeneralViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4F0E82D1DA1B9CF00435310 /* JFPreferencesGeneralViewController.xib */; };
-		C4F0E8381DA1CB0900435310 /* JFPreferencesInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C4F0E8361DA1CB0900435310 /* JFPreferencesInfoViewController.m */; };
-		C4F0E8391DA1CB0900435310 /* JFPreferencesInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C4F0E8371DA1CB0900435310 /* JFPreferencesInfoViewController.xib */; };
 		C4FFB0661D0D7F870015D14A /* JellyfinMacOS.m in Sources */ = {isa = PBXBuildFile; fileRef = C4FFB0641D0D7E4C0015D14A /* JellyfinMacOS.m */; };
 /* End PBXBuildFile section */
 
@@ -78,9 +76,6 @@
 		C4F0E82B1DA1B9CF00435310 /* JFPreferencesGeneralViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JFPreferencesGeneralViewController.h; sourceTree = "<group>"; };
 		C4F0E82C1DA1B9CF00435310 /* JFPreferencesGeneralViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JFPreferencesGeneralViewController.m; sourceTree = "<group>"; };
 		C4F0E82D1DA1B9CF00435310 /* JFPreferencesGeneralViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JFPreferencesGeneralViewController.xib; sourceTree = "<group>"; };
-		C4F0E8351DA1CB0900435310 /* JFPreferencesInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JFPreferencesInfoViewController.h; path = UI/STPreferencesWindow/JFPreferencesInfoViewController.h; sourceTree = "<group>"; };
-		C4F0E8361DA1CB0900435310 /* JFPreferencesInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JFPreferencesInfoViewController.m; path = UI/STPreferencesWindow/JFPreferencesInfoViewController.m; sourceTree = "<group>"; };
-		C4F0E8371DA1CB0900435310 /* JFPreferencesInfoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = JFPreferencesInfoViewController.xib; path = UI/STPreferencesWindow/JFPreferencesInfoViewController.xib; sourceTree = "<group>"; };
 		C4FFB0631D0D7E440015D14A /* JellyfinMacOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JellyfinMacOS.h; sourceTree = "<group>"; };
 		C4FFB0641D0D7E4C0015D14A /* JellyfinMacOS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JellyfinMacOS.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -121,10 +116,7 @@
 				C4460A7D1D0DD2D500200C21 /* JFPreferencesWindowController.m */,
 				C4F0E82B1DA1B9CF00435310 /* JFPreferencesGeneralViewController.h */,
 				C4F0E82C1DA1B9CF00435310 /* JFPreferencesGeneralViewController.m */,
-				C4F0E8351DA1CB0900435310 /* JFPreferencesInfoViewController.h */,
 				C4F0E82D1DA1B9CF00435310 /* JFPreferencesGeneralViewController.xib */,
-				C4F0E8361DA1CB0900435310 /* JFPreferencesInfoViewController.m */,
-				C4F0E8371DA1CB0900435310 /* JFPreferencesInfoViewController.xib */,
 				C4D36D7D1DA3D53F0061FD08 /* JFPreferencesAdvancedViewController.h */,
 				C4D36D7E1DA3D53F0061FD08 /* JFPreferencesAdvancedViewController.m */,
 				C4D36D7F1DA3D53F0061FD08 /* JFPreferencesAdvancedViewController.xib */,
@@ -294,7 +286,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C4F0E8391DA1CB0900435310 /* JFPreferencesInfoViewController.xib in Resources */,
 				09004F8F238E739700F7E9C2 /* Images.xcassets in Resources */,
 				C4D36D811DA3D53F0061FD08 /* JFPreferencesAdvancedViewController.xib in Resources */,
 				C4A4156A1D0D579D00DC6018 /* jellyfin-server in Resources */,
@@ -343,7 +334,6 @@
 				C48B83B61DA444BC0052A172 /* JFConfiguration.m in Sources */,
 				C4460A801D0DD2D500200C21 /* JFPreferencesWindowController.m in Sources */,
 				C4F0E82E1DA1B9CF00435310 /* JFPreferencesGeneralViewController.m in Sources */,
-				C4F0E8381DA1CB0900435310 /* JFPreferencesInfoViewController.m in Sources */,
 				C4A415651D0D579D00DC6018 /* JFApplication.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

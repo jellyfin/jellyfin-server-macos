@@ -30,14 +30,9 @@
                             <action selector="toolbarButtonClicked:" target="-2" id="cWV-tS-JnL"/>
                         </connections>
                     </toolbarItem>
-                    <toolbarItem implicitItemIdentifier="D874225D-8E52-4A4B-A937-DEA979F1229B" label="Advanced" paletteLabel="Advanced" tag="4" image="NSAdvanced" id="S5T-mV-7Wv">
+                    <toolbarItem implicitItemIdentifier="D874225D-8E52-4A4B-A937-DEA979F1229B" label="Advanced" paletteLabel="Advanced" tag="1" image="NSAdvanced" id="S5T-mV-7Wv">
                         <connections>
                             <action selector="toolbarButtonClicked:" target="-2" id="b7K-cg-PrG"/>
-                        </connections>
-                    </toolbarItem>
-                    <toolbarItem implicitItemIdentifier="724E41E5-958D-40E7-AF30-71771B2155F7" label="Info" paletteLabel="Info" tag="3" image="NSInfo" id="86s-00-8YI">
-                        <connections>
-                            <action selector="toolbarButtonClicked:" target="-2" id="Vse-Kj-679"/>
                         </connections>
                     </toolbarItem>
                 </allowedToolbarItems>
@@ -53,7 +48,6 @@
     </objects>
     <resources>
         <image name="NSAdvanced" width="32" height="32"/>
-        <image name="NSInfo" width="32" height="32"/>
         <image name="NSPreferencesGeneral" width="32" height="32"/>
     </resources>
 </document>

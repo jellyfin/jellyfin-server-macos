@@ -8,6 +8,7 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="JFPreferencesGeneralViewController">
             <connections>
+                <outlet property="AutoOpenWebUI" destination="5lN-5f-CeY" id="jmM-ha-xc1"/>
                 <outlet property="Jellyfin_URI" destination="kCf-gA-qTB" id="qgf-Ba-Nvw"/>
                 <outlet property="StartAtLogin" destination="tYl-sb-Hga" id="nUj-DN-esv"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
@@ -49,19 +50,18 @@
                         <binding destination="43V-m6-OJJ" name="value" keyPath="values.StartAtLogin" id="sF5-YE-6mA"/>
                     </connections>
                 </button>
-                <switch horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" baseWritingDirection="leftToRight" alignment="left" translatesAutoresizingMaskIntoConstraints="NO" id="0Y5-YD-U0N" userLabel="Auto Open Web UI">
-                    <rect key="frame" x="37" y="28" width="42" height="24"/>
-                    <autoresizingMask key="autoresizingMask"/>
-                </switch>
-                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="obR-PP-W5V">
-                    <rect key="frame" x="85" y="33" width="116" height="16"/>
-                    <autoresizingMask key="autoresizingMask"/>
-                    <textFieldCell key="cell" lineBreakMode="clipping" title="Auto Open Web UI" id="01p-Fm-oZF">
+                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5lN-5f-CeY">
+                    <rect key="frame" x="67" y="28" width="134" height="18"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="check" title="Auto Open Web UI" bezelStyle="regularSquare" imagePosition="left" inset="2" id="UM6-EI-QVx">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                         <font key="font" metaFont="system"/>
-                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                    </textFieldCell>
-                </textField>
+                    </buttonCell>
+                    <connections>
+                        <action selector="switched:" target="-2" id="bhY-uA-Bot"/>
+                        <binding destination="43V-m6-OJJ" name="value" keyPath="values.AutoOpenWebUI" id="IoI-73-2TU"/>
+                    </connections>
+                </button>
             </subviews>
             <point key="canvasLocation" x="109" y="95.5"/>
         </customView>
