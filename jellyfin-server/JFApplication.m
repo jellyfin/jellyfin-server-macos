@@ -35,8 +35,7 @@
 - (void) awakeFromNib {
     _statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
     _statusItem.menu = _Menu;
-
-   [self updateStatusIcon:@"StatusIconNotify"];
+    [self updateStatusIcon];
 }
 
 - (void)applicationLoadConfiguration {
@@ -117,9 +116,9 @@
     [[NSUserNotificationCenter defaultUserNotificationCenter] deliverNotification:notification];
 }
 
-- (void) updateStatusIcon:(NSString *)icon {
+- (void) updateStatusIcon{
     _statusItem.button.image = [NSImage imageNamed:@"StatusBarButtonImage"];
-	[_statusItem.button.image setTemplate:YES];
+	//[_statusItem.button.image setTemplate:YES];
 }
 
 
@@ -128,7 +127,6 @@
     [[NSWorkspace sharedWorkspace] openURL:URL];
 }
 - (IBAction) clickedViewLogs:(id)sender {
-    //NSWorkspace.shared.selectFile(nil, inFileViewerRootedAtPath: "/Users/\(NSUserName())/Library/Application Support/Jellyfin/server")
     NSString *configDir = [NSString stringWithFormat:@"%@/%@", NSHomeDirectory(), @".local/share/jellyfin/log"];
     NSURL *folderURL = [NSURL fileURLWithPath: configDir];
     [[NSWorkspace sharedWorkspace] openURL:folderURL];
@@ -140,7 +138,7 @@
 
 - (IBAction) clickedQuit:(id)sender {
     
-    [self updateStatusIcon:@"StatusIconNotify"];
+    [self updateStatusIcon];
     [_statusItem setToolTip:@""];
     _statusItem.menu = nil;
 
