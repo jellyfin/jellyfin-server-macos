@@ -62,22 +62,5 @@
             </items>
             <point key="canvasLocation" x="400" y="224"/>
         </menu>
-        <menu title="Main Menu" systemMenu="main" id="LRK-4Q-J2a">
-            <items>
-                <menuItem title="Jellyfin" id="ViC-de-Xi1">
-                    <modifierMask key="keyEquivalentModifierMask"/>
-                    <menu key="submenu" title="Jellyfin" systemMenu="apple" id="O1r-v6-dVJ">
-                        <items>
-                            <menuItem title="Quit application" keyEquivalent="q" id="42h-qg-75M">
-                                <connections>
-                                    <action selector="terminate:" target="-1" id="11j-7w-23u"/>
-                                </connections>
-                            </menuItem>
-                        </items>
-                    </menu>
-                </menuItem>
-            </items>
-            <point key="canvasLocation" x="428" y="223"/>
-        </menu>
     </objects>
 </document>
