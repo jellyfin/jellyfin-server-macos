@@ -8,7 +8,6 @@
 
 import Foundation
 
-let RestartInterval = 5.0 // seconds
 let MaxKeepLogLines = 200
 
 @objc public protocol DaemonProcessDelegate: class {
@@ -22,6 +21,8 @@ let MaxKeepLogLines = 200
     private var log = [String]()
     private var queue = DispatchQueue(label: "DaemonProcess")
     private var shouldTerminate = false
+    //private var args = String()
+    private var args = [String]()
 
     @objc init(path: String, delegate: DaemonProcessDelegate) {
         self.path = path
@@ -51,14 +52,38 @@ let MaxKeepLogLines = 200
             }
         }
     }
-
+    private func buildStartupArgs(){
+        // clear all args on rebuild
+        args.removeAll()
+        // let's read the NSUserDefaults
+        let defaults = UserDefaults.standard
+        
+        // Look for our defaults. This one is a bool
+        let AutoOpen = defaults.bool(forKey:"AutoOpenWebUI")
+        if (AutoOpen == false){
+            args.append("--service")
+            args.append("--noautorunwebapp")
+            return
+        } else {
+         return
+        }
+        // You're able to add more arguments in future - see Jellyfin.Server/StartupOptions.cs for more
+    }
+    
     private func launchServer() {
         NSLog("Launching Jellyfin Server")
-        
+       
+            
+        buildStartupArgs()
+
         shouldTerminate = false
         let p = Process()
-        //p.arguments = ["--noautorunwebapp", "--service"]
-        //p.arguments = ["--service"]
+        p.arguments = []
+        
+        for arg in args{
+            p.arguments! += [arg]
+        }
+        
         p.launchPath = path
         p.standardInput = Pipe() // isolate daemon from our stdin
         p.standardOutput = pipeIntoLineBuffer()
@@ -87,12 +112,6 @@ let MaxKeepLogLines = 200
         }
         var delay = 0.0
         switch p.terminationStatus {
-        case 0:
-            // Successfull exit, such as when told to stop. We ignore
-            // that fact and restart anyway, with no delay. TODO(jb):
-            // Consider instead offering a "restart daemon" command in
-            // the menu?
-            break
         case 3:
             // Restarting. No delay necessary.
             break
@@ -102,7 +121,7 @@ let MaxKeepLogLines = 200
         default:
             // Anything else is an error condition of some kind. Delay
             // the startup to not get caught in a tight loop.
-            delay = RestartInterval
+            delay = 5.0
             NSLog("Delaying Jellyfin startup by %.1f s", delay)
         }
         queue.asyncAfter(deadline: DispatchTime.now() + delay) {
@@ -122,7 +141,7 @@ let MaxKeepLogLines = 200
             }
 
             guard let str = String(data: data, encoding: .utf8) else {
-                // Non-UTF-8 data from Syncthing should never happen.
+                // Non-UTF-8 data should never happen.
                 return
             }
 
