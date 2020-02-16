@@ -21,7 +21,6 @@ let MaxKeepLogLines = 200
     private var log = [String]()
     private var queue = DispatchQueue(label: "DaemonProcess")
     private var shouldTerminate = false
-    //private var args = String()
     private var args = [String]()
 
     @objc init(path: String, delegate: DaemonProcessDelegate) {
