@@ -79,15 +79,5 @@
             </items>
             <point key="canvasLocation" x="428" y="223"/>
         </menu>
-        <menuItem title="Menu" id="I8M-Pf-BKw">
-            <modifierMask key="keyEquivalentModifierMask"/>
-            <menu key="submenu" title="Menu" id="rlz-0G-Jeh">
-                <items>
-                    <menuItem title="Item" id="Y9X-vm-pic">
-                        <modifierMask key="keyEquivalentModifierMask"/>
-                    </menuItem>
-                </items>
-            </menu>
-        </menuItem>
     </objects>
 </document>
