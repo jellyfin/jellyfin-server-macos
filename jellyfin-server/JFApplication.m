@@ -27,11 +27,6 @@
     
 }
 
-
-- (void) applicationWillTerminate:(NSNotification *)aNotification {
-    [_process terminate];
-}
-
 - (void) awakeFromNib {
     _statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
     _statusItem.menu = _Menu;
