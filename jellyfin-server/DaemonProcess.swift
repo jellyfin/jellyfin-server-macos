@@ -57,7 +57,8 @@ let MaxKeepLogLines = 200
         
         shouldTerminate = false
         let p = Process()
-        p.arguments = ["--noautorunwebapp", "--service"]
+        //p.arguments = ["--noautorunwebapp", "--service"]
+        //p.arguments = ["--service"]
         p.launchPath = path
         p.standardInput = Pipe() // isolate daemon from our stdin
         p.standardOutput = pipeIntoLineBuffer()

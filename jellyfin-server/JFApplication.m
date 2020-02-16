@@ -39,9 +39,7 @@
    [self updateStatusIcon:@"StatusIconNotify"];
 }
 
-// TODO: move to JFConfiguration class
 - (void)applicationLoadConfiguration {
-    static int configLoadAttempt = 1;
 
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 
@@ -79,7 +77,7 @@
     }
     
     if (![defaults objectForKey:@"AutoOpenWebUI"]) {
-        [defaults setBool:false forKey:@"AutoOpenWebUI"];
+        [defaults setBool:true forKey:@"AutoOpenWebUI"];
     }
     
 }
