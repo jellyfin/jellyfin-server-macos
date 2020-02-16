@@ -1,17 +1,14 @@
 //
-//  STConfiguration.m
-//  syncthing
+//  JFConfiguration.m
+//  Originally STConfiguration.m from syncthing-macos
 //
 //  Created by Jerry Jacobs on 04/10/2016.
 //  Copyright © 2016 Jerry Jacobs. All rights reserved.
 //
 
 #import "JFConfiguration.h"
-#import "JellyfinMacOS.h"
 
 @interface JFConfiguration()
-
-@property JellyfinMacOS *st;
 
 @end
 

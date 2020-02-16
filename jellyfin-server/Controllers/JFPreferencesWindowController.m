@@ -1,6 +1,6 @@
 //
-//  PreferencesWindowController.m
-//  syncthing-mac
+//  JFPreferencesWindowController.m
+//  Originally PreferencesWindowController.m from syncthing-macos
 //
 //  Created by Jerry Jacobs on 12/06/16.
 //  Copyright © 2016 Jerry Jacobs. All rights reserved.

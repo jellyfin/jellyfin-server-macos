@@ -1,6 +1,6 @@
 //
-//  TestView.m
-//  syncthing
+//  JFPreferencesGeneralViewController.m
+//  Originally STPreferencesGeneralViewController.h from syncthing-macos
 //
 //  Created by Jerry Jacobs on 02/10/2016.
 //  Copyright © 2016 Jerry Jacobs. All rights reserved.
@@ -8,7 +8,6 @@
 
 #import "JFPreferencesGeneralViewController.h"
 #import "JFLoginItem.h"
-#import "JellyfinMacOS.h"
 
 @interface JFPreferencesGeneralViewController ()
 
@@ -51,7 +50,7 @@
 - (IBAction)switched:(id)sender; {
     if (sender == self.AutoOpenWebUI)
     {
-        [[NSUserDefaults standardUserDefaults] setBool:self.AutoOpenWebUI.isEnabled forKey:@"AutoOpenWebUI"];
+        [[NSUserDefaults standardUserDefaults] setBool:self.AutoOpenWebUI.state forKey:@"AutoOpenWebUI"];
         [[NSUserDefaults standardUserDefaults] synchronize];
     }
 }

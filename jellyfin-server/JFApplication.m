@@ -6,7 +6,7 @@
 @interface STAppDelegate ()
 
 @property (nonatomic, strong, readwrite) NSStatusItem *statusItem;
-@property (nonatomic, strong, readwrite) JellyfinMacOS *jfmacos;
+@property (nonatomic, strong, readwrite) NSString *URI;
 @property (nonatomic, strong, readwrite) NSString *executable;
 @property (nonatomic, strong, readwrite) DaemonProcess *process;
 @property (strong) JFPreferencesWindowController *preferencesWindow;
@@ -18,8 +18,6 @@
 
  
 - (void) applicationDidFinishLaunching:(NSNotification *)aNotification {
-    _jfmacos = [[JellyfinMacOS alloc] init];
-    
     
     [self applicationLoadConfiguration];
 
@@ -65,28 +63,15 @@
         return;
     }
 
-    _jfmacos.URI = [defaults stringForKey:@"URI"];
+    _URI = [defaults stringForKey:@"URI"];
 
-    // If no values are set, read from XML and store in defaults
-    if (!_jfmacos.URI.length) {
-        BOOL success = [_jfmacos loadConfigurationFromXML];
 
-        // If XML doesn't exist or is invalid, retry after delay
-        if (!success && configLoadAttempt <= 3) {
-            configLoadAttempt++;
-            [self performSelector:@selector(applicationLoadConfiguration) withObject:self afterDelay:5.0];
-            return;
-        }
-
-        [defaults setObject:_jfmacos.URI forKey:@"URI"];
-    }
-
-    if (!_jfmacos.URI) {
+    if (!_URI) {
         // if not already saved once, gets the machine host name and saves it for launching the web UI
         NSString * currentHost = [[NSHost currentHost] name];
         NSString * urlString = [NSString stringWithFormat:@"http://%@:8096", currentHost];
-        _jfmacos.URI = urlString;
-        [defaults setObject:_jfmacos.URI forKey:@"URI"];
+        _URI = urlString;
+        [defaults setObject:_URI forKey:@"URI"];
     }
 
     if (![defaults objectForKey:@"StartAtLogin"]) {
@@ -141,7 +126,7 @@
 
 
 - (IBAction) clickedOpen:(id)sender {
-    NSURL *URL = [NSURL URLWithString:[_jfmacos URI]];
+    NSURL *URL = [NSURL URLWithString:_URI];
     [[NSWorkspace sharedWorkspace] openURL:URL];
 }
 - (IBAction) clickedViewLogs:(id)sender {

@@ -1,6 +1,6 @@
 //
-//  TestView.h
-//  syncthing
+//  JFPreferencesGeneralViewController.h
+//  Originally STPreferencesGeneralViewController.h from syncthing-macos
 //
 //  Created by Jerry Jacobs on 02/10/2016.
 //  Copyright © 2016 Jerry Jacobs. All rights reserved.

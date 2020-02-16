@@ -1,6 +1,6 @@
 //
 //  DaemonProcess.swift
-//  syncthing
+//  Originally DaemonProcess.swift from syncthing-macos
 //
 //  Created by Jakob Borg on 2018-07-29.
 //  Copyright © 2018 The syncthing-macos Authors. All rights reserved.

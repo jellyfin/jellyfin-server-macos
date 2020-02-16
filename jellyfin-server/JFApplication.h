@@ -8,7 +8,6 @@
 
 #import <Cocoa/Cocoa.h>
 
-#import "JellyfinMacOS.h"
 #import "Controllers/JFAboutWindowController.h"
 #import "Controllers/JFPreferencesWindowController.h"
 #import "jellyfin_server_macos-Swift.h"
