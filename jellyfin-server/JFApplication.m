@@ -35,7 +35,7 @@
 - (void) awakeFromNib {
     _statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
     _statusItem.menu = _Menu;
-    [self updateStatusIcon];
+    _statusItem.button.image = [NSImage imageNamed:@"StatusBarButtonImage"];
 }
 
 - (void)applicationLoadConfiguration {
@@ -116,12 +116,6 @@
     [[NSUserNotificationCenter defaultUserNotificationCenter] deliverNotification:notification];
 }
 
-- (void) updateStatusIcon{
-    _statusItem.button.image = [NSImage imageNamed:@"StatusBarButtonImage"];
-	//[_statusItem.button.image setTemplate:YES];
-}
-
-
 - (IBAction) clickedOpen:(id)sender {
     NSURL *URL = [NSURL URLWithString:_URI];
     [[NSWorkspace sharedWorkspace] openURL:URL];
@@ -137,11 +131,6 @@
 }
 
 - (IBAction) clickedQuit:(id)sender {
-    
-    [self updateStatusIcon];
-    [_statusItem setToolTip:@""];
-    _statusItem.menu = nil;
-
     [NSApp performSelector:@selector(terminate:) withObject:nil];
 }
 
