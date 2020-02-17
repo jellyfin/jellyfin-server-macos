@@ -13,7 +13,7 @@ Jellyfin for macOS is a launcher/wrapper built in Swift and Objective-C.
    ```sh
    git clone https://github.com/jellyfin/jellyfin-server-macos.git
    ```
-2. Open `Server.xcodeproj` with Xcode, and build.
+2. Open `jellyfin-server-macos.xcodeproj` with Xcode, and build.
 
 
 ### FFmpeg Download
