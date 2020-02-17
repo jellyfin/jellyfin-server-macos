@@ -3,34 +3,49 @@
 <plist version="1.0">
 <dict>
 	<key>CFBundleDevelopmentRegion</key>
-	<string>$(DEVELOPMENT_LANGUAGE)</string>
+	<string>en</string>
+	<key>CFBundleDisplayName</key>
+	<string>Jellyfin Server</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
-	<key>CFBundleIconFile</key>
-	<string></string>
+	<key>CFBundleGetInfoString</key>
+	<string>Jellyfin Project</string>
 	<key>CFBundleIdentifier</key>
 	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>$(PRODUCT_NAME)</string>
+	<string>Jellyfin Server</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
 	<string>$(MARKETING_VERSION)</string>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>LSApplicationCategoryType</key>
 	<string>public.app-category.entertainment</string>
 	<key>LSMinimumSystemVersion</key>
 	<string>$(MACOSX_DEPLOYMENT_TARGET)</string>
 	<key>LSUIElement</key>
 	<true/>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 	<key>NSHumanReadableCopyright</key>
-	<string>Copyright © 2019 Jellyfin. All rights reserved.</string>
-	<key>NSMainStoryboardFile</key>
-	<string>Main</string>
+	<string>Copyright © 2020 Jellyfin. All rights reserved.</string>
+	<key>NSMainNibFile</key>
+	<string>JFApplication</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
+	<key>STBundleName</key>
+	<string>jellyfin-server-macos</string>
+	<key>STProjectHomepageURL</key>
+	<string>https://github.com/jellyfin/jellyfin-server-macos</string>
+	<key>SUFeedURL</key>
+	<string>https://repo.jellyfin.org/releases/server/macos/stable/</string>
+	<key>SUScheduledCheckInterval</key>
+	<integer>86400</integer>
 </dict>
 </plist>

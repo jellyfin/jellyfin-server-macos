@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1020"
+   LastUpgradeVersion = "1120"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "0919394E22C35C1400392D55"
-               BuildableName = "Server.app"
-               BlueprintName = "Server"
-               ReferencedContainer = "container:Server.xcodeproj">
+               BlueprintIdentifier = "0B9C6B051F144DF1009C68CA"
+               BuildableName = "jellyfin-server-macos-dmg"
+               BlueprintName = "jellyfin-server-macos-dmg"
+               ReferencedContainer = "container:jellyfin-server-macos.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -29,17 +29,6 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "0919394E22C35C1400392D55"
-            BuildableName = "Server.app"
-            BlueprintName = "Server"
-            ReferencedContainer = "container:Server.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
-      <AdditionalOptions>
-      </AdditionalOptions>
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
@@ -51,18 +40,6 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "0919394E22C35C1400392D55"
-            BuildableName = "Server.app"
-            BlueprintName = "Server"
-            ReferencedContainer = "container:Server.xcodeproj">
-         </BuildableReference>
-      </BuildableProductRunnable>
-      <AdditionalOptions>
-      </AdditionalOptions>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -70,16 +47,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "0919394E22C35C1400392D55"
-            BuildableName = "Server.app"
-            BlueprintName = "Server"
-            ReferencedContainer = "container:Server.xcodeproj">
+            BlueprintIdentifier = "0B9C6B051F144DF1009C68CA"
+            BuildableName = "jellyfin-server-macos-dmg"
+            BlueprintName = "jellyfin-server-macos-dmg"
+            ReferencedContainer = "container:jellyfin-server-macos.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

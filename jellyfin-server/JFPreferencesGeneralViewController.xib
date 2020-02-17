@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="15705" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15705"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="JFPreferencesGeneralViewController">
+            <connections>
+                <outlet property="AutoOpenWebUI" destination="5lN-5f-CeY" id="jmM-ha-xc1"/>
+                <outlet property="Jellyfin_URI" destination="kCf-gA-qTB" id="qgf-Ba-Nvw"/>
+                <outlet property="StartAtLogin" destination="tYl-sb-Hga" id="nUj-DN-esv"/>
+                <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="Hz6-mo-xeY">
+            <rect key="frame" x="0.0" y="0.0" width="445" height="125"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bgQ-af-R3Y">
+                    <rect key="frame" x="37" y="85" width="26" height="17"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="URI" id="geO-tg-eJG">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kCf-gA-qTB" userLabel="JellyfinURI">
+                    <rect key="frame" x="69" y="83" width="336" height="22"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="http://localhost:8096" drawsBackground="YES" id="hwI-eW-JrI">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tYl-sb-Hga">
+                    <rect key="frame" x="306" y="28" width="101" height="18"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="check" title="Start at login" bezelStyle="regularSquare" imagePosition="left" inset="2" id="bnF-et-LAz">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="clickedStartAtLogin:" target="-2" id="TK6-09-5uy"/>
+                        <binding destination="43V-m6-OJJ" name="value" keyPath="values.StartAtLogin" id="sF5-YE-6mA"/>
+                    </connections>
+                </button>
+                <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5lN-5f-CeY">
+                    <rect key="frame" x="67" y="28" width="134" height="18"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="check" title="Auto Open Web UI" bezelStyle="regularSquare" imagePosition="left" inset="2" id="UM6-EI-QVx">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="switched:" target="-2" id="bhY-uA-Bot"/>
+                        <binding destination="43V-m6-OJJ" name="value" keyPath="values.AutoOpenWebUI" id="IoI-73-2TU"/>
+                    </connections>
+                </button>
+            </subviews>
+            <point key="canvasLocation" x="109" y="95.5"/>
+        </customView>
+        <userDefaultsController representsSharedInstance="YES" id="43V-m6-OJJ"/>
+    </objects>
+</document>
