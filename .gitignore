@@ -1,6 +1,6 @@
 
-# Created by https://www.gitignore.io/api/xcode,swift,macos
-# Edit at https://www.gitignore.io/?templates=xcode,swift,macos
+# Created by https://www.gitignore.io/api/xcode,macos,swift
+# Edit at https://www.gitignore.io/?templates=xcode,macos,swift
 
 ### macOS ###
 # General
@@ -71,6 +71,8 @@ playground.xcworkspace
 # Package.pins
 # Package.resolved
 .build/
+# Add this line if you want to avoid checking in Xcode SPM integration.
+# .swiftpm/xcode
 
 # CocoaPods
 # We recommend against adding the Pods directory to your .gitignore. However
@@ -127,4 +129,4 @@ iOSInjectionProject/
 ### Xcode Patch ###
 **/xcshareddata/WorkspaceSettings.xcsettings
 
-# End of https://www.gitignore.io/api/xcode,swift,macos
+# End of https://www.gitignore.io/api/xcode,macos,swift

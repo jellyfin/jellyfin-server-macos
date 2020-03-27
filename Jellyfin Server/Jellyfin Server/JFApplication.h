@@ -10,7 +10,7 @@
 
 #import "Controllers/JFAboutWindowController.h"
 #import "Controllers/JFPreferencesWindowController.h"
-#import "jellyfin_server_macos-Swift.h"
+#import "Jellyfin_Server-swift.h"
 
 @interface STAppDelegate : NSObject <NSApplicationDelegate, DaemonProcessDelegate>
 

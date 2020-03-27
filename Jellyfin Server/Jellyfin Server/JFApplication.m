@@ -1,6 +1,6 @@
 #import "JFApplication.h"
 #import "JFLoginItem.h"
-#import "jellyfin_server_macos-Swift.h"
+#import "Jellyfin_Server-swift.h"
 
 
 @interface STAppDelegate ()
