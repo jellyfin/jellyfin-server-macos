@@ -1,0 +1,475 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		094208D4241CBFB1008D67E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 094208D3241CBFB1008D67E7 /* Assets.xcassets */; };
+		094208D7241CBFB1008D67E7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 094208D6241CBFB1008D67E7 /* Preview Assets.xcassets */; };
+		094208E3241CBFC5008D67E7 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 094208E2241CBFC5008D67E7 /* README.md */; };
+		094208E7241CBFD0008D67E7 /* AUTHORS.md in Resources */ = {isa = PBXBuildFile; fileRef = 094208E4241CBFD0008D67E7 /* AUTHORS.md */; };
+		094208E8241CBFD0008D67E7 /* deployment in Resources */ = {isa = PBXBuildFile; fileRef = 094208E5241CBFD0008D67E7 /* deployment */; };
+		094208E9241CBFD0008D67E7 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 094208E6241CBFD0008D67E7 /* LICENSE */; };
+		094208EB241CC0CA008D67E7 /* Controllers in Resources */ = {isa = PBXBuildFile; fileRef = 094208EA241CC0CA008D67E7 /* Controllers */; };
+		094208EE241CC109008D67E7 /* JFApplication.xib in Resources */ = {isa = PBXBuildFile; fileRef = 094208EC241CC109008D67E7 /* JFApplication.xib */; };
+		094208FB241CC13E008D67E7 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 094208F1241CC13E008D67E7 /* Info.plist */; };
+		094208FC241CC13E008D67E7 /* JFPreferencesGeneralViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 094208F4241CC13E008D67E7 /* JFPreferencesGeneralViewController.xib */; };
+		094208FD241CC13E008D67E7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 094208F5241CC13E008D67E7 /* main.m */; };
+		094208FE241CC13E008D67E7 /* JFLoginItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 094208F6241CC13E008D67E7 /* JFLoginItem.m */; };
+		094208FF241CC13E008D67E7 /* JFApplication.m in Sources */ = {isa = PBXBuildFile; fileRef = 094208F8241CC13E008D67E7 /* JFApplication.m */; };
+		09420900241CC13E008D67E7 /* JFPreferencesGeneralViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 094208F9241CC13E008D67E7 /* JFPreferencesGeneralViewController.m */; };
+		09420901241CC13E008D67E7 /* DaemonProcess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094208FA241CC13E008D67E7 /* DaemonProcess.swift */; };
+		09420903241CC162008D67E7 /* Scripts in Resources */ = {isa = PBXBuildFile; fileRef = 09420902241CC162008D67E7 /* Scripts */; };
+		09420912241CC5BF008D67E7 /* JFAboutWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09420911241CC5BF008D67E7 /* JFAboutWindowController.m */; };
+		09420914241CC61F008D67E7 /* JFPreferencesAdvancedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09420913241CC61F008D67E7 /* JFPreferencesAdvancedViewController.m */; };
+		09420916241CC646008D67E7 /* JFStatusBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09420915241CC646008D67E7 /* JFStatusBarController.m */; };
+		09420918241CC68E008D67E7 /* JFPreferencesWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09420917241CC68E008D67E7 /* JFPreferencesWindowController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		094208CC241CBFAF008D67E7 /* Jellyfin Server.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Jellyfin Server.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		094208D3241CBFB1008D67E7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		094208D6241CBFB1008D67E7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		094208DB241CBFB1008D67E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		094208DC241CBFB1008D67E7 /* Jellyfin_Server.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Jellyfin_Server.entitlements; sourceTree = "<group>"; };
+		094208E2241CBFC5008D67E7 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		094208E4241CBFD0008D67E7 /* AUTHORS.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = AUTHORS.md; sourceTree = "<group>"; };
+		094208E5241CBFD0008D67E7 /* deployment */ = {isa = PBXFileReference; lastKnownFileType = folder; path = deployment; sourceTree = "<group>"; };
+		094208E6241CBFD0008D67E7 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		094208EA241CC0CA008D67E7 /* Controllers */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Controllers; sourceTree = "<group>"; };
+		094208ED241CC109008D67E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/JFApplication.xib; sourceTree = "<group>"; };
+		094208EF241CC13E008D67E7 /* Jellyfin Server-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Jellyfin Server-Bridging-Header.h"; sourceTree = "<group>"; };
+		094208F0241CC13E008D67E7 /* JFPreferencesGeneralViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JFPreferencesGeneralViewController.h; sourceTree = "<group>"; };
+		094208F1241CC13E008D67E7 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = "../../../jellyfin-server-macos copy/jellyfin-server/Info.plist"; sourceTree = "<group>"; };
+		094208F2241CC13E008D67E7 /* JFApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JFApplication.h; sourceTree = "<group>"; };
+		094208F3241CC13E008D67E7 /* JFLoginItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JFLoginItem.h; sourceTree = "<group>"; };
+		094208F4241CC13E008D67E7 /* JFPreferencesGeneralViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JFPreferencesGeneralViewController.xib; sourceTree = "<group>"; };
+		094208F5241CC13E008D67E7 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		094208F6241CC13E008D67E7 /* JFLoginItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JFLoginItem.m; sourceTree = "<group>"; };
+		094208F8241CC13E008D67E7 /* JFApplication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JFApplication.m; sourceTree = "<group>"; };
+		094208F9241CC13E008D67E7 /* JFPreferencesGeneralViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JFPreferencesGeneralViewController.m; sourceTree = "<group>"; };
+		094208FA241CC13E008D67E7 /* DaemonProcess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DaemonProcess.swift; sourceTree = "<group>"; };
+		09420902241CC162008D67E7 /* Scripts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Scripts; sourceTree = "<group>"; };
+		09420905241CC168008D67E7 /* JFPreferencesWindowController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JFPreferencesWindowController.xib; sourceTree = "<group>"; };
+		09420907241CC168008D67E7 /* JFPreferencesAdvancedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JFPreferencesAdvancedViewController.m; sourceTree = "<group>"; };
+		09420908241CC168008D67E7 /* JFPreferencesAdvancedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JFPreferencesAdvancedViewController.h; sourceTree = "<group>"; };
+		09420909241CC168008D67E7 /* JFPreferencesAdvancedViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JFPreferencesAdvancedViewController.xib; sourceTree = "<group>"; };
+		0942090A241CC168008D67E7 /* JFAboutWindowController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JFAboutWindowController.xib; sourceTree = "<group>"; };
+		09420911241CC5BF008D67E7 /* JFAboutWindowController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = JFAboutWindowController.m; path = "Jellyfin Server/Controllers/JFAboutWindowController.m"; sourceTree = "<group>"; };
+		09420913241CC61F008D67E7 /* JFPreferencesAdvancedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = JFPreferencesAdvancedViewController.m; path = "Jellyfin Server/UI/STPreferencesWindow/JFPreferencesAdvancedViewController.m"; sourceTree = "<group>"; };
+		09420915241CC646008D67E7 /* JFStatusBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = JFStatusBarController.m; path = "Jellyfin Server/Controllers/JFStatusBarController.m"; sourceTree = "<group>"; };
+		09420917241CC68E008D67E7 /* JFPreferencesWindowController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = JFPreferencesWindowController.m; path = "Jellyfin Server/Controllers/JFPreferencesWindowController.m"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		094208C9241CBFAF008D67E7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		094208C3241CBFAF008D67E7 = {
+			isa = PBXGroup;
+			children = (
+				09420917241CC68E008D67E7 /* JFPreferencesWindowController.m */,
+				09420915241CC646008D67E7 /* JFStatusBarController.m */,
+				09420913241CC61F008D67E7 /* JFPreferencesAdvancedViewController.m */,
+				09420911241CC5BF008D67E7 /* JFAboutWindowController.m */,
+				094208CE241CBFAF008D67E7 /* Jellyfin Server */,
+				094208CD241CBFAF008D67E7 /* Products */,
+				094208E2241CBFC5008D67E7 /* README.md */,
+				094208E4241CBFD0008D67E7 /* AUTHORS.md */,
+				094208E5241CBFD0008D67E7 /* deployment */,
+				094208E6241CBFD0008D67E7 /* LICENSE */,
+			);
+			sourceTree = "<group>";
+		};
+		094208CD241CBFAF008D67E7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				094208CC241CBFAF008D67E7 /* Jellyfin Server.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		094208CE241CBFAF008D67E7 /* Jellyfin Server */ = {
+			isa = PBXGroup;
+			children = (
+				094208EA241CC0CA008D67E7 /* Controllers */,
+				094208D3241CBFB1008D67E7 /* Assets.xcassets */,
+				094208EC241CC109008D67E7 /* JFApplication.xib */,
+				094208FA241CC13E008D67E7 /* DaemonProcess.swift */,
+				094208DB241CBFB1008D67E7 /* Info.plist */,
+				094208F1241CC13E008D67E7 /* Info.plist */,
+				094208F2241CC13E008D67E7 /* JFApplication.h */,
+				094208F8241CC13E008D67E7 /* JFApplication.m */,
+				094208F3241CC13E008D67E7 /* JFLoginItem.h */,
+				094208F6241CC13E008D67E7 /* JFLoginItem.m */,
+				094208F0241CC13E008D67E7 /* JFPreferencesGeneralViewController.h */,
+				094208F9241CC13E008D67E7 /* JFPreferencesGeneralViewController.m */,
+				094208F4241CC13E008D67E7 /* JFPreferencesGeneralViewController.xib */,
+				094208F5241CC13E008D67E7 /* main.m */,
+				094208DC241CBFB1008D67E7 /* Jellyfin_Server.entitlements */,
+				094208D5241CBFB1008D67E7 /* Preview Content */,
+				094208EF241CC13E008D67E7 /* Jellyfin Server-Bridging-Header.h */,
+				09420904241CC168008D67E7 /* UI */,
+				09420902241CC162008D67E7 /* Scripts */,
+			);
+			path = "Jellyfin Server";
+			sourceTree = "<group>";
+		};
+		094208D5241CBFB1008D67E7 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				094208D6241CBFB1008D67E7 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		09420904241CC168008D67E7 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				09420905241CC168008D67E7 /* JFPreferencesWindowController.xib */,
+				09420906241CC168008D67E7 /* STPreferencesWindow */,
+				0942090A241CC168008D67E7 /* JFAboutWindowController.xib */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		09420906241CC168008D67E7 /* STPreferencesWindow */ = {
+			isa = PBXGroup;
+			children = (
+				09420907241CC168008D67E7 /* JFPreferencesAdvancedViewController.m */,
+				09420908241CC168008D67E7 /* JFPreferencesAdvancedViewController.h */,
+				09420909241CC168008D67E7 /* JFPreferencesAdvancedViewController.xib */,
+			);
+			path = STPreferencesWindow;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		094208CB241CBFAF008D67E7 /* Jellyfin Server */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 094208DF241CBFB1008D67E7 /* Build configuration list for PBXNativeTarget "Jellyfin Server" */;
+			buildPhases = (
+				094208C8241CBFAF008D67E7 /* Sources */,
+				094208C9241CBFAF008D67E7 /* Frameworks */,
+				094208CA241CBFAF008D67E7 /* Resources */,
+				09F42A17241CD0940041A1A3 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Jellyfin Server";
+			productName = "Jellyfin Server";
+			productReference = 094208CC241CBFAF008D67E7 /* Jellyfin Server.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		094208C4241CBFAF008D67E7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1130;
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = "Anthony Lavado";
+				TargetAttributes = {
+					094208CB241CBFAF008D67E7 = {
+						CreatedOnToolsVersion = 11.3.1;
+						LastSwiftMigration = 1130;
+					};
+				};
+			};
+			buildConfigurationList = 094208C7241CBFAF008D67E7 /* Build configuration list for PBXProject "Jellyfin Server" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 094208C3241CBFAF008D67E7;
+			productRefGroup = 094208CD241CBFAF008D67E7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				094208CB241CBFAF008D67E7 /* Jellyfin Server */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		094208CA241CBFAF008D67E7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				09420903241CC162008D67E7 /* Scripts in Resources */,
+				094208E7241CBFD0008D67E7 /* AUTHORS.md in Resources */,
+				094208EE241CC109008D67E7 /* JFApplication.xib in Resources */,
+				094208FB241CC13E008D67E7 /* Info.plist in Resources */,
+				094208EB241CC0CA008D67E7 /* Controllers in Resources */,
+				094208FC241CC13E008D67E7 /* JFPreferencesGeneralViewController.xib in Resources */,
+				094208D7241CBFB1008D67E7 /* Preview Assets.xcassets in Resources */,
+				094208E9241CBFD0008D67E7 /* LICENSE in Resources */,
+				094208E8241CBFD0008D67E7 /* deployment in Resources */,
+				094208E3241CBFC5008D67E7 /* README.md in Resources */,
+				094208D4241CBFB1008D67E7 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		09F42A17241CD0940041A1A3 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/Users/anthonylavado/repos/jellyfin-server-macos/Jellyfin\\ Server/Jellyfin\\ Server/Scripts/jellyfin-resource.sh \n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		094208C8241CBFAF008D67E7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				094208FE241CC13E008D67E7 /* JFLoginItem.m in Sources */,
+				094208FD241CC13E008D67E7 /* main.m in Sources */,
+				09420912241CC5BF008D67E7 /* JFAboutWindowController.m in Sources */,
+				09420914241CC61F008D67E7 /* JFPreferencesAdvancedViewController.m in Sources */,
+				09420916241CC646008D67E7 /* JFStatusBarController.m in Sources */,
+				09420901241CC13E008D67E7 /* DaemonProcess.swift in Sources */,
+				09420918241CC68E008D67E7 /* JFPreferencesWindowController.m in Sources */,
+				09420900241CC13E008D67E7 /* JFPreferencesGeneralViewController.m in Sources */,
+				094208FF241CC13E008D67E7 /* JFApplication.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		094208EC241CC109008D67E7 /* JFApplication.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				094208ED241CC109008D67E7 /* Base */,
+			);
+			name = JFApplication.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		094208DD241CBFB1008D67E7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		094208DE241CBFB1008D67E7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		094208E0241CBFB1008D67E7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "Jellyfin Server/Jellyfin_Server.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = 6YC6EAV7ES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "Jellyfin Server/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MARKETING_VERSION = 10.5.2;
+				PRODUCT_BUNDLE_IDENTIFIER = "org.jellyfin.Jellyfin-Server";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Jellyfin Server/Jellyfin Server-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		094208E1241CBFB1008D67E7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "Jellyfin Server/Jellyfin_Server.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = 6YC6EAV7ES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "Jellyfin Server/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MARKETING_VERSION = 10.5.2;
+				PRODUCT_BUNDLE_IDENTIFIER = "org.jellyfin.Jellyfin-Server";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Jellyfin Server/Jellyfin Server-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		094208C7241CBFAF008D67E7 /* Build configuration list for PBXProject "Jellyfin Server" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				094208DD241CBFB1008D67E7 /* Debug */,
+				094208DE241CBFB1008D67E7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		094208DF241CBFB1008D67E7 /* Build configuration list for PBXNativeTarget "Jellyfin Server" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				094208E0241CBFB1008D67E7 /* Debug */,
+				094208E1241CBFB1008D67E7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 094208C4241CBFAF008D67E7 /* Project object */;
+}
