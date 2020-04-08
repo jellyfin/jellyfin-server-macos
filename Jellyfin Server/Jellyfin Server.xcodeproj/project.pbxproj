@@ -43,7 +43,7 @@
 		094208ED241CC109008D67E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/JFApplication.xib; sourceTree = "<group>"; };
 		094208EF241CC13E008D67E7 /* Jellyfin Server-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Jellyfin Server-Bridging-Header.h"; sourceTree = "<group>"; };
 		094208F0241CC13E008D67E7 /* JFPreferencesGeneralViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JFPreferencesGeneralViewController.h; sourceTree = "<group>"; };
-		094208F1241CC13E008D67E7 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = "../../../jellyfin-server-macos copy/jellyfin-server/Info.plist"; sourceTree = "<group>"; };
+		094208F1241CC13E008D67E7 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = "Info.plist"; sourceTree = "<group>"; };
 		094208F2241CC13E008D67E7 /* JFApplication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JFApplication.h; sourceTree = "<group>"; };
 		094208F3241CC13E008D67E7 /* JFLoginItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JFLoginItem.h; sourceTree = "<group>"; };
 		094208F4241CC13E008D67E7 /* JFPreferencesGeneralViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JFPreferencesGeneralViewController.xib; sourceTree = "<group>"; };
