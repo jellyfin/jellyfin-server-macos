@@ -5,6 +5,10 @@
 Jellyfin for macOS is a launcher/wrapper built in Swift and Objective-C.
 </p>
 
+## Help Needed
+If you know how to properly package a .NET Core Application to be codesigned and notarized with Apple, please contact @anthonylavado.
+
+
 ## Build Process
 
 ### Getting Started
