@@ -21,11 +21,10 @@ var task = Process()
             button.image = NSImage(named:NSImage.Name("StatusBarButtonImage"))
         }
         
-        let path = Bundle.main.path(forResource: "jellyfin", ofType: nil, inDirectory: "jellyfin")
-        let ffmpegpath =  String(Bundle.main.path(forResource: "ffmpeg", ofType: nil) ?? "")
+        let path = Bundle.main.path(forAuxiliaryExecutable: "jellyfin")
 
         task.launchPath = path
-        task.arguments = ["--noautorunwebapp", "--ffmpeg", ffmpegpath]
+        //task.arguments = ["--noautorunwebapp"]
         
         do {
             try  task.run()
