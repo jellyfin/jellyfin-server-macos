@@ -2,22 +2,23 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "icon-solid-monochrome.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "icon-solid-monochrome-2.png",
+      "filename" : "icon-solid-monochrome.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "icon-solid-monochrome-1.png",
       "scale" : "3x"
     }
   ],
   "info" : {
     "version" : 1,
     "author" : "xcode"
+  },
+  "properties" : {
+    "template-rendering-intent" : "template"
   }
 }
