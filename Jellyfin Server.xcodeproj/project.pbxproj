@@ -31,7 +31,7 @@
 		0919395922C35C1400392D55 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0919395B22C35C1400392D55 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0924531622D5BC7E00B2E710 /* ffmpeg LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "ffmpeg LICENSE.txt"; sourceTree = "<group>"; };
-		09A23D5B2468FB9B0071B5A9 /* Server.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Server.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		09A23D5B2468FB9B0071B5A9 /* Jellyfin Server.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Jellyfin Server.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		09A23D5C2468FBAB0071B5A9 /* Server.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Server.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -50,12 +50,12 @@
 			isa = PBXGroup;
 			children = (
 				0924531622D5BC7E00B2E710 /* ffmpeg LICENSE.txt */,
-				0919395122C35C1400392D55 /* Server */,
-				09A23D5B2468FB9B0071B5A9 /* Server.app */,
+				0919395122C35C1400392D55 /* Jellyfin Server */,
+				09A23D5B2468FB9B0071B5A9 /* Jellyfin Server.app */,
 			);
 			sourceTree = "<group>";
 		};
-		0919395122C35C1400392D55 /* Server */ = {
+		0919395122C35C1400392D55 /* Jellyfin Server */ = {
 			isa = PBXGroup;
 			children = (
 				09A23D5C2468FBAB0071B5A9 /* Server.entitlements */,
@@ -64,15 +64,15 @@
 				0919395822C35C1400392D55 /* Main.storyboard */,
 				0919395B22C35C1400392D55 /* Info.plist */,
 			);
-			path = Server;
+			path = "Jellyfin Server";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		0919394E22C35C1400392D55 /* Server */ = {
+		0919394E22C35C1400392D55 /* Jellyfin Server */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0919395F22C35C1400392D55 /* Build configuration list for PBXNativeTarget "Server" */;
+			buildConfigurationList = 0919395F22C35C1400392D55 /* Build configuration list for PBXNativeTarget "Jellyfin Server" */;
 			buildPhases = (
 				0919394B22C35C1400392D55 /* Sources */,
 				0919394C22C35C1400392D55 /* Frameworks */,
@@ -83,9 +83,9 @@
 			);
 			dependencies = (
 			);
-			name = Server;
+			name = "Jellyfin Server";
 			productName = Server;
-			productReference = 09A23D5B2468FB9B0071B5A9 /* Server.app */;
+			productReference = 09A23D5B2468FB9B0071B5A9 /* Jellyfin Server.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -111,7 +111,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 0919394A22C35C1300392D55 /* Build configuration list for PBXProject "Server" */;
+			buildConfigurationList = 0919394A22C35C1300392D55 /* Build configuration list for PBXProject "Jellyfin Server" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -124,7 +124,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				0919394E22C35C1400392D55 /* Server */,
+				0919394E22C35C1400392D55 /* Jellyfin Server */,
 			);
 		};
 /* End PBXProject section */
@@ -284,13 +284,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = Server/Server.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "Jellyfin Server/Server.entitlements";
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 6YC6EAV7ES;
 				ENABLE_HARDENED_RUNTIME = YES;
-				INFOPLIST_FILE = Server/Info.plist;
+				INFOPLIST_FILE = "Jellyfin Server/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -308,13 +308,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = Server/Server.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "Jellyfin Server/Server.entitlements";
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 6YC6EAV7ES;
 				ENABLE_HARDENED_RUNTIME = YES;
-				INFOPLIST_FILE = Server/Info.plist;
+				INFOPLIST_FILE = "Jellyfin Server/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -331,7 +331,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0919394A22C35C1300392D55 /* Build configuration list for PBXProject "Server" */ = {
+		0919394A22C35C1300392D55 /* Build configuration list for PBXProject "Jellyfin Server" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0919395D22C35C1400392D55 /* Debug */,
@@ -340,7 +340,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0919395F22C35C1400392D55 /* Build configuration list for PBXNativeTarget "Server" */ = {
+		0919395F22C35C1400392D55 /* Build configuration list for PBXNativeTarget "Jellyfin Server" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0919396022C35C1400392D55 /* Debug */,
