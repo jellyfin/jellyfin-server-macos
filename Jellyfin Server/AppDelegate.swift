@@ -21,6 +21,23 @@ var task = Process()
             button.image = NSImage(named:NSImage.Name("StatusBarButtonImage"))
         }
         
+        let fileManager = FileManager.default
+        let home = FileManager.default.homeDirectoryForCurrentUser
+        let appFolder = home.appendingPathComponent(".local/share")
+        var isDirectory: ObjCBool = false
+        let folderExists = fileManager.fileExists(atPath: appFolder.path,
+                                      isDirectory: &isDirectory)
+        if !folderExists || !isDirectory.boolValue {
+          do {
+            // 4
+            try fileManager.createDirectory(at: appFolder,
+                                            withIntermediateDirectories: true,
+                                            attributes: nil)
+          } catch {
+            //failure
+            }
+        }
+        
         let path = Bundle.main.path(forAuxiliaryExecutable: "jellyfin")
 
         task.launchPath = path
