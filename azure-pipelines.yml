@@ -15,6 +15,11 @@ steps:
     certSecureFile: 'MacDevAnthony.p12'
     certPwd: '$(CertificatePassword)'
     keychain: 'temp'
+- task: InstallAppleProvisioningProfile@1
+  inputs:
+    provisioningProfileLocation: 'secureFiles'
+    provProfileSecureFile: 'JellyfinMacProvision.provisionprofile'
+
 - task: Xcode@5
   inputs:
     actions: 'build'
