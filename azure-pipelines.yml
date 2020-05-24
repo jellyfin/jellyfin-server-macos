@@ -10,10 +10,11 @@ pool:
   vmImage: 'macos-latest'
 
 steps:
-- task: InstallAppleProvisioningProfile@1
+- task: InstallAppleCertificate@2
   inputs:
-    provisioningProfileLocation: 'secureFiles'
-    provProfileSecureFile: 'DeveloperIDMac.cer'
+    certSecureFile: 'DevIDCert.p12'
+    certPwd: '$(CertificatePassword)'
+    keychain: 'temp'
 - task: Xcode@5
   inputs:
     actions: 'build'
