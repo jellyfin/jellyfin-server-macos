@@ -15,6 +15,13 @@ steps:
     certSecureFile: 'MacDevAnthony.p12'
     certPwd: '$(CertificatePassword)'
     keychain: 'temp'
+
+- task: InstallAppleCertificate@2
+  inputs:
+    certSecureFile: 'MacAnthony2.p12'
+    certPwd: '$(CertificatePassword)'
+    keychain: 'temp'
+    
 - task: InstallAppleProvisioningProfile@1
   inputs:
     provisioningProfileLocation: 'secureFiles'
