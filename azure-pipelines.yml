@@ -12,7 +12,7 @@ pool:
 steps:
 - task: InstallAppleCertificate@2
   inputs:
-    certSecureFile: 'DevIDCert.p12'
+    certSecureFile: 'MacDevAnthony.p12'
     certPwd: '$(CertificatePassword)'
     keychain: 'temp'
 - task: Xcode@5
