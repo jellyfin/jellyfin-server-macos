@@ -10,6 +10,10 @@ pool:
   vmImage: 'macos-latest'
 
 steps:
+- task: InstallAppleProvisioningProfile@1
+  inputs:
+    provisioningProfileLocation: 'secureFiles'
+    provProfileSecureFile: 'DeveloperIDMac.cer'
 - task: Xcode@5
   inputs:
     actions: 'build'
@@ -20,3 +24,10 @@ steps:
     signingOption: 'auto'
     teamId: '6YC6EAV7ES'
     destinationPlatformOption: 'macOS'
+
+- task: PublishBuildArtifacts@1
+  displayName: 'Bundle Release'
+  inputs:
+    PathtoPublish: '$(System.DefaultWorkingDirectory)/build/Release/'
+    ArtifactName: 'jellyfin-macos-wrapper.zip'
+    publishLocation: 'Container'
