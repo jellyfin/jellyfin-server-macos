@@ -39,9 +39,10 @@ var task = Process()
         }
         
         let path = Bundle.main.path(forAuxiliaryExecutable: "jellyfin")
-
+        let webui = Bundle.main.resourceURL!.appendingPathComponent("jellyfin-web").path
+        
         task.launchPath = path
-        //task.arguments = ["--noautorunwebapp"]
+        task.arguments = ["--webdir", webui]
         
         do {
             try  task.run()
