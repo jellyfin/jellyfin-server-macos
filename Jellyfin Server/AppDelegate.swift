@@ -29,12 +29,13 @@ var task = Process()
                                       isDirectory: &isDirectory)
         if !folderExists || !isDirectory.boolValue {
           do {
-            // 4
+
             try fileManager.createDirectory(at: appFolder,
                                             withIntermediateDirectories: true,
                                             attributes: nil)
           } catch {
-            //failure
+            // TODO: Add system dialog and stop here. Provide instructions at a link.
+            print("Could not create cache folder. Reason: \(error)")
             }
         }
         
@@ -46,7 +47,8 @@ var task = Process()
         do {
             try  task.run()
         } catch {
-            print("\(error)")
+            // TODO: Add system dialog and stop here. Provide instructions at a link.
+            print("Could not launch Jellyfin. Reason: \(error)")
         }
         
         constructMenu()
