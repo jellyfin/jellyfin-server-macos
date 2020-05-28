@@ -10,18 +10,7 @@ pool:
   vmImage: 'macos-latest'
 
 steps:
-- task: InstallAppleCertificate@2
-  inputs:
-    certSecureFile: 'MacDevAnthony.p12'
-    certPwd: '$(CertificatePassword)'
-    keychain: 'temp'
-
-- task: InstallAppleCertificate@2
-  inputs:
-    certSecureFile: 'MacAnthony2.p12'
-    certPwd: '$(CertificatePassword)'
-    keychain: 'temp'
-    
+ 
 - task: InstallAppleProvisioningProfile@1
   inputs:
     provisioningProfileLocation: 'secureFiles'
@@ -34,8 +23,9 @@ steps:
     sdk: 'macosx10.15'
     xcWorkspacePath: '**/*.xcodeproj'
     packageApp: false
-    signingOption: 'manual'
+    signingOption: 'default'
     destinationPlatformOption: 'macOS'
+    useXcpretty: false
 
 - task: PublishBuildArtifacts@1
   displayName: 'Bundle Release'
