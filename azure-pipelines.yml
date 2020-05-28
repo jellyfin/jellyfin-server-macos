@@ -34,8 +34,7 @@ steps:
     sdk: 'macosx10.15'
     xcWorkspacePath: '**/*.xcodeproj'
     packageApp: false
-    signingOption: 'auto'
-    teamId: '6YC6EAV7ES'
+    signingOption: 'manual'
     destinationPlatformOption: 'macOS'
 
 - task: PublishBuildArtifacts@1
