@@ -73,7 +73,7 @@ steps:
       
       # Setup some variables
       APP_NAME="Jellyfin.app"
-      ENTITLEMENTS="$BUILD_SOURCESDIRECTORY/Jellyfin_Server.entitlements"
+      ENTITLEMENTS="$BUILD_SOURCESDIRECTORY/deployment/Jellyfin_Server.entitlements"
       SIGNING_IDENTITY="739426E195172DE44249548E1DC1CBFA797AEF3A" # matches Keychain Access certificate name
       
       # Iterate through contents that should be signed, and sign them
@@ -104,7 +104,7 @@ steps:
     targetType: 'inline'
     script: |
       echo "[INFO] Creating DMG..."
-      appdmg "$BUILD_SOURCESDIRECTORY/jfdmg.json" "Jellyfin.dmg"
+      appdmg "$BUILD_SOURCESDIRECTORY/deployment/jfdmg.json" "Jellyfin.dmg"
       echo "[INFO] Uploading for notarization..."
       xcrun altool --notarize-app --primary-bundle-id "jellyfin-server-macos" --username "$APPLEDEVACCOUNT" --password "$APPLEDEVPASSWORD" --file "Jellyfin.dmg"
     workingDirectory: '$(System.DefaultWorkingDirectory)/build/Release/'
