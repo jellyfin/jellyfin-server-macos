@@ -22,7 +22,7 @@ steps:
   inputs:
     archiveFilePatterns: '*.gz'
     destinationFolder: '$(Build.SourcesDirectory)'
-    cleanDestinationFolder: true
+    cleanDestinationFolder: false
 
 - task: InstallAppleCertificate@2
   inputs:
