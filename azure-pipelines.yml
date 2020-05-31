@@ -108,11 +108,10 @@ steps:
       echo "[INFO] Creating DMG..."
       npx appdmg "jfdmg.json" "Jellyfin.dmg"
       echo "[INFO] Uploading for notarization..."
-      xcrun altool --notarize-app --primary-bundle-id "jellyfin-server-macos" --username "$APPLEDEVACCOUNT" --password "$APPLEDEVPASSWORD" --file "Jellyfin.dmg"
+      xcrun altool --notarize-app --primary-bundle-id "jellyfin-server-macos" --username "$DEVUSER" --password "$APPLEDEVPASSWORD" --file "Jellyfin.dmg"
     workingDirectory: '$(System.DefaultWorkingDirectory)/build/Release/'
     env:
-      APPLEDEVACCOUNT: $(AppleDevAccount)
-      APPLEDEVPASSWORD: $(AppleDevPassword)
+      DEVUSER: $(AppleDevAccount)
 
 - task: PublishBuildArtifacts@1
   displayName: 'Bundle Release'
