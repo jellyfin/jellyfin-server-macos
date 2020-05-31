@@ -117,6 +117,6 @@ steps:
 - task: PublishBuildArtifacts@1
   displayName: 'Bundle Release'
   inputs:
-    PathtoPublish: '$(System.DefaultWorkingDirectory)/build/Release/'
+    PathtoPublish: '$(System.DefaultWorkingDirectory)/build/Release/Jellyfin.dmg'
     ArtifactName: 'jellyfin-macos-wrapper.zip'
     publishLocation: 'Container'
