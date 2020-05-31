@@ -1,6 +1,6 @@
 {
   "title": "Jellyfin Server",
-  "icon": "$BUILD_SOURCESDIRECTORY/deployment/AppIcon.icns",
+  "icon": "AppIcon.icns",
   "icon-size": 80,
   "window": {
     "size": { "width": 240, "height": 160 }

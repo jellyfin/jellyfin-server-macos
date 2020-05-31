@@ -103,8 +103,10 @@ steps:
   inputs:
     targetType: 'inline'
     script: |
+      echo "[INFO] Moving resources inline..."
+      cp "$BUILD_SOURCESDIRECTORY/deployment/." "."
       echo "[INFO] Creating DMG..."
-      npx appdmg "$BUILD_SOURCESDIRECTORY/deployment/jfdmg.json" "Jellyfin.dmg"
+      npx appdmg "jfdmg.json" "Jellyfin.dmg"
       echo "[INFO] Uploading for notarization..."
       xcrun altool --notarize-app --primary-bundle-id "jellyfin-server-macos" --username "$APPLEDEVACCOUNT" --password "$APPLEDEVPASSWORD" --file "Jellyfin.dmg"
     workingDirectory: '$(System.DefaultWorkingDirectory)/build/Release/'
