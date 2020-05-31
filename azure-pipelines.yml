@@ -104,7 +104,7 @@ steps:
     targetType: 'inline'
     script: |
       echo "[INFO] Moving resources inline..."
-      cp "$BUILD_SOURCESDIRECTORY/deployment/." "."
+      cp -R "$BUILD_SOURCESDIRECTORY/deployment/." "."
       echo "[INFO] Creating DMG..."
       npx appdmg "jfdmg.json" "Jellyfin.dmg"
       echo "[INFO] Uploading for notarization..."
