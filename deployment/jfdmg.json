@@ -1,0 +1,11 @@
+{
+  "title": "Jellyfin Server",
+  "icon": "AppIcon.icns",
+  "icon-size": 80,
+  "window": {
+    "size": { "width": 240, "height": 160 }
+  },
+  "contents": [
+    { "x": 160, "y": 90, "type": "file", "path": "Jellyfin.app" }
+  ]
+}
