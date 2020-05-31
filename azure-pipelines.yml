@@ -52,7 +52,7 @@ steps:
     script: |
       # Rename the bundle
       echo "[INFO] Renaming Jellyfin Server.app as Jellyfin.app..."
-      mv "$(System.DefaultWorkingDirectory)/build/Release/Jellyfin Server.app" "$(System.DefaultWorkingDirectory)/build/Release/Jellyfin.app"
+      mv "Jellyfin Server.app" "Jellyfin.app"
       
       # Read the extracted Jellyfin binary folder name, get version
       echo "[INFO] Reading details from Jellyfin release..."
@@ -104,7 +104,7 @@ steps:
     targetType: 'inline'
     script: |
       echo "[INFO] Creating DMG..."
-      appdmg "$BUILD.SOURCESDIRECTORY/jfdmg.json" "Jellyfin.dmg"
+      appdmg "$BUILD_SOURCESDIRECTORY/jfdmg.json" "Jellyfin.dmg"
       echo "[INFO] Uploading for notarization..."
       xcrun altool --notarize-app --primary-bundle-id "jellyfin-server-macos" --username "$APPLEDEVACCOUNT" --password "$APPLEDEVPASSWORD" --file "Jellyfin.dmg"
     workingDirectory: '$(System.DefaultWorkingDirectory)/build/Release/'
