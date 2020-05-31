@@ -20,7 +20,7 @@ steps:
     downloadPath: '$(Build.SourcesDirectory)'
 - task: ExtractFiles@1
   inputs:
-    archiveFilePatterns: '*.zip'
+    archiveFilePatterns: '*.gz'
     destinationFolder: '$(Build.SourcesDirectory)'
     cleanDestinationFolder: true
 
@@ -45,6 +45,8 @@ steps:
     signingOption: 'default'
     destinationPlatformOption: 'macOS'
     useXcpretty: false
+
+
 
 - task: PublishBuildArtifacts@1
   displayName: 'Bundle Release'
