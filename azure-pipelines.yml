@@ -10,6 +10,20 @@ pool:
   vmImage: 'macos-latest'
 
 steps:
+
+- task: DownloadGitHubRelease@0
+  inputs:
+    connection: 'AzureGH'
+    userRepository: 'jellyfin/jellyfin'
+    defaultVersionType: 'latest'
+    itemPattern: '*macos.tar.gz'
+    downloadPath: '$(Build.SourcesDirectory)'
+- task: ExtractFiles@1
+  inputs:
+    archiveFilePatterns: '*.zip'
+    destinationFolder: '$(Build.SourcesDirectory)'
+    cleanDestinationFolder: true
+
 - task: InstallAppleCertificate@2
   inputs:
     certSecureFile: 'MacAnthony2.p12'
