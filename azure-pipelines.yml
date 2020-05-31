@@ -110,6 +110,9 @@ steps:
       echo "[INFO] Uploading for notarization..."
       xcrun altool --notarize-app --primary-bundle-id "jellyfin-server-macos" --username "$APPLEDEVACCOUNT" --password "$APPLEDEVPASSWORD" --file "Jellyfin.dmg"
     workingDirectory: '$(System.DefaultWorkingDirectory)/build/Release/'
+    env:
+      APPLEDEVACCOUNT: $(AppleDevAccount)
+      APPLEDEVPASSWORD: $(AppleDevPassword)
 
 - task: PublishBuildArtifacts@1
   displayName: 'Bundle Release'
