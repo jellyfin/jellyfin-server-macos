@@ -1,0 +1,23 @@
+{
+  "name": "jellyfin-server-macos",
+  "version": "1.0.0",
+  "description": "<h1 align=\"center\">Jellyfin for macOS</h1> <h3 align=\"center\">Part of the <a href=\"https://jellyfin.media\">Jellyfin Project</a></h3>",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anthonylavado/jellyfin-server-macos.git"
+  },
+  "keywords": [],
+  "author": "Anthony Lavado",
+  "license": "MPL-2.0",
+  "bugs": {
+    "url": "https://github.com/anthonylavado/jellyfin-server-macos/issues"
+  },
+  "homepage": "https://github.com/anthonylavado/jellyfin-server-macos#readme",
+  "dependencies": {
+    "appdmg": "^0.6.0"
+  }
+}
