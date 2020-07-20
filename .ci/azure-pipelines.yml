@@ -5,7 +5,10 @@ pool:
   vmImage: 'macos-latest'
 
 steps:
-
+- task: Bash@3
+  inputs:
+    targetType: 'inline'
+    script: '$AZP_BASHV3_OLD_SOURCE_BEHAVIOR=true'
 # Add all Apple signing material
 - task: InstallAppleCertificate@2
   inputs:
