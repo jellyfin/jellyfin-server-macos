@@ -49,7 +49,7 @@ var task = Process()
             try  task.run()
         } catch {
             // TODO: Add system dialog and stop here. Provide instructions at a link.
-            print("Could not launch Jellyfin. Reason: \(error)")
+            print("Could not launch ErsatzTV. Reason: \(error)")
         }
         
         constructMenu()
@@ -62,7 +62,7 @@ var task = Process()
     }
     
     @objc func launchWebUI(sender: Any?) {
-        NSWorkspace.shared.open(NSURL(string: "http://localhost:8096")! as URL)
+        NSWorkspace.shared.open(NSURL(string: "http://localhost:8409")! as URL)
     }
    
     @objc func showLogs(sender: Any?){
@@ -76,7 +76,7 @@ var task = Process()
         menu.addItem(NSMenuItem(title: "Launch Web UI", action: #selector(launchWebUI(sender:)), keyEquivalent: "l"))
         menu.addItem(NSMenuItem(title: "Show Logs", action: #selector(showLogs(sender:)), keyEquivalent: "d"))
         menu.addItem(NSMenuItem.separator())
-        menu.addItem(NSMenuItem(title: "Quit Jellyfin Server", action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q"))
+        menu.addItem(NSMenuItem(title: "Quit ErsatzTV", action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q"))
         
         statusItem.menu = menu
     }
