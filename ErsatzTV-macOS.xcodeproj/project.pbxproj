@@ -10,7 +10,6 @@
 		0919395322C35C1400392D55 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0919395222C35C1400392D55 /* AppDelegate.swift */; };
 		0919395722C35C1400392D55 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0919395622C35C1400392D55 /* Assets.xcassets */; };
 		0919395A22C35C1400392D55 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0919395822C35C1400392D55 /* Main.storyboard */; };
-		0924531822D5BC7E00B2E710 /* ffmpeg LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0924531622D5BC7E00B2E710 /* ffmpeg LICENSE.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -30,9 +29,8 @@
 		0919395622C35C1400392D55 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0919395922C35C1400392D55 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0919395B22C35C1400392D55 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0924531622D5BC7E00B2E710 /* ffmpeg LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "ffmpeg LICENSE.txt"; sourceTree = "<group>"; };
-		09A23D5B2468FB9B0071B5A9 /* Jellyfin Server.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Jellyfin Server.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		09A23D5C2468FBAB0071B5A9 /* Server.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Server.entitlements; sourceTree = "<group>"; };
+		09A23D5B2468FB9B0071B5A9 /* ErsatzTV-macOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ErsatzTV-macOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		96D92E1527A3105F001C7745 /* ErsatzTV-macOS.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = "ErsatzTV-macOS.entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,30 +47,29 @@
 		0919394622C35C1300392D55 = {
 			isa = PBXGroup;
 			children = (
-				0924531622D5BC7E00B2E710 /* ffmpeg LICENSE.txt */,
-				0919395122C35C1400392D55 /* Jellyfin Server */,
-				09A23D5B2468FB9B0071B5A9 /* Jellyfin Server.app */,
+				0919395122C35C1400392D55 /* ErsatzTV-macOS */,
+				09A23D5B2468FB9B0071B5A9 /* ErsatzTV-macOS.app */,
 			);
 			sourceTree = "<group>";
 		};
-		0919395122C35C1400392D55 /* Jellyfin Server */ = {
+		0919395122C35C1400392D55 /* ErsatzTV-macOS */ = {
 			isa = PBXGroup;
 			children = (
-				09A23D5C2468FBAB0071B5A9 /* Server.entitlements */,
+				96D92E1527A3105F001C7745 /* ErsatzTV-macOS.entitlements */,
 				0919395222C35C1400392D55 /* AppDelegate.swift */,
 				0919395622C35C1400392D55 /* Assets.xcassets */,
 				0919395822C35C1400392D55 /* Main.storyboard */,
 				0919395B22C35C1400392D55 /* Info.plist */,
 			);
-			path = "Jellyfin Server";
+			path = "ErsatzTV-macOS";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		0919394E22C35C1400392D55 /* Jellyfin Server */ = {
+		0919394E22C35C1400392D55 /* ErsatzTV-macOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0919395F22C35C1400392D55 /* Build configuration list for PBXNativeTarget "Jellyfin Server" */;
+			buildConfigurationList = 0919395F22C35C1400392D55 /* Build configuration list for PBXNativeTarget "ErsatzTV-macOS" */;
 			buildPhases = (
 				0919394B22C35C1400392D55 /* Sources */,
 				0919394C22C35C1400392D55 /* Frameworks */,
@@ -83,9 +80,9 @@
 			);
 			dependencies = (
 			);
-			name = "Jellyfin Server";
+			name = "ErsatzTV-macOS";
 			productName = Server;
-			productReference = 09A23D5B2468FB9B0071B5A9 /* Jellyfin Server.app */;
+			productReference = 09A23D5B2468FB9B0071B5A9 /* ErsatzTV-macOS.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -95,8 +92,8 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1020;
-				LastUpgradeCheck = 1020;
-				ORGANIZATIONNAME = Jellyfin;
+				LastUpgradeCheck = 1320;
+				ORGANIZATIONNAME = ErsatzTV;
 				TargetAttributes = {
 					0919394E22C35C1400392D55 = {
 						CreatedOnToolsVersion = 10.2.1;
@@ -111,7 +108,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 0919394A22C35C1300392D55 /* Build configuration list for PBXProject "Jellyfin Server" */;
+			buildConfigurationList = 0919394A22C35C1300392D55 /* Build configuration list for PBXProject "ErsatzTV-macOS" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -124,7 +121,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				0919394E22C35C1400392D55 /* Jellyfin Server */,
+				0919394E22C35C1400392D55 /* ErsatzTV-macOS */,
 			);
 		};
 /* End PBXProject section */
@@ -134,7 +131,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0924531822D5BC7E00B2E710 /* ffmpeg LICENSE.txt in Resources */,
 				0919395722C35C1400392D55 /* Assets.xcassets in Resources */,
 				0919395A22C35C1400392D55 /* Main.storyboard in Resources */,
 			);
@@ -191,6 +187,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -252,6 +249,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -284,22 +282,22 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "Jellyfin Server/Server.entitlements";
-				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_ENTITLEMENTS = "ErsatzTV-macOS/ErsatzTV-macOS.entitlements";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 6YC6EAV7ES;
+				DEVELOPMENT_TEAM = 32MB98Q32R;
 				ENABLE_HARDENED_RUNTIME = YES;
-				INFOPLIST_FILE = "Jellyfin Server/Info.plist";
+				INFOPLIST_FILE = "ErsatzTV-macOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
-				MARKETING_VERSION = 10.5.5;
-				PRODUCT_BUNDLE_IDENTIFIER = Jellyfin.Server;
+				MARKETING_VERSION = 0.0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jasongdove.ersatztv-macos";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = JellyfinMacProvision;
+				PROVISIONING_PROFILE_SPECIFIER = "Local M1 Development";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -308,22 +306,22 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "Jellyfin Server/Server.entitlements";
-				CODE_SIGN_IDENTITY = "Developer ID Application";
+				CODE_SIGN_ENTITLEMENTS = "ErsatzTV-macOS/ErsatzTV-macOS.entitlements";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 6YC6EAV7ES;
+				DEVELOPMENT_TEAM = 32MB98Q32R;
 				ENABLE_HARDENED_RUNTIME = YES;
-				INFOPLIST_FILE = "Jellyfin Server/Info.plist";
+				INFOPLIST_FILE = "ErsatzTV-macOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.14;
-				MARKETING_VERSION = 10.5.5;
-				PRODUCT_BUNDLE_IDENTIFIER = Jellyfin.Server;
+				MARKETING_VERSION = 0.0.1;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jasongdove.ersatztv-macos";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = JellyfinMacProvision;
+				PROVISIONING_PROFILE_SPECIFIER = "Local M1 Development";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -331,7 +329,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0919394A22C35C1300392D55 /* Build configuration list for PBXProject "Jellyfin Server" */ = {
+		0919394A22C35C1300392D55 /* Build configuration list for PBXProject "ErsatzTV-macOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0919395D22C35C1400392D55 /* Debug */,
@@ -340,7 +338,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0919395F22C35C1400392D55 /* Build configuration list for PBXNativeTarget "Jellyfin Server" */ = {
+		0919395F22C35C1400392D55 /* Build configuration list for PBXNativeTarget "ErsatzTV-macOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0919396022C35C1400392D55 /* Debug */,
