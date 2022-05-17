@@ -1,0 +1,63 @@
+on:
+  workflow_call: 
+    inputs:
+      jellyfin_version:
+        required: true
+        type: string
+      server_url:
+        required: true
+        type: string
+      ffmpeg_url:
+        required: false
+        type: string
+        default: https://evermeet.cx/pub/ffmpeg/ffmpeg-4.4.1.zip
+      ffprobe_url:
+        required: false
+        type: string
+        default: https://evermeet.cx/pub/ffprobe/ffprobe-4.4.1.zip
+
+jobs:
+  publish:
+    runs-on: macos-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+      
+      - name: Set Version
+        run: |
+          sed -i -E 's/MARKETING_VERSION = .*/MARKETING_VERSION = ${{ inputs.jellyfin_version }};/g' Jellyfin\ Server.xcodeproj/project.pbxproj
+
+      - name: Archive App
+        uses: devbotsxyz/xcode-archive@v1
+          
+      - name: Setup Jellyfin server
+        run: |
+          curl -L -o jellyfin.tar.gz ${{ inputs.server_url }}
+          tar -xf jellyfin.tar.gz
+          # move Jellyfin server
+          mv jellyfin_*/* Jellyfin\ Server.xcarchive/Products/Applications/Jellyfin\ Server.app/Contents/MacOS
+          # move Jellyfin web
+          mv Jellyfin\ Server.xcarchive/Products/Applications/Jellyfin\ Server.app/Contents/MacOS/jellyfin-web Jellyfin\ Server.xcarchive/Products/Applications/Jellyfin\ Server.app/Contents/Resources
+          
+      - name: Setup ffmpeg
+        run: |
+          curl -L -o ffmpeg.zip ${{ inputs.ffmpeg_url }}
+          unzip ffmpeg.zip
+          mv ffmpeg Jellyfin\ Server.xcarchive/Products/Applications/Jellyfin\ Server.app/Contents/MacOS
+
+      - name: Setup ffprobe
+        run: |
+          curl -L -o ffprobe.zip ${{ inputs.ffprobe_url }}
+          unzip ffprobe.zip
+          mv ffprobe Jellyfin\ Server.xcarchive/Products/Applications/Jellyfin\ Server.app/Contents/MacOS             
+          
+      - name: Export
+        uses: devbotsxyz/xcode-export-archive@v1.0.0
+          
+#      - name: Upload Artifact
+#        uses: actions/upload-artifact@v2
+#        with:
+#          name: macos-x64
+#          retention-days: 30
+#          if-no-files-found: error
+#          path: ./Export/Jellyfin.app
