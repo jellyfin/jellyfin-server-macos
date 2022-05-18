@@ -27,6 +27,13 @@ jobs:
         run: |
           sed -i -E 's/MARKETING_VERSION = .*/MARKETING_VERSION = ${{ inputs.jellyfin_version }};/g' Jellyfin\ Server.xcodeproj/project.pbxproj
 
+      - name: Import Signing Certificate
+        uses: devbotsxyz/import-signing-certificate@v1.0.0
+        with:
+          certificate-data: ${{ secrets.DEVELOPMENT_CERTIFICATE_DATA }}
+          certificate-passphrase: ${{ secrets.DEVELOPMENT_CERTIFICATE_PASSPHRASE }}
+          keychain-password: ${{ secrets.KEYCHAIN_PASSWORD }
+
       - name: Archive App
         uses: devbotsxyz/xcode-archive@v1
           
@@ -53,6 +60,13 @@ jobs:
           
       - name: Export
         uses: devbotsxyz/xcode-export-archive@v1.0.0
+
+      - name: Notarize Release Build
+        uses: devbotsxyz/xcode-notarize@v1
+        with:
+          product-path: "Jellyfin Server.xcarchive/Products/Applications/Jellyfin Server.app"
+          appstore-connect-username: ${{ secrets.NOTARIZATION_USERNAME }}
+          appstore-connect-password: ${{ secrets.NOTARIZATION_PASSWORD }}
           
 #      - name: Upload Artifact
 #        uses: actions/upload-artifact@v2
