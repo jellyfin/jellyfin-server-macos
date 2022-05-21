@@ -15,6 +15,21 @@ on:
         required: false
         type: string
         default: https://evermeet.cx/pub/ffprobe/ffprobe-4.4.1.zip
+      certificate_data:
+        required: true
+        type: string
+      certificate_passphrase:
+        required: true
+        type: string
+      keychain_password:
+        required: true
+        type: string
+      notarization_username:
+        required: true
+        type: string
+      notarization_password:
+        required: true
+        type: string
 
 jobs:
   publish:
@@ -30,9 +45,9 @@ jobs:
       - name: Import Signing Certificate
         uses: devbotsxyz/import-signing-certificate@v1.0.0
         with:
-          certificate-data: ${{ secrets.DEVELOPMENT_CERTIFICATE_DATA }}
-          certificate-passphrase: ${{ secrets.DEVELOPMENT_CERTIFICATE_PASSPHRASE }}
-          keychain-password: ${{ secrets.KEYCHAIN_PASSWORD }
+          certificate-data: ${{ inputs.certificate_data }}
+          certificate-passphrase: ${{ inputs.certificate_passphrase }}
+          keychain-password: ${{ inputs.keychain_password }}
 
       - name: Archive App
         uses: devbotsxyz/xcode-archive@v1
@@ -65,8 +80,8 @@ jobs:
         uses: devbotsxyz/xcode-notarize@v1
         with:
           product-path: "Jellyfin Server.xcarchive/Products/Applications/Jellyfin Server.app"
-          appstore-connect-username: ${{ secrets.NOTARIZATION_USERNAME }}
-          appstore-connect-password: ${{ secrets.NOTARIZATION_PASSWORD }}
+          appstore-connect-username: ${{ inputs.notarization_username }}
+          appstore-connect-password: ${{ inputs.notarization_password }}
           
 #      - name: Upload Artifact
 #        uses: actions/upload-artifact@v2
