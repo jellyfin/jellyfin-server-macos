@@ -8,7 +8,6 @@
 
 import AppKit
 import Cocoa
-import LaunchAtLogin
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
@@ -21,7 +20,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         statusItem.button?.image = NSImage(named: "StatusBarButtonImage")
         
         createAppFolder()
-        startJellyfinTask()
+//        startJellyfinTask()
         createStatusBarMenu()
     }
 

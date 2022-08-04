@@ -48,6 +48,9 @@
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <binding destination="bU7-R8-ocO" name="value" keyPath="launchAtLogin.isEnabled" id="HbU-1F-ccK"/>
+                                </connections>
                             </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gxh-eI-cDG">
                                 <rect key="frame" x="108" y="111" width="134" height="32"/>
@@ -114,7 +117,8 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="launchAtLoginToggle" destination="iV1-fg-N8A" id="LnK-p3-p5s"/>
+                        <outlet property="copyrightLabel" destination="a23-zM-ylI" id="trm-Z4-WYg"/>
+                        <outlet property="versionLabel" destination="qEc-pa-mey" id="Rya-Fg-5pP"/>
                     </connections>
                 </viewController>
                 <customObject id="9uD-mB-xHs" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>

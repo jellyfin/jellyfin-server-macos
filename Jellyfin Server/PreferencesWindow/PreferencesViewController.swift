@@ -7,13 +7,24 @@
 //
 
 import AppKit
+import LaunchAtLogin
 
 class PreferencesViewController: NSViewController {
     
-    @IBOutlet weak var launchAtLoginToggle: NSButton!
+    @IBOutlet weak var versionLabel: NSTextField!
+    @objc dynamic var launchAtLogin = LaunchAtLogin.kvo
+    @IBOutlet weak var copyrightLabel: NSTextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
+        versionLabel.stringValue = "Version \(appVersion ?? "0.0.1")"
+        
+        
+        
+        let copyright = Bundle.main.infoDictionary?["NSHumanReadableCopyright"] as? String
+        copyrightLabel.stringValue = copyright ?? ""
     }
     
     @IBAction func launchWebUISelected(_ sender: Any) {
