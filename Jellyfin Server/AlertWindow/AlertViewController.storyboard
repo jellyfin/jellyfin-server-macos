@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="20037"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Alert View Controller-->
+        <scene sceneID="PEd-7d-5j0">
+            <objects>
+                <viewController storyboardIdentifier="AlertViewController" id="bU7-R8-ocO" customClass="AlertViewController" customModule="Jellyfin_Server" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="tOy-S4-hL0">
+                        <rect key="frame" x="0.0" y="0.0" width="356" height="76"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fdY-Da-lII">
+                                <rect key="frame" x="111" y="3" width="134" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="r62-wU-Ttb"/>
+                                    <constraint firstAttribute="height" constant="20" id="scZ-eY-Uyg"/>
+                                </constraints>
+                                <buttonCell key="cell" type="push" title="Exit" bezelStyle="rounded" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Png-uI-fVN">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <color key="bezelColor" name="linkColor" catalog="System" colorSpace="catalog"/>
+                                <connections>
+                                    <action selector="exitSelected:" target="bU7-R8-ocO" id="fhS-Ze-Fpf"/>
+                                </connections>
+                            </button>
+                            <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="XLz-Rj-HcW">
+                                <rect key="frame" x="18" y="50" width="320" height="16"/>
+                                <textFieldCell key="cell" selectable="YES" alignment="center" title="Error" id="sZe-fP-Ack">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="XLz-Rj-HcW" firstAttribute="top" secondItem="tOy-S4-hL0" secondAttribute="top" constant="10" id="DeW-Aw-WxI"/>
+                            <constraint firstAttribute="trailing" secondItem="XLz-Rj-HcW" secondAttribute="trailing" constant="20" id="Dme-Ed-gzb"/>
+                            <constraint firstAttribute="bottom" secondItem="fdY-Da-lII" secondAttribute="bottom" constant="10" id="OAI-ie-nUf"/>
+                            <constraint firstItem="fdY-Da-lII" firstAttribute="centerX" secondItem="tOy-S4-hL0" secondAttribute="centerX" id="aA3-Kr-sGp"/>
+                            <constraint firstItem="XLz-Rj-HcW" firstAttribute="centerX" secondItem="tOy-S4-hL0" secondAttribute="centerX" id="kI9-sR-LeJ"/>
+                            <constraint firstItem="fdY-Da-lII" firstAttribute="top" secondItem="XLz-Rj-HcW" secondAttribute="bottom" constant="20" id="os9-F6-xid"/>
+                            <constraint firstItem="XLz-Rj-HcW" firstAttribute="leading" secondItem="tOy-S4-hL0" secondAttribute="leading" constant="20" id="xhS-PT-ux0"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="errorLabel" destination="XLz-Rj-HcW" id="bcD-0u-mgC"/>
+                    </connections>
+                </viewController>
+                <customObject id="9uD-mB-xHs" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="12" y="67"/>
+        </scene>
+    </scenes>
+</document>

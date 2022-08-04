@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,6 +11,14 @@
 		0919395722C35C1400392D55 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0919395622C35C1400392D55 /* Assets.xcassets */; };
 		0919395A22C35C1400392D55 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0919395822C35C1400392D55 /* Main.storyboard */; };
 		0924531822D5BC7E00B2E710 /* ffmpeg LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0924531622D5BC7E00B2E710 /* ffmpeg LICENSE.txt */; };
+		E174A306289B755C0092450E /* LaunchAtLogin in Frameworks */ = {isa = PBXBuildFile; productRef = E174A305289B755C0092450E /* LaunchAtLogin */; };
+		E174A312289B84F90092450E /* PreferencesViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E174A311289B84F90092450E /* PreferencesViewController.storyboard */; };
+		E174A314289B855C0092450E /* PreferencesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E174A313289B855C0092450E /* PreferencesViewController.swift */; };
+		E174A318289B86820092450E /* PreferencesWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E174A317289B86820092450E /* PreferencesWindow.swift */; };
+		E174A31B289B8D700092450E /* ActionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E174A31A289B8D700092450E /* ActionManager.swift */; };
+		E174A31F289B92480092450E /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E174A31E289B92480092450E /* AlertViewController.swift */; };
+		E174A322289B929F0092450E /* AlertViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E174A321289B929F0092450E /* AlertViewController.storyboard */; };
+		E19E5327289B932300A94983 /* AlertWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19E5326289B932300A94983 /* AlertWindow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -33,6 +41,13 @@
 		0924531622D5BC7E00B2E710 /* ffmpeg LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "ffmpeg LICENSE.txt"; sourceTree = "<group>"; };
 		09A23D5B2468FB9B0071B5A9 /* Jellyfin Server.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Jellyfin Server.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		09A23D5C2468FBAB0071B5A9 /* Server.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Server.entitlements; sourceTree = "<group>"; };
+		E174A311289B84F90092450E /* PreferencesViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PreferencesViewController.storyboard; sourceTree = "<group>"; };
+		E174A313289B855C0092450E /* PreferencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesViewController.swift; sourceTree = "<group>"; };
+		E174A317289B86820092450E /* PreferencesWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesWindow.swift; sourceTree = "<group>"; };
+		E174A31A289B8D700092450E /* ActionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionManager.swift; sourceTree = "<group>"; };
+		E174A31E289B92480092450E /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
+		E174A321289B929F0092450E /* AlertViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AlertViewController.storyboard; sourceTree = "<group>"; };
+		E19E5326289B932300A94983 /* AlertWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertWindow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E174A306289B755C0092450E /* LaunchAtLogin in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,11 +76,34 @@
 			children = (
 				09A23D5C2468FBAB0071B5A9 /* Server.entitlements */,
 				0919395222C35C1400392D55 /* AppDelegate.swift */,
+				E174A31A289B8D700092450E /* ActionManager.swift */,
+				E174A320289B926C0092450E /* AlertWindow */,
+				E174A319289B8D520092450E /* PreferencesWindow */,
 				0919395622C35C1400392D55 /* Assets.xcassets */,
 				0919395822C35C1400392D55 /* Main.storyboard */,
 				0919395B22C35C1400392D55 /* Info.plist */,
 			);
 			path = "Jellyfin Server";
+			sourceTree = "<group>";
+		};
+		E174A319289B8D520092450E /* PreferencesWindow */ = {
+			isa = PBXGroup;
+			children = (
+				E174A317289B86820092450E /* PreferencesWindow.swift */,
+				E174A313289B855C0092450E /* PreferencesViewController.swift */,
+				E174A311289B84F90092450E /* PreferencesViewController.storyboard */,
+			);
+			path = PreferencesWindow;
+			sourceTree = "<group>";
+		};
+		E174A320289B926C0092450E /* AlertWindow */ = {
+			isa = PBXGroup;
+			children = (
+				E19E5326289B932300A94983 /* AlertWindow.swift */,
+				E174A31E289B92480092450E /* AlertViewController.swift */,
+				E174A321289B929F0092450E /* AlertViewController.storyboard */,
+			);
+			path = AlertWindow;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -84,6 +123,9 @@
 			dependencies = (
 			);
 			name = "Jellyfin Server";
+			packageProductDependencies = (
+				E174A305289B755C0092450E /* LaunchAtLogin */,
+			);
 			productName = Server;
 			productReference = 09A23D5B2468FB9B0071B5A9 /* Jellyfin Server.app */;
 			productType = "com.apple.product-type.application";
@@ -120,6 +162,9 @@
 				Base,
 			);
 			mainGroup = 0919394622C35C1300392D55;
+			packageReferences = (
+				E174A304289B755C0092450E /* XCRemoteSwiftPackageReference "LaunchAtLogin" */,
+			);
 			productRefGroup = 0919394622C35C1300392D55;
 			projectDirPath = "";
 			projectRoot = "";
@@ -135,7 +180,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				0924531822D5BC7E00B2E710 /* ffmpeg LICENSE.txt in Resources */,
+				E174A322289B929F0092450E /* AlertViewController.storyboard in Resources */,
 				0919395722C35C1400392D55 /* Assets.xcassets in Resources */,
+				E174A312289B84F90092450E /* PreferencesViewController.storyboard in Resources */,
 				0919395A22C35C1400392D55 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -147,7 +194,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E19E5327289B932300A94983 /* AlertWindow.swift in Sources */,
 				0919395322C35C1400392D55 /* AppDelegate.swift in Sources */,
+				E174A318289B86820092450E /* PreferencesWindow.swift in Sources */,
+				E174A314289B855C0092450E /* PreferencesViewController.swift in Sources */,
+				E174A31F289B92480092450E /* AlertViewController.swift in Sources */,
+				E174A31B289B8D700092450E /* ActionManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,10 +337,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Jellyfin Server/Server.entitlements";
-				CODE_SIGN_IDENTITY = "Developer ID Application";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 6YC6EAV7ES;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = "Jellyfin Server/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -299,7 +351,7 @@
 				MARKETING_VERSION = 10.5.5;
 				PRODUCT_BUNDLE_IDENTIFIER = Jellyfin.Server;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = JellyfinMacProvision;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -309,10 +361,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Jellyfin Server/Server.entitlements";
-				CODE_SIGN_IDENTITY = "Developer ID Application";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = 6YC6EAV7ES;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = "Jellyfin Server/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -323,7 +375,7 @@
 				MARKETING_VERSION = 10.5.5;
 				PRODUCT_BUNDLE_IDENTIFIER = Jellyfin.Server;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = JellyfinMacProvision;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
@@ -350,6 +402,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E174A304289B755C0092450E /* XCRemoteSwiftPackageReference "LaunchAtLogin" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sindresorhus/LaunchAtLogin";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E174A305289B755C0092450E /* LaunchAtLogin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E174A304289B755C0092450E /* XCRemoteSwiftPackageReference "LaunchAtLogin" */;
+			productName = LaunchAtLogin;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 0919394722C35C1300392D55 /* Project object */;
 }
