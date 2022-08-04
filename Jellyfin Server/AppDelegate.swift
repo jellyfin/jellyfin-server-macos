@@ -15,8 +15,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     private let statusItem = NSStatusBar.system.statusItem(withLength:NSStatusItem.squareLength)
     private var windowController = NSWindowController(window: nil)
-    
-    private var jellyfinTask = Process()
+    private var jellyfinProcess = Process()
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         statusItem.button?.image = NSImage(named: "StatusBarButtonImage")
@@ -28,8 +27,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationWillTerminate(_ aNotification: Notification) {
         print("app will terminate received")
-        jellyfinTask.terminate()
-        jellyfinTask.waitUntilExit()
+        jellyfinProcess.terminate()
+        jellyfinProcess.waitUntilExit()
     }
     
     private func createAppFolder() {
@@ -62,13 +61,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             return
         }
         
-        jellyfinTask.launchPath = jellyfinPath
-        jellyfinTask.arguments = ["--webdir", webUIPath]
+        jellyfinProcess.launchPath = jellyfinPath
+        jellyfinProcess.arguments = ["--webdir", webUIPath]
         
         do {
-            try jellyfinTask.run()
+            try jellyfinProcess.run()
         } catch {
-            let alertWindow = AlertWindow(text: "Jellyfin Server was unable to start underlying jellyfin task.")
+            let alertWindow = AlertWindow(text: "Jellyfin Server was unable to start underlying jellyfin process.")
             
             windowController.window = alertWindow
             windowController.showWindow(self)
