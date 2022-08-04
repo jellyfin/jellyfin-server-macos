@@ -20,7 +20,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         statusItem.button?.image = NSImage(named: "StatusBarButtonImage")
         
         createAppFolder()
-//        startJellyfinTask()
+        startJellyfinTask()
         createStatusBarMenu()
     }
 
@@ -87,7 +87,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
     
     @objc private func launchWebUI() {
-        ActionManager.launchAbout()
+        ActionManager.launchWebUI()
     }
     
     @objc private func showLogs() {
