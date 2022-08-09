@@ -1,5 +1,5 @@
 //
-// Swiftfin is subject to the terms of the Mozilla Public
+// Jellyfin Server is subject to the terms of the Mozilla Public
 // License, v2.0. If a copy of the MPL was not distributed with this
 // file, you can obtain one at https://mozilla.org/MPL/2.0/.
 //
@@ -9,10 +9,9 @@
 import AppKit
 
 class AlertViewController: NSViewController {
-    
-    @IBOutlet weak var errorLabel: NSTextField!
-    
-    @IBAction func exitSelected(_ sender: Any) {
+    @IBOutlet var errorLabel: NSTextField!
+
+    @IBAction func exitSelected(_: Any) {
         view.window?.windowController?.close()
         ActionManager.terminateWithError()
     }

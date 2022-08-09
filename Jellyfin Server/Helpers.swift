@@ -1,5 +1,5 @@
 //
-// Swiftfin is subject to the terms of the Mozilla Public
+// Jellyfin Server is subject to the terms of the Mozilla Public
 // License, v2.0. If a copy of the MPL was not distributed with this
 // file, you can obtain one at https://mozilla.org/MPL/2.0/.
 //
@@ -8,15 +8,11 @@
 
 import Foundation
 
-let localShareJellyfinFolder: URL = {
-    FileManager.default.homeDirectoryForCurrentUser
-        .appendingPathComponent(".local/share/jellyfin")
-}()
+let localShareJellyfinFolder: URL = FileManager.default.homeDirectoryForCurrentUser
+    .appendingPathComponent(".local/share/jellyfin")
 
-let applicationSupportJellyfinFolder: URL = {
-    FileManager.default.homeDirectoryForCurrentUser
-        .appendingPathComponent("/Library/Application Support/jellyfin")
-}()
+let applicationSupportJellyfinFolder: URL = FileManager.default.homeDirectoryForCurrentUser
+    .appendingPathComponent("/Library/Application Support/jellyfin")
 
 func directoryExists(path: String) -> Bool {
     var isDirectory: ObjCBool = false
