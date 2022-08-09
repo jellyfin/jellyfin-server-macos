@@ -25,24 +25,36 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
-        print("app will terminate received")
         jellyfinProcess.terminate()
         jellyfinProcess.waitUntilExit()
     }
     
     private func createAppFolder() {
-        var isDirectory: ObjCBool = false
-        let shareFolderExists = FileManager.default.fileExists(atPath: ActionManager.shareFolder.path,
-                                                               isDirectory: &isDirectory)
-        
-        if !shareFolderExists || !isDirectory.boolValue {
+        // Old contents were stored in ~/.local/share
+        // Move to ~/Library/Application Support/Jellyfin
+        if directoryExists(path: localShareJellyfinFolder.path) {
             do {
-                try FileManager.default.createDirectory(at: ActionManager.shareFolder, withIntermediateDirectories: true)
-            } catch {
-                let alertWindow = AlertWindow(text: "Jellyfin Server was unable to properly create expected directories.")
+                let contents = try FileManager.default.contentsOfDirectory(atPath: localShareJellyfinFolder.path)
                 
-                windowController.window = alertWindow
-                windowController.showWindow(self)
+                for contentName in contents {
+                    let oldPath = localShareJellyfinFolder.appendingPathComponent(contentName)
+                    let newPath = applicationSupportJellyfinFolder.appendingPathComponent(contentName)
+                    try FileManager.default.moveItem(atPath: oldPath.path,
+                                                     toPath: newPath.path)
+                }
+                
+                try FileManager.default.removeItem(atPath: localShareJellyfinFolder.path)
+            } catch {
+                present(alert: "Jellyfin Server was unable to properly migrate old directories.")
+            }
+        }
+        
+        if !directoryExists(path: applicationSupportJellyfinFolder.path) {
+            do {
+                try FileManager.default.createDirectory(atPath: applicationSupportJellyfinFolder.path,
+                                                        withIntermediateDirectories: true)
+            } catch {
+                present(alert: "Jellyfin Server was unable to properly create necessary directories.")
             }
         }
     }
@@ -52,24 +64,17 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let webUIPath = Bundle.main.resourceURL!.appendingPathComponent("jellyfin-web").path
         
         guard let jellyfinPath = jellyfinPath else {
-            let alertWindow = AlertWindow(text: "Jellyfin Server was unable to start underlying jellyfin task.")
-            
-            windowController.window = alertWindow
-            windowController.showWindow(self)
-            
+            present(alert: "Jellyfin Server was unable to start underlying jellyfin task.")
             return
         }
         
         jellyfinProcess.launchPath = jellyfinPath
-        jellyfinProcess.arguments = ["--webdir", webUIPath]
+        jellyfinProcess.arguments = ["--webdir", webUIPath, "--cache", applicationSupportJellyfinFolder.path]
         
         do {
             try jellyfinProcess.run()
         } catch {
-            let alertWindow = AlertWindow(text: "Jellyfin Server was unable to start underlying jellyfin process.")
-            
-            windowController.window = alertWindow
-            windowController.showWindow(self)
+            present(alert: "Jellyfin Server was unable to start underlying jellyfin process.")
         }
     }
 
@@ -102,6 +107,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let window = PreferencesWindow()
 
         windowController.window = window
+        windowController.showWindow(self)
+    }
+    
+    private func present(alert: String) {
+        let alertWindow = AlertWindow(text: alert)
+        
+        windowController.window = alertWindow
         windowController.showWindow(self)
     }
 }

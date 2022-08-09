@@ -11,17 +11,12 @@ import AppKit
 
 enum ActionManager {
     
-    static let shareFolder: URL = {
-        FileManager.default.homeDirectoryForCurrentUser
-            .appendingPathComponent(".local/share")
-    }()
-    
     static func launchWebUI() {
         NSWorkspace.shared.open(.init(string: "http://localhost:8096")!)
     }
     
     static func showLogs() {
-        let logFolder = shareFolder.appendingPathComponent("jellyfin/log")
+        let logFolder = applicationSupportJellyfinFolder.appendingPathComponent("/log")
         NSWorkspace.shared.selectFile(nil, inFileViewerRootedAtPath: logFolder.path)
     }
     
