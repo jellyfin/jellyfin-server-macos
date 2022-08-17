@@ -79,6 +79,10 @@ If you choose to build Jellyfin server on your own, you will also require:
 4. Go up one level, and go to the `Resources` folder. Place the `jellyfin-web` folder here. The folder name must match.
 5. (Optional) If you want to sign the .app for distribution, see the [Deployment Instructions](https://github.com/jellyfin/jellyfin-server-macos/tree/master/deployment).
 
+## Uninstalling
+
+Jellyfin Server uses the directory `~/Library/Application Support/jellyfin` to store necessary contents. After deleting `Jellyfin Server.app`, delete that directory for a full uninstallation.
+
 ## Troubleshooting
 
 ### The project didn't build!

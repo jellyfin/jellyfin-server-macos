@@ -1,89 +1,118 @@
 //
-//  AppDelegate.swift
-//  Server
+// Jellyfin Server is subject to the terms of the Mozilla Public
+// License, v2.0. If a copy of the MPL was not distributed with this
+// file, you can obtain one at https://mozilla.org/MPL/2.0/.
 //
-//  Created by Anthony Lavado on 2019-06-26.
-//  Copyright © 2019 Anthony Lavado. All rights reserved.
+// Copyright (c) 2022 Jellyfin & Jellyfin Contributors
 //
-/*
- * This Source Code Form is subject to the terms of the Mozilla Public
- * License, v. 2.0. If a copy of the MPL was not distributed with this
- * file, You can obtain one at https://mozilla.org/MPL/2.0/.
- */
 
+import AppKit
 import Cocoa
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
+    private let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
+    private var windowController = NSWindowController(window: nil)
+    private var jellyfinProcess = Process()
 
-let statusItem = NSStatusBar.system.statusItem(withLength:NSStatusItem.squareLength)
-let bundle = Bundle.main
-var task = Process()
+    func applicationDidFinishLaunching(_: Notification) {
+        statusItem.button?.image = NSImage(named: "StatusBarButtonImage")
 
-    
-    func applicationDidFinishLaunching(_ aNotification: Notification) {
-        if let button = statusItem.button {
-            button.image = NSImage(named:NSImage.Name("StatusBarButtonImage"))
-        }
-        
-        let fileManager = FileManager.default
-        let home = FileManager.default.homeDirectoryForCurrentUser
-        let appFolder = home.appendingPathComponent(".local/share")
-        var isDirectory: ObjCBool = false
-        let folderExists = fileManager.fileExists(atPath: appFolder.path,
-                                      isDirectory: &isDirectory)
-        if !folderExists || !isDirectory.boolValue {
-          do {
+        createAppFolder()
+        startJellyfinTask()
+        createStatusBarMenu()
+    }
 
-            try fileManager.createDirectory(at: appFolder,
-                                            withIntermediateDirectories: true,
-                                            attributes: nil)
-          } catch {
-            // TODO: Add system dialog and stop here. Provide instructions at a link.
-            print("Could not create cache folder. Reason: \(error)")
+    func applicationWillTerminate(_: Notification) {
+        jellyfinProcess.terminate()
+        jellyfinProcess.waitUntilExit()
+    }
+
+    private func createAppFolder() {
+        // Old contents were stored in ~/.local/share
+        // Move to ~/Library/Application Support/Jellyfin
+        if directoryExists(path: localShareJellyfinFolder.path) {
+            do {
+                let contents = try FileManager.default.contentsOfDirectory(atPath: localShareJellyfinFolder.path)
+
+                for contentName in contents {
+                    let oldPath = localShareJellyfinFolder.appendingPathComponent(contentName)
+                    let newPath = applicationSupportJellyfinFolder.appendingPathComponent(contentName)
+                    try FileManager.default.moveItem(atPath: oldPath.path,
+                                                     toPath: newPath.path)
+                }
+
+                try FileManager.default.removeItem(atPath: localShareJellyfinFolder.path)
+            } catch {
+                present(alert: "Jellyfin Server was unable to properly migrate old directories.")
             }
         }
-        
-        let path = Bundle.main.path(forAuxiliaryExecutable: "jellyfin")
-        let webui = Bundle.main.resourceURL!.appendingPathComponent("jellyfin-web").path
-        
-        task.launchPath = path
-        task.arguments = ["--webdir", webui]
-        
-        do {
-            try  task.run()
-        } catch {
-            // TODO: Add system dialog and stop here. Provide instructions at a link.
-            print("Could not launch Jellyfin. Reason: \(error)")
+
+        if !directoryExists(path: applicationSupportJellyfinFolder.path) {
+            do {
+                try FileManager.default.createDirectory(atPath: applicationSupportJellyfinFolder.path,
+                                                        withIntermediateDirectories: true)
+            } catch {
+                present(alert: "Jellyfin Server was unable to properly create necessary directories.")
+            }
         }
-        
-        constructMenu()
     }
 
-    func applicationWillTerminate(_ aNotification: Notification) {
-      task.terminate()
-    task.waitUntilExit()
-        
-    }
-    
-    @objc func launchWebUI(sender: Any?) {
-        NSWorkspace.shared.open(NSURL(string: "http://localhost:8096")! as URL)
-    }
-   
-    @objc func showLogs(sender: Any?){
-        NSWorkspace.shared.selectFile(nil, inFileViewerRootedAtPath: "/Users/\(NSUserName())/.local/share/jellyfin/log")
+    private func startJellyfinTask() {
+        let jellyfinPath = Bundle.main.path(forAuxiliaryExecutable: "jellyfin")
+        let webUIPath = Bundle.main.resourceURL!.appendingPathComponent("jellyfin-web").path
+
+        guard let jellyfinPath = jellyfinPath else {
+            present(alert: "Jellyfin Server was unable to start underlying jellyfin task.")
+            return
+        }
+
+        jellyfinProcess.launchPath = jellyfinPath
+        jellyfinProcess.arguments = ["--webdir", webUIPath, "--cache", applicationSupportJellyfinFolder.path]
+
+        do {
+            try jellyfinProcess.run()
+        } catch {
+            present(alert: "Jellyfin Server was unable to start underlying jellyfin process.")
+        }
     }
 
-    
-    func constructMenu() {
+    private func createStatusBarMenu() {
         let menu = NSMenu()
-        
-        menu.addItem(NSMenuItem(title: "Launch Web UI", action: #selector(launchWebUI(sender:)), keyEquivalent: "l"))
-        menu.addItem(NSMenuItem(title: "Show Logs", action: #selector(showLogs(sender:)), keyEquivalent: "d"))
+
+        menu.addItem(withTitle: "Launch", action: #selector(launchWebUI), keyEquivalent: "l")
+        menu.addItem(withTitle: "Show Logs", action: #selector(showLogs), keyEquivalent: "d")
+        menu.addItem(withTitle: "Restart", action: #selector(restart), keyEquivalent: "r")
         menu.addItem(NSMenuItem.separator())
-        menu.addItem(NSMenuItem(title: "Quit Jellyfin Server", action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q"))
-        
+        menu.addItem(withTitle: "Preferences", action: #selector(launchPreferences), keyEquivalent: ",")
+        menu.addItem(NSMenuItem(title: "Quit", action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q"))
+
         statusItem.menu = menu
     }
-}
 
+    @objc private func launchWebUI() {
+        ActionManager.launchWebUI()
+    }
+
+    @objc private func showLogs() {
+        ActionManager.showLogs()
+    }
+
+    @objc private func restart() {
+        ActionManager.restart()
+    }
+
+    @objc private func launchPreferences() {
+        let window = PreferencesWindow()
+
+        windowController.window = window
+        windowController.showWindow(self)
+    }
+
+    private func present(alert: String) {
+        let alertWindow = AlertWindow(text: alert)
+
+        windowController.window = alertWindow
+        windowController.showWindow(self)
+    }
+}
