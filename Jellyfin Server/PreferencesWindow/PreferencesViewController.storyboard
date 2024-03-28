@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="20037"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="22689"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -36,7 +36,7 @@
                             </textField>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="a23-zM-ylI">
                                 <rect key="frame" x="-2" y="10" width="354" height="16"/>
-                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Copyright © 2022 Jellyfin" id="5VS-Kj-kIo">
+                                <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Copyright © 2024 Jellyfin" id="5VS-Kj-kIo">
                                     <font key="font" metaFont="system"/>
                                     <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -54,44 +54,44 @@
                             </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="gxh-eI-cDG">
                                 <rect key="frame" x="108" y="111" width="134" height="32"/>
+                                <buttonCell key="cell" type="push" title="Launch Web UI" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="wE7-Nw-pDc">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="8x3-gy-6H5"/>
                                     <constraint firstAttribute="width" constant="120" id="Ahg-po-3td"/>
                                     <constraint firstAttribute="height" constant="20" id="xQy-q3-kdD"/>
                                 </constraints>
-                                <buttonCell key="cell" type="push" title="Launch Web UI" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="wE7-Nw-pDc">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
                                 <connections>
                                     <action selector="launchWebUISelected:" target="bU7-R8-ocO" id="Y1q-ze-oTU"/>
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="hE0-YK-gRX">
                                 <rect key="frame" x="108" y="81" width="134" height="32"/>
+                                <buttonCell key="cell" type="push" title="Show Logs" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="6WI-yj-06V">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="3kk-Pb-tWB"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="QAT-4c-DkD"/>
                                     <constraint firstAttribute="width" constant="120" id="z2X-7N-gUG"/>
                                 </constraints>
-                                <buttonCell key="cell" type="push" title="Show Logs" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="6WI-yj-06V">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
                                 <connections>
                                     <action selector="showLogsSelected:" target="bU7-R8-ocO" id="9jx-gg-Oqp"/>
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="3SL-fH-pl4">
                                 <rect key="frame" x="108" y="51" width="134" height="32"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="20" id="DNG-Ny-2hn"/>
-                                    <constraint firstAttribute="width" constant="120" id="LPR-XR-Lo7"/>
-                                </constraints>
                                 <buttonCell key="cell" type="push" title="About" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Em3-6n-hE4">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="DNG-Ny-2hn"/>
+                                    <constraint firstAttribute="width" constant="120" id="LPR-XR-Lo7"/>
+                                </constraints>
                                 <connections>
                                     <action selector="aboutSelected:" target="bU7-R8-ocO" id="EcU-RU-LdB"/>
                                 </connections>

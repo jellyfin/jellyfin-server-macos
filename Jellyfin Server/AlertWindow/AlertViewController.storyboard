@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="20037"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="22689"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -16,15 +16,15 @@
                         <subviews>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fdY-Da-lII">
                                 <rect key="frame" x="111" y="3" width="134" height="32"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="120" id="r62-wU-Ttb"/>
-                                    <constraint firstAttribute="height" constant="20" id="scZ-eY-Uyg"/>
-                                </constraints>
                                 <buttonCell key="cell" type="push" title="Exit" bezelStyle="rounded" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Png-uI-fVN">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <color key="bezelColor" name="linkColor" catalog="System" colorSpace="catalog"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="r62-wU-Ttb"/>
+                                    <constraint firstAttribute="height" constant="20" id="scZ-eY-Uyg"/>
+                                </constraints>
                                 <connections>
                                     <action selector="exitSelected:" target="bU7-R8-ocO" id="fhS-Ze-Fpf"/>
                                 </connections>
