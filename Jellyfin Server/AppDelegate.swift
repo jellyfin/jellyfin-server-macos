@@ -60,15 +60,21 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     private func startJellyfinTask() {
         let jellyfinPath = Bundle.main.path(forAuxiliaryExecutable: "jellyfin")
+        let ffmpegPath = Bundle.main.path(forAuxiliaryExecutable: "ffmpeg")
         let webUIPath = Bundle.main.resourceURL!.appendingPathComponent("jellyfin-web").path
 
         guard let jellyfinPath = jellyfinPath else {
             present(alert: "Jellyfin Server was unable to start underlying jellyfin task.")
             return
         }
+        
+        guard let ffmpegPath = ffmpegPath else {
+            present(alert: "Jellyfin Server was unable to find bundled ffmpeg.")
+            return
+        }
 
         jellyfinProcess.launchPath = jellyfinPath
-        jellyfinProcess.arguments = ["--webdir", webUIPath, "--cache", applicationSupportJellyfinFolder.path]
+        jellyfinProcess.arguments = ["--webdir", webUIPath, "--ffmpeg", ffmpegPath, "--datadir", applicationSupportJellyfinFolder.path]
 
         do {
             try jellyfinProcess.run()
