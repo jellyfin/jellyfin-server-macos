@@ -29,31 +29,30 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     private func createAppFolder() {
-        // Old contents were stored in ~/.local/share
-        // Move to ~/Library/Application Support/Jellyfin
-        if directoryExists(path: localShareJellyfinFolder.path) {
-            do {
-                let contents = try FileManager.default.contentsOfDirectory(atPath: localShareJellyfinFolder.path)
-
-                for contentName in contents {
-                    let oldPath = localShareJellyfinFolder.appendingPathComponent(contentName)
-                    let newPath = applicationSupportJellyfinFolder.appendingPathComponent(contentName)
-                    try FileManager.default.moveItem(atPath: oldPath.path,
-                                                     toPath: newPath.path)
-                }
-
-                try FileManager.default.removeItem(atPath: localShareJellyfinFolder.path)
-            } catch {
-                present(alert: "Jellyfin Server was unable to properly migrate old directories.")
-            }
-        }
-
         if !directoryExists(path: applicationSupportJellyfinFolder.path) {
             do {
                 try FileManager.default.createDirectory(atPath: applicationSupportJellyfinFolder.path,
                                                         withIntermediateDirectories: true)
             } catch {
                 present(alert: "Jellyfin Server was unable to properly create necessary directories.")
+            }
+            // Old contents were stored in ~/.local/share
+            // Move to ~/Library/Application Support/Jellyfin
+            if directoryExists(path: localShareJellyfinFolder.path) {
+                do {
+                    let contents = try FileManager.default.contentsOfDirectory(atPath: localShareJellyfinFolder.path)
+
+                    for contentName in contents {
+                        let oldPath = localShareJellyfinFolder.appendingPathComponent(contentName)
+                        let newPath = applicationSupportJellyfinFolder.appendingPathComponent(contentName)
+                        try FileManager.default.moveItem(atPath: oldPath.path,
+                                                         toPath: newPath.path)
+                    }
+
+                    try FileManager.default.removeItem(atPath: localShareJellyfinFolder.path)
+                } catch {
+                    present(alert: "Jellyfin Server was unable to properly migrate old directories.")
+                }
             }
         }
     }
