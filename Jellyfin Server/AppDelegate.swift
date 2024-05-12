@@ -18,7 +18,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(_: Notification) {
         statusItem.button?.image = NSImage(named: "StatusBarButtonImage")
 
-        createAppFolder()
         startJellyfinTask()
         createStatusBarMenu()
     }
@@ -26,35 +25,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationWillTerminate(_: Notification) {
         jellyfinProcess.terminate()
         jellyfinProcess.waitUntilExit()
-    }
-
-    private func createAppFolder() {
-        if !directoryExists(path: applicationSupportJellyfinFolder.path) {
-            do {
-                try FileManager.default.createDirectory(atPath: applicationSupportJellyfinFolder.path,
-                                                        withIntermediateDirectories: true)
-            } catch {
-                present(alert: "Jellyfin Server was unable to properly create necessary directories.")
-            }
-            // Old contents were stored in ~/.local/share
-            // Move to ~/Library/Application Support/Jellyfin
-            if directoryExists(path: localShareJellyfinFolder.path) {
-                do {
-                    let contents = try FileManager.default.contentsOfDirectory(atPath: localShareJellyfinFolder.path)
-
-                    for contentName in contents {
-                        let oldPath = localShareJellyfinFolder.appendingPathComponent(contentName)
-                        let newPath = applicationSupportJellyfinFolder.appendingPathComponent(contentName)
-                        try FileManager.default.moveItem(atPath: oldPath.path,
-                                                         toPath: newPath.path)
-                    }
-
-                    try FileManager.default.removeItem(atPath: localShareJellyfinFolder.path)
-                } catch {
-                    present(alert: "Jellyfin Server was unable to properly migrate old directories.")
-                }
-            }
-        }
     }
 
     private func startJellyfinTask() {
@@ -73,7 +43,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
 
         jellyfinProcess.launchPath = jellyfinPath
-        jellyfinProcess.arguments = ["--webdir", webUIPath, "--ffmpeg", ffmpegPath, "--datadir", applicationSupportJellyfinFolder.path]
+        jellyfinProcess.arguments = ["--webdir", webUIPath, "--ffmpeg", ffmpegPath, "--datadir"]
+        
+        if directoryExists(path: localShareJellyfinFolder.path) {
+            jellyfinProcess.arguments?.append(localShareJellyfinFolder.path)
+        } else {
+            jellyfinProcess.arguments?.append(applicationSupportJellyfinFolder.path)
+        }
 
         do {
             try jellyfinProcess.run()
