@@ -15,7 +15,7 @@ enum ActionManager {
     }
 
     static func showLogs() {
-        let logFolder = applicationSupportJellyfinFolder.appendingPathComponent("/log")
+        let logFolder = directoryExists(path: localShareJellyfinFolder.path) ? localShareJellyfinFolder.appendingPathComponent("/log") : applicationSupportJellyfinFolder.appendingPathComponent("/log")
         NSWorkspace.shared.selectFile(nil, inFileViewerRootedAtPath: logFolder.path)
     }
 
