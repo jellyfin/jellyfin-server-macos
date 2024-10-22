@@ -11,7 +11,7 @@
           "value" : "light"
         }
       ],
-      "filename" : "jellyfin-banner-light.png",
+      "filename" : "logo-light.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
@@ -22,7 +22,7 @@
           "value" : "dark"
         }
       ],
-      "filename" : "jellyfin-banner-dark.png",
+      "filename" : "logo-dark.png",
       "idiom" : "universal",
       "scale" : "1x"
     },

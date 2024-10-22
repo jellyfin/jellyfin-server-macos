@@ -11,7 +11,8 @@ import Foundation
 
 enum ActionManager {
     static func launchWebUI() {
-        NSWorkspace.shared.open(.init(string: "http://localhost:8096")!)
+        let (port, proto, subPath) = getJellyfinNetworkConfig()
+        NSWorkspace.shared.open(.init(string: "\(proto)://localhost:\(port)\(subPath)")!)
     }
 
     static func showLogs() {
