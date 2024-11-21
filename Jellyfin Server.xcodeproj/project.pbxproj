@@ -11,6 +11,7 @@
 		0919395722C35C1400392D55 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0919395622C35C1400392D55 /* Assets.xcassets */; };
 		0919395A22C35C1400392D55 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0919395822C35C1400392D55 /* Main.storyboard */; };
 		0924531822D5BC7E00B2E710 /* ffmpeg LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 0924531622D5BC7E00B2E710 /* ffmpeg LICENSE.txt */; };
+		37FCB9D42CEE4F69007E17F5 /* LanchAtLoginHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37FCB9D32CEE4F54007E17F5 /* LanchAtLoginHelper.swift */; };
 		E1293F4B28A2059B0076A445 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1293F4A28A2059B0076A445 /* Helpers.swift */; };
 		E174A306289B755C0092450E /* LaunchAtLogin in Frameworks */ = {isa = PBXBuildFile; productRef = E174A305289B755C0092450E /* LaunchAtLogin */; };
 		E174A312289B84F90092450E /* PreferencesViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E174A311289B84F90092450E /* PreferencesViewController.storyboard */; };
@@ -42,6 +43,7 @@
 		0924531622D5BC7E00B2E710 /* ffmpeg LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "ffmpeg LICENSE.txt"; sourceTree = "<group>"; };
 		09A23D5B2468FB9B0071B5A9 /* Jellyfin Server.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Jellyfin Server.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		09A23D5C2468FBAB0071B5A9 /* Server.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Server.entitlements; sourceTree = "<group>"; };
+		37FCB9D32CEE4F54007E17F5 /* LanchAtLoginHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanchAtLoginHelper.swift; sourceTree = "<group>"; };
 		E1293F4A28A2059B0076A445 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		E174A311289B84F90092450E /* PreferencesViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PreferencesViewController.storyboard; sourceTree = "<group>"; };
 		E174A313289B855C0092450E /* PreferencesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesViewController.swift; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 		E174A319289B8D520092450E /* PreferencesWindow */ = {
 			isa = PBXGroup;
 			children = (
+				37FCB9D32CEE4F54007E17F5 /* LanchAtLoginHelper.swift */,
 				E174A317289B86820092450E /* PreferencesWindow.swift */,
 				E174A313289B855C0092450E /* PreferencesViewController.swift */,
 				E174A311289B84F90092450E /* PreferencesViewController.storyboard */,
@@ -204,6 +207,7 @@
 				E174A314289B855C0092450E /* PreferencesViewController.swift in Sources */,
 				E174A31F289B92480092450E /* AlertViewController.swift in Sources */,
 				E174A31B289B8D700092450E /* ActionManager.swift in Sources */,
+				37FCB9D42CEE4F69007E17F5 /* LanchAtLoginHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,7 +276,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -327,7 +331,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
@@ -352,7 +356,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 12.0;
-				MARKETING_VERSION = 1.2.3;
+				MARKETING_VERSION = 2.4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = Jellyfin.Server;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -376,7 +380,7 @@
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 12.0;
-				MARKETING_VERSION = 1.2.3;
+				MARKETING_VERSION = 2.4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = Jellyfin.Server;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

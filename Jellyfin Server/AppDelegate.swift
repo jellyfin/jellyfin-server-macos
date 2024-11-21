@@ -16,7 +16,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     private var jellyfinProcess = Process()
 
     func applicationDidFinishLaunching(_: Notification) {
+        if !isRunningFromApplicationFolder() {
+            present(alert: "Jellyfin Server is not running from the Applications folder. Exiting...")
+        }
         statusItem.button?.image = NSImage(named: "StatusBarButtonImage")
+        LanchAtLoginHelper.migrateIfNeeded()
 
         startJellyfinTask()
         createStatusBarMenu()

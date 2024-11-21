@@ -7,11 +7,10 @@
 //
 
 import AppKit
-import LaunchAtLogin
 
 class PreferencesViewController: NSViewController {
     @IBOutlet var versionLabel: NSTextField!
-    @objc dynamic var launchAtLogin = LaunchAtLogin.kvo
+    @objc dynamic var launchAtLogin = LanchAtLoginHelper.kvo
     @IBOutlet var copyrightLabel: NSTextField!
 
     override func viewDidLoad() {

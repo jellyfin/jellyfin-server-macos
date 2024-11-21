@@ -8,6 +8,34 @@
 
 import Foundation
 
+func isRunningFromApplicationFolder() -> Bool {
+    let bundlePath = Bundle.main.bundlePath
+    let applicationsPath = "/Applications/"
+    return bundlePath.hasPrefix(applicationsPath)
+}
+
+func getLaunchAgentPlist() -> String {
+    let identifier = Bundle.main.bundleIdentifier ?? "Jellyfin.Server"
+    let path = Bundle.main.path(forAuxiliaryExecutable: "Jellyfin Server") ?? "/Applications/Jellyfin.app/Contents/MacOS/Jellyfin Server"
+    let template = """
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+        <key>Label</key>
+        <string>\(identifier)</string>
+        <key>ProgramArguments</key>
+        <array>
+            <string>\(path)</string>
+        </array>
+        <key>RunAtLoad</key>
+        <true/>
+</dict>
+</plist>
+"""
+    return template
+}
+
 let localShareJellyfinFolder: URL = FileManager.default.homeDirectoryForCurrentUser
     .appendingPathComponent(".local/share/jellyfin")
 
