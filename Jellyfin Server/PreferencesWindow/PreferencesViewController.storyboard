@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="23094" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="22689"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="23094"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -22,7 +22,7 @@
                                 </constraints>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="jellyfin-banner" id="e4N-CF-Dic"/>
                             </imageView>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="qEc-pa-mey">
+                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="qEc-pa-mey">
                                 <rect key="frame" x="73" y="194" width="204" height="16"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="16" id="gGl-zS-3e9"/>
@@ -34,7 +34,7 @@
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="a23-zM-ylI">
+                            <textField focusRingType="none" horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="a23-zM-ylI">
                                 <rect key="frame" x="-2" y="10" width="354" height="16"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="Copyright © 2024 Jellyfin" id="5VS-Kj-kIo">
                                     <font key="font" metaFont="system"/>
@@ -127,6 +127,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="jellyfin-banner" width="1481" height="466"/>
+        <image name="jellyfin-banner" width="275.5" height="80"/>
     </resources>
 </document>
