@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Cocoa
 
 func isRunningFromApplicationFolder() -> Bool {
     let bundlePath = Bundle.main.bundlePath
@@ -35,6 +36,9 @@ func getLaunchAgentPlist() -> String {
 """
     return template
 }
+
+let nativePlayerBundleId: String = "tv.jellyfin.player"
+let nativePlayerURL: URL? = NSWorkspace.shared.urlForApplication(withBundleIdentifier: nativePlayerBundleId)
 
 let localShareJellyfinFolder: URL = FileManager.default.homeDirectoryForCurrentUser
     .appendingPathComponent(".local/share/jellyfin")
@@ -89,4 +93,8 @@ func getJellyfinNetworkConfig() -> (port: String, proto: String, subPath:String)
     } else {
         return (httpPort, "http", subPath)
     }
+}
+
+func isNativeClientInstalled() -> Bool {
+    return nativePlayerURL != nil
 }
