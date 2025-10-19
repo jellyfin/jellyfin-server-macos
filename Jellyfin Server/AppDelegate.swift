@@ -66,6 +66,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let menu = NSMenu()
 
         menu.addItem(withTitle: "Launch", action: #selector(launchWebUI), keyEquivalent: "l")
+
+        if (isNativeClientInstalled()) {
+            menu.addItem(withTitle: "Launch App", action: #selector(launchNativeApp), keyEquivalent: "a")
+        }
+
         menu.addItem(withTitle: "Show Logs", action: #selector(showLogs), keyEquivalent: "d")
         menu.addItem(withTitle: "Restart", action: #selector(restart), keyEquivalent: "r")
         menu.addItem(NSMenuItem.separator())
@@ -77,6 +82,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     @objc private func launchWebUI() {
         ActionManager.launchWebUI()
+    }
+
+    @objc private func launchNativeApp() {
+        NSWorkspace.shared.openApplication(at: nativePlayerURL!, configuration: NSWorkspace.OpenConfiguration())
     }
 
     @objc private func showLogs() {
